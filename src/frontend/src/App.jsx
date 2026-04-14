@@ -12,7 +12,6 @@ import {
   featuredProducts,
   productsByCategory,
 } from "./data/products";
-import type { Category } from "./types";
 
 const SHOP_BY_CATEGORY = [
   { id: "rice-dal", icon: "🌾", label: "Dal & Pulses" },
@@ -27,50 +26,34 @@ const SHOP_BY_CATEGORY = [
   { id: "laundry", icon: "👕", label: "Laundry Care" },
 ];
 
-function ShopByCategory({
-  onCategorySelect,
-}: { onCategorySelect: (id: string) => void }) {
+function ShopByCategory({ onCategorySelect }) {
   return (
     <section
-      className="mt-8"
+      className="mt-7"
       aria-label="Shop by category"
       data-ocid="shop-by-category"
     >
       <div className="flex items-center justify-between mb-4 px-0.5">
-        <div className="flex items-center gap-2.5">
-          <div
-            className="w-1 h-5 rounded-full"
-            style={{
-              background:
-                "linear-gradient(180deg, oklch(0.48 0.27 308) 0%, oklch(0.55 0.22 290) 100%)",
-            }}
-            aria-hidden="true"
-          />
-          <h2 className="text-base md:text-[1.15rem] font-extrabold text-foreground tracking-tight">
-            Shop By Category
-          </h2>
-        </div>
+        <h2 className="text-base md:text-[1.15rem] font-extrabold text-foreground tracking-tight">
+          Shop By Category
+        </h2>
       </div>
-      <div className="grid grid-cols-5 md:grid-cols-10 gap-2.5 md:gap-3">
+      <div className="grid grid-cols-5 md:grid-cols-10 gap-2 md:gap-3">
         {SHOP_BY_CATEGORY.map((cat) => (
           <button
             type="button"
             key={`${cat.id}-${cat.label}`}
             onClick={() => onCategorySelect(cat.id)}
-            className="flex flex-col items-center gap-2 p-2.5 md:p-3.5 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg transition-smooth group cursor-pointer card-glow"
-            style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}
+            className="flex flex-col items-center gap-2 p-2 md:p-3 rounded-xl bg-card border border-border hover:border-primary hover:shadow-md transition-smooth group cursor-pointer"
             data-ocid={`category-icon-${cat.id}`}
           >
             <span
-              className="text-2xl md:text-3xl group-hover:scale-115 transition-smooth"
-              style={{
-                transition: "transform 0.25s cubic-bezier(0.4,0,0.2,1)",
-              }}
+              className="text-2xl md:text-3xl group-hover:scale-110 transition-smooth"
               aria-hidden="true"
             >
               {cat.icon}
             </span>
-            <span className="text-[10px] md:text-xs font-bold text-foreground text-center leading-tight line-clamp-2">
+            <span className="text-[10px] md:text-xs font-semibold text-foreground text-center leading-tight line-clamp-2">
               {cat.label}
             </span>
           </button>
@@ -81,8 +64,8 @@ function ShopByCategory({
 }
 
 function AppContent() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const currentProducts = searchQuery.trim()
     ? productsByCategory("all").filter(
@@ -96,13 +79,13 @@ function AppContent() {
   const featured = featuredProducts();
   const topSellers = bestsellers();
 
-  const handleCategoryChange = (cat: Category) => {
+  const handleCategoryChange = (cat) => {
     setActiveCategory(cat.id);
     setSearchQuery("");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleCategorySelect = (id: string) => {
+  const handleCategorySelect = (id) => {
     setActiveCategory(id);
     setSearchQuery("");
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -119,7 +102,7 @@ function AppContent() {
         onCategoryChange={handleCategoryChange}
       />
 
-      <main className="flex-1 max-w-[1400px] mx-auto w-full px-3 md:px-6 pb-12">
+      <main className="flex-1 max-w-[1400px] mx-auto w-full px-3 md:px-6 pb-10">
         {searchQuery ? (
           <ProductSection
             title={`Results for "${searchQuery}"`}
@@ -137,9 +120,13 @@ function AppContent() {
           />
         ) : (
           <>
+            {/* Hero Carousel */}
             <HeroCarousel />
+
+            {/* Shop By Category icons grid */}
             <ShopByCategory onCategorySelect={handleCategorySelect} />
 
+            {/* Top Picks / Featured */}
             <ProductSection
               title="⚡ Top Picks For You"
               products={featured}
@@ -147,6 +134,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("all")}
             />
 
+            {/* Bestsellers */}
             <ProductSection
               title="🔥 Bestsellers"
               products={topSellers}
@@ -154,6 +142,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("all")}
             />
 
+            {/* Laundry Care */}
             <ProductSection
               title="👕 Laundry Care"
               products={productsByCategory("laundry").slice(0, 12)}
@@ -162,6 +151,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("laundry")}
             />
 
+            {/* Household Cleaning */}
             <ProductSection
               title="🧹 Household Cleaning"
               products={productsByCategory("cleaning").slice(0, 12)}
@@ -170,6 +160,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("cleaning")}
             />
 
+            {/* Rice, Dal & Pulses */}
             <ProductSection
               title="🌾 Rice, Dal & Pulses"
               products={productsByCategory("rice-dal").slice(0, 12)}
@@ -178,6 +169,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("rice-dal")}
             />
 
+            {/* Snacks */}
             {isHome && (
               <ProductSection
                 title="🍿 Snacks & Munchies"
@@ -188,6 +180,7 @@ function AppContent() {
               />
             )}
 
+            {/* Dairy */}
             <ProductSection
               title="🥛 Dairy & Eggs"
               products={productsByCategory("dairy").slice(0, 12)}
@@ -196,6 +189,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("dairy")}
             />
 
+            {/* Personal Hygiene */}
             <ProductSection
               title="🧴 Personal Hygiene"
               products={productsByCategory("personal-hygiene").slice(0, 12)}
@@ -204,6 +198,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("personal-hygiene")}
             />
 
+            {/* Hair Care */}
             <ProductSection
               title="💆 Hair Care"
               products={productsByCategory("hair-care").slice(0, 12)}
@@ -212,6 +207,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("hair-care")}
             />
 
+            {/* Beverages */}
             <ProductSection
               title="🥤 Beverages"
               products={productsByCategory("beverages").slice(0, 12)}

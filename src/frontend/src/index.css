@@ -7,93 +7,93 @@
     --font-display: "DM Sans";
     --font-body: "DM Sans";
     --font-mono: "JetBrains Mono";
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --background: 0.99 0 0;
-    --foreground: 0.15 0 0;
-    --card: 0.98 0 0;
-    --card-foreground: 0.15 0 0;
-    --popover: 0.98 0 0;
-    --popover-foreground: 0.15 0 0;
+    --background: 0.985 0.003 285;
+    --foreground: 0.12 0.02 285;
+    --card: 1 0 0;
+    --card-foreground: 0.12 0.02 285;
+    --popover: 0.99 0.003 285;
+    --popover-foreground: 0.12 0.02 285;
 
-    /* Zepto purple: #7B2FF7 */
-    --primary: 0.52 0.25 310;
-    --primary-foreground: 0.99 0 0;
+    /* QuickCart purple premium */
+    --primary: 0.48 0.27 308;
+    --primary-foreground: 0.99 0.002 0;
 
-    /* Discount orange: #FF6B00 */
-    --secondary: 0.68 0.18 50;
-    --secondary-foreground: 0.99 0 0;
+    /* Discount orange accent */
+    --secondary: 0.65 0.2 50;
+    --secondary-foreground: 0.99 0.002 0;
 
-    --muted: 0.94 0 0;
-    --muted-foreground: 0.5 0 0;
+    --muted: 0.94 0.006 285;
+    --muted-foreground: 0.5 0.015 285;
 
-    /* ADD button green: #0C831F */
-    --accent: 0.52 0.16 145;
-    --accent-foreground: 0.99 0 0;
+    /* ADD button - vibrant green */
+    --accent: 0.51 0.19 145;
+    --accent-foreground: 0.99 0.002 0;
 
     --destructive: 0.55 0.22 25;
-    --destructive-foreground: 0.98 0 0;
+    --destructive-foreground: 0.98 0.002 0;
 
-    --border: 0.9 0 0;
-    --input: 0.95 0 0;
-    --ring: 0.52 0.25 310;
+    --border: 0.9 0.008 285;
+    --input: 0.94 0.006 285;
+    --ring: 0.48 0.27 308;
 
-    --chart-1: 0.52 0.25 310;
-    --chart-2: 0.68 0.18 50;
-    --chart-3: 0.52 0.16 145;
-    --chart-4: 0.6 0.15 50;
-    --chart-5: 0.45 0.2 30;
+    --chart-1: 0.48 0.27 308;
+    --chart-2: 0.65 0.2 50;
+    --chart-3: 0.51 0.19 145;
+    --chart-4: 0.6 0.16 50;
+    --chart-5: 0.46 0.22 30;
 
-    --sidebar: 0.52 0.25 310;
-    --sidebar-foreground: 0.99 0 0;
-    --sidebar-primary: 0.52 0.16 145;
-    --sidebar-primary-foreground: 0.99 0 0;
-    --sidebar-accent: 0.68 0.18 50;
-    --sidebar-accent-foreground: 0.15 0 0;
-    --sidebar-border: 0.9 0 0;
-    --sidebar-ring: 0.52 0.25 310;
+    --sidebar: 0.48 0.27 308;
+    --sidebar-foreground: 0.99 0.002 0;
+    --sidebar-primary: 0.51 0.19 145;
+    --sidebar-primary-foreground: 0.99 0.002 0;
+    --sidebar-accent: 0.65 0.2 50;
+    --sidebar-accent-foreground: 0.12 0.02 285;
+    --sidebar-border: 0.9 0.008 285;
+    --sidebar-ring: 0.48 0.27 308;
   }
 
   .dark {
-    --background: 0.12 0 0;
-    --foreground: 0.95 0 0;
-    --card: 0.18 0 0;
-    --card-foreground: 0.95 0 0;
-    --popover: 0.22 0 0;
-    --popover-foreground: 0.95 0 0;
+    --background: 0.1 0.01 285;
+    --foreground: 0.94 0.01 285;
+    --card: 0.15 0.012 285;
+    --card-foreground: 0.94 0.01 285;
+    --popover: 0.18 0.012 285;
+    --popover-foreground: 0.94 0.01 285;
 
-    --primary: 0.65 0.2 310;
-    --primary-foreground: 0.95 0 0;
+    --primary: 0.62 0.24 308;
+    --primary-foreground: 0.94 0.01 0;
 
-    --secondary: 0.75 0.15 50;
-    --secondary-foreground: 0.15 0 0;
-    --muted: 0.28 0 0;
-    --muted-foreground: 0.6 0 0;
+    --secondary: 0.7 0.18 50;
+    --secondary-foreground: 0.12 0.01 0;
+    --muted: 0.24 0.01 285;
+    --muted-foreground: 0.58 0.01 285;
 
-    --accent: 0.58 0.14 145;
-    --accent-foreground: 0.95 0 0;
+    --accent: 0.57 0.17 145;
+    --accent-foreground: 0.94 0.01 0;
 
-    --destructive: 0.65 0.19 22;
-    --destructive-foreground: 0.95 0 0;
+    --destructive: 0.63 0.21 22;
+    --destructive-foreground: 0.94 0.01 0;
 
-    --border: 0.3 0 0;
-    --input: 0.22 0 0;
-    --ring: 0.65 0.2 310;
+    --border: 0.26 0.012 285;
+    --input: 0.18 0.01 285;
+    --ring: 0.62 0.24 308;
 
-    --chart-1: 0.65 0.2 310;
-    --chart-2: 0.75 0.15 50;
-    --chart-3: 0.58 0.14 145;
-    --chart-4: 0.7 0.12 50;
-    --chart-5: 0.55 0.18 30;
+    --chart-1: 0.62 0.24 308;
+    --chart-2: 0.7 0.18 50;
+    --chart-3: 0.57 0.17 145;
+    --chart-4: 0.66 0.15 50;
+    --chart-5: 0.52 0.2 30;
 
-    --sidebar: 0.12 0 0;
-    --sidebar-foreground: 0.95 0 0;
-    --sidebar-primary: 0.65 0.2 310;
-    --sidebar-primary-foreground: 0.95 0 0;
-    --sidebar-accent: 0.75 0.15 50;
-    --sidebar-accent-foreground: 0.15 0 0;
-    --sidebar-border: 0.28 0 0;
-    --sidebar-ring: 0.65 0.2 310;
+    --sidebar: 0.1 0.01 285;
+    --sidebar-foreground: 0.94 0.01 285;
+    --sidebar-primary: 0.62 0.24 308;
+    --sidebar-primary-foreground: 0.94 0.01 0;
+    --sidebar-accent: 0.7 0.18 50;
+    --sidebar-accent-foreground: 0.12 0.01 0;
+    --sidebar-border: 0.24 0.012 285;
+    --sidebar-ring: 0.62 0.24 308;
   }
 
   * {
@@ -121,59 +121,73 @@
 
 @layer utilities {
   .transition-smooth {
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center px-4 py-2 rounded-md bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-smooth;
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-bold hover:shadow-lg hover:brightness-110 active:scale-95 transition-smooth;
   }
 
-  /* Green ADD button matching Zepto */
+  /* Green ADD button */
   .btn-add {
-    @apply inline-flex items-center justify-center gap-1 px-4 py-1.5 rounded-lg bg-accent text-accent-foreground font-bold text-sm border border-accent hover:opacity-90 active:scale-95 transition-smooth select-none;
+    @apply inline-flex items-center justify-center gap-1 px-4 py-1.5 rounded-full bg-accent text-accent-foreground font-bold text-sm shadow-md hover:shadow-lg hover:brightness-105 active:scale-95 transition-smooth select-none;
   }
 
-  /* Quantity stepper matching Zepto */
+  /* Quantity stepper */
   .btn-qty {
-    @apply inline-flex items-center justify-center w-7 h-7 rounded-md bg-accent text-accent-foreground font-bold text-base hover:opacity-90 active:scale-95 transition-smooth select-none;
+    @apply inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent text-accent-foreground font-bold text-base hover:brightness-105 active:scale-95 transition-smooth select-none;
   }
 
   .card-product {
-    @apply rounded-xl bg-card border border-border overflow-hidden hover:shadow-md transition-smooth cursor-pointer;
+    @apply rounded-2xl bg-card border border-border overflow-hidden hover:shadow-xl hover:border-primary/15 hover:-translate-y-0.5 transition-smooth cursor-pointer;
   }
 
-  /* Discount badge — orange-yellow matching Zepto */
+  /* Discount badge */
   .badge-discount {
-    @apply bg-secondary text-secondary-foreground px-1.5 py-0.5 rounded text-[10px] font-extrabold leading-tight;
+    @apply bg-secondary text-secondary-foreground px-2 py-0.5 rounded-md text-[10px] font-extrabold leading-tight shadow-sm;
   }
 
   /* Horizontal scroll section */
   .scroll-section {
     @apply flex gap-3 overflow-x-auto pb-2;
-    scrollbar-width: thin;
-    scrollbar-color: oklch(var(--muted)) transparent;
+    scrollbar-width: none;
   }
 
   .scroll-section::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .scroll-section::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .scroll-section::-webkit-scrollbar-thumb {
-    @apply rounded-full;
-    background: oklch(var(--muted));
+    display: none;
   }
 
   .scroll-section > * {
     flex-shrink: 0;
   }
 
+  /* Glass effect */
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Section heading gradient */
+  .heading-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.48 0.27 308) 0%,
+      oklch(0.55 0.22 290) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Premium card hover glow */
+  .card-glow:hover {
+    box-shadow: 0 8px 32px -4px oklch(0.48 0.27 308 / 0.18), 0 4px 12px -2px
+      oklch(0.48 0.27 308 / 0.1);
+  }
+
   /* Category tab pill */
   .tab-pill {
-    @apply flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap cursor-pointer border transition-smooth;
+    @apply flex items-center gap-1.5 px-3.5 py-2 rounded-full text-sm font-medium whitespace-nowrap cursor-pointer border transition-smooth;
   }
 
   .tab-pill-active {
@@ -181,11 +195,21 @@
   }
 
   .tab-pill-inactive {
-    @apply bg-background text-foreground border-border hover:border-primary hover:text-primary;
+    @apply bg-background text-foreground border-border hover:border-primary/50 hover:text-primary;
   }
 
   /* Cart badge */
   .cart-badge {
     @apply absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] bg-destructive text-destructive-foreground text-[10px] font-bold rounded-full flex items-center justify-center px-1;
+  }
+
+  /* Subtle inner shadow for image containers */
+  .img-container {
+    @apply bg-gradient-to-br from-muted/20 to-muted/50;
+  }
+
+  /* Section divider accent */
+  .section-accent-bar {
+    @apply inline-block w-8 h-1 rounded-full bg-primary mr-2 align-middle;
   }
 }

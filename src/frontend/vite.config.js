@@ -42,7 +42,9 @@ export default defineConfig({
     environment("all", { prefix: "DFX_" }),
     environment(["II_URL"]),
     environment(["STORAGE_GATEWAY_URL"]),
-    react(),
+    react({
+      jsxRuntime: "automatic",
+    }),
   ],
   resolve: {
     alias: [
@@ -55,6 +57,7 @@ export default defineConfig({
         replacement: fileURLToPath(new URL("./src", import.meta.url)),
       },
     ],
-    dedupe: ["@dfinity/agent"]
+    dedupe: ["@dfinity/agent"],
+    extensions: [".jsx", ".js", ".json"],
   },
 });
