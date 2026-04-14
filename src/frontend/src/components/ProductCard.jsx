@@ -73,6 +73,11 @@ export default function ProductCard({ product }) {
           loading="lazy"
           width={188}
           height={172}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=300&fit=crop&auto=format&q=80";
+          }}
         />
 
         {/* Add to Cart / Qty stepper — absolute bottom-right over image */}

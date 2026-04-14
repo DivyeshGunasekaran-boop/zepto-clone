@@ -40,7 +40,7 @@ export const products: Product[] = [
     category: "laundry",
     subcategory: "Detergent Powder",
     imageUrl:
-      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=300&h=300&fit=crop&auto=format&q=80",
     price: 109,
     originalPrice: 140,
     discount: 22,
@@ -58,7 +58,7 @@ export const products: Product[] = [
     category: "laundry",
     subcategory: "Detergent Powder",
     imageUrl:
-      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&auto=format&q=80",
     price: 299,
     originalPrice: 380,
     discount: 21,
@@ -94,7 +94,7 @@ export const products: Product[] = [
     category: "laundry",
     subcategory: "Detergent Powder",
     imageUrl:
-      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=300&fit=crop&auto=format&q=80",
     price: 89,
     originalPrice: 115,
     discount: 23,
@@ -112,7 +112,7 @@ export const products: Product[] = [
     category: "laundry",
     subcategory: "Detergent Powder",
     imageUrl:
-      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=300&h=300&fit=crop&auto=format&q=80",
     price: 135,
     originalPrice: 165,
     discount: 18,
@@ -148,7 +148,7 @@ export const products: Product[] = [
     category: "laundry",
     subcategory: "Liquid Detergent",
     imageUrl:
-      "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1585652757168-2b69b3e0fb41?w=300&h=300&fit=crop&auto=format&q=80",
     price: 199,
     originalPrice: 245,
     discount: 19,
@@ -184,7 +184,7 @@ export const products: Product[] = [
     category: "laundry",
     subcategory: "Dishwash",
     imageUrl:
-      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1585652757168-2b69b3e0fb41?w=300&h=300&fit=crop&auto=format&q=80",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -204,7 +204,7 @@ export const products: Product[] = [
     category: "cleaning",
     subcategory: "Disinfectant",
     imageUrl:
-      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=300&fit=crop&auto=format&q=80",
     price: 149,
     originalPrice: 185,
     discount: 19,
@@ -240,7 +240,7 @@ export const products: Product[] = [
     category: "cleaning",
     subcategory: "Surface Cleaner",
     imageUrl:
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1527515545081-5db817172677?w=300&h=300&fit=crop&auto=format&q=80",
     price: 129,
     originalPrice: 160,
     discount: 19,
@@ -294,7 +294,7 @@ export const products: Product[] = [
     category: "cleaning",
     subcategory: "Bleach",
     imageUrl:
-      "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1584813439934-31e2fb7cbfe3?w=300&h=300&fit=crop&auto=format&q=80",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -312,7 +312,7 @@ export const products: Product[] = [
     category: "cleaning",
     subcategory: "Air Freshener",
     imageUrl:
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300&h=300&fit=crop&auto=format&q=80",
     price: 299,
     originalPrice: 350,
     discount: 15,
@@ -348,7 +348,7 @@ export const products: Product[] = [
     category: "cleaning",
     subcategory: "Mops",
     imageUrl:
-      "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=300&h=300&fit=crop&auto=format&q=80",
     price: 349,
     originalPrice: 450,
     discount: 22,
@@ -366,7 +366,7 @@ export const products: Product[] = [
     category: "cleaning",
     subcategory: "Pest Control",
     imageUrl:
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=300&h=300&fit=crop&auto=format&q=80",
     price: 119,
     originalPrice: 145,
     discount: 18,
@@ -422,7 +422,7 @@ export const products: Product[] = [
     category: "rice-dal",
     subcategory: "Moong Dal",
     imageUrl:
-      "https://images.unsplash.com/photo-1612257416648-8e14f99df3ef?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1585568686851-5f87ba417b11?w=300&h=300&fit=crop&auto=format&q=80",
     price: 179,
     originalPrice: 220,
     discount: 19,
@@ -440,7 +440,7 @@ export const products: Product[] = [
     category: "rice-dal",
     subcategory: "Chana Dal",
     imageUrl:
-      "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=300&h=300&fit=crop&auto=format&q=80",
     price: 119,
     originalPrice: 145,
     discount: 18,
@@ -458,7 +458,7 @@ export const products: Product[] = [
     category: "rice-dal",
     subcategory: "Basmati Rice",
     imageUrl:
-      "https://images.unsplash.com/photo-1536304993881-ff86e0c4ad98?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=300&h=300&fit=crop&auto=format&q=80",
     price: 699,
     originalPrice: 850,
     discount: 18,
@@ -476,7 +476,7 @@ export const products: Product[] = [
     category: "rice-dal",
     subcategory: "Masoor Dal",
     imageUrl:
-      "https://images.unsplash.com/photo-1612257416648-8e14f99df3ef?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1506459668175-b23f8a3c9ae9?w=300&h=300&fit=crop&auto=format&q=80",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -494,7 +494,7 @@ export const products: Product[] = [
     category: "rice-dal",
     subcategory: "Besan",
     imageUrl:
-      "https://images.unsplash.com/photo-1574323347407-f5e1c5a1ec21?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=300&fit=crop&auto=format&q=80",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -512,7 +512,7 @@ export const products: Product[] = [
     category: "rice-dal",
     subcategory: "Atta",
     imageUrl:
-      "https://images.unsplash.com/photo-1574323347407-f5e1c5a1ec21?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=300&fit=crop&auto=format&q=80",
     price: 280,
     originalPrice: 340,
     discount: 18,
@@ -622,7 +622,7 @@ export const products: Product[] = [
     category: "personal-hygiene",
     subcategory: "Toothbrush",
     imageUrl:
-      "https://images.unsplash.com/photo-1559591937-abc0d4e72ce0?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=300&fit=crop&auto=format&q=80",
     price: 69,
     originalPrice: 89,
     discount: 22,
@@ -694,7 +694,7 @@ export const products: Product[] = [
     category: "personal-hygiene",
     subcategory: "Hair Removal",
     imageUrl:
-      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=300&h=300&fit=crop&auto=format&q=80",
     price: 179,
     originalPrice: 225,
     discount: 20,
@@ -730,7 +730,7 @@ export const products: Product[] = [
     category: "personal-hygiene",
     subcategory: "Baby Care",
     imageUrl:
-      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1609086316867-e5f4a3baf5dc?w=300&h=300&fit=crop&auto=format&q=80",
     price: 129,
     originalPrice: 160,
     discount: 19,
@@ -768,7 +768,7 @@ export const products: Product[] = [
     category: "hair-care",
     subcategory: "Shampoo",
     imageUrl:
-      "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1631390706998-e6c02e6b95a4?w=300&h=300&fit=crop&auto=format&q=80",
     price: 189,
     originalPrice: 235,
     discount: 20,
@@ -822,7 +822,7 @@ export const products: Product[] = [
     category: "hair-care",
     subcategory: "Shampoo",
     imageUrl:
-      "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1631390706998-e6c02e6b95a4?w=300&h=300&fit=crop&auto=format&q=80",
     price: 299,
     originalPrice: 380,
     discount: 21,
@@ -858,7 +858,7 @@ export const products: Product[] = [
     category: "hair-care",
     subcategory: "Shampoo",
     imageUrl:
-      "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=300&h=300&fit=crop&auto=format&q=80",
     price: 349,
     originalPrice: 435,
     discount: 20,
@@ -876,7 +876,7 @@ export const products: Product[] = [
     category: "hair-care",
     subcategory: "Hair Oil",
     imageUrl:
-      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=300&h=300&fit=crop&auto=format&q=80",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -1422,7 +1422,7 @@ export const products: Product[] = [
     category: "dairy",
     subcategory: "Milk",
     imageUrl:
-      "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&h=300&fit=crop&auto=format&q=80",
     price: 31,
     originalPrice: 33,
     discount: 6,
@@ -1440,7 +1440,7 @@ export const products: Product[] = [
     category: "dairy",
     subcategory: "Curd & Yoghurt",
     imageUrl:
-      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1571742720850-8e9f7b59de3c?w=300&h=300&fit=crop&auto=format&q=80",
     price: 69,
     originalPrice: 85,
     discount: 19,

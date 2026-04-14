@@ -37,7 +37,8 @@ export const products = [
     brand: "Rin",
     category: "laundry",
     subcategory: "Detergent Powder",
-    imageUrl: "https://source.unsplash.com/300x300/?blue-detergent-powder-box",
+    imageUrl:
+      "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=300&h=300&fit=crop&auto=format&q=80",
     price: 109,
     originalPrice: 140,
     discount: 22,
@@ -55,7 +56,7 @@ export const products = [
     category: "laundry",
     subcategory: "Detergent Powder",
     imageUrl:
-      "https://source.unsplash.com/300x300/?laundry-detergent-washing-powder",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&auto=format&q=80",
     price: 299,
     originalPrice: 380,
     discount: 21,
@@ -72,7 +73,8 @@ export const products = [
     brand: "Comfort",
     category: "laundry",
     subcategory: "Fabric Conditioner",
-    imageUrl: "https://source.unsplash.com/300x300/?fabric-softener-bottle",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=300&fit=crop&auto=format&q=80",
     price: 179,
     originalPrice: 220,
     discount: 19,
@@ -90,7 +92,7 @@ export const products = [
     category: "laundry",
     subcategory: "Detergent Powder",
     imageUrl:
-      "https://source.unsplash.com/300x300/?orange-detergent-powder-pack",
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&auto=format&q=80",
     price: 89,
     originalPrice: 115,
     discount: 23,
@@ -107,7 +109,8 @@ export const products = [
     brand: "Henko",
     category: "laundry",
     subcategory: "Detergent Powder",
-    imageUrl: "https://source.unsplash.com/300x300/?stain-remover-spray-bottle",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=300&fit=crop&auto=format&q=80",
     price: 135,
     originalPrice: 165,
     discount: 18,
@@ -124,7 +127,8 @@ export const products = [
     brand: "Surf Excel",
     category: "laundry",
     subcategory: "Detergent Bar",
-    imageUrl: "https://source.unsplash.com/300x300/?laundry-soap-bar",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?w=300&h=300&fit=crop&auto=format&q=80",
     price: 45,
     originalPrice: 55,
     discount: 18,
@@ -142,7 +146,7 @@ export const products = [
     category: "laundry",
     subcategory: "Liquid Detergent",
     imageUrl:
-      "https://source.unsplash.com/300x300/?liquid-detergent-bottle-cleaning",
+      "https://images.unsplash.com/photo-1585652757168-2b69b3e0fb41?w=300&h=300&fit=crop&auto=format&q=80",
     price: 199,
     originalPrice: 245,
     discount: 19,
@@ -178,7 +182,7 @@ export const products = [
     category: "laundry",
     subcategory: "Dishwash",
     imageUrl:
-      "https://source.unsplash.com/300x300/?green-dish-soap-bottle-kitchen",
+      "https://images.unsplash.com/photo-1585652757168-2b69b3e0fb41?w=300&h=300&fit=crop&auto=format&q=80",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -198,7 +202,7 @@ export const products = [
     category: "cleaning",
     subcategory: "Disinfectant",
     imageUrl:
-      "https://source.unsplash.com/300x300/?floor-cleaner-bottle-disinfectant",
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&auto=format&q=80",
     price: 149,
     originalPrice: 185,
     discount: 19,
@@ -234,7 +238,7 @@ export const products = [
     category: "cleaning",
     subcategory: "Surface Cleaner",
     imageUrl:
-      "https://source.unsplash.com/300x300/?glass-window-cleaner-spray-bottle",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=300&fit=crop&auto=format&q=80",
     price: 129,
     originalPrice: 160,
     discount: 19,
@@ -252,7 +256,7 @@ export const products = [
     category: "cleaning",
     subcategory: "Floor Cleaner",
     imageUrl:
-      "https://source.unsplash.com/300x300/?floor-cleaner-mop-cleaning-bottle",
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&auto=format&q=80",
     price: 199,
     originalPrice: 249,
     discount: 20,
@@ -288,7 +292,7 @@ export const products = [
     category: "cleaning",
     subcategory: "Bleach",
     imageUrl:
-      "https://source.unsplash.com/300x300/?bleach-cleaning-bottle-thick",
+      "https://images.unsplash.com/photo-1584813439934-31e2fb7cbfe3?w=300&h=300&fit=crop&auto=format&q=80",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -306,7 +310,7 @@ export const products = [
     category: "cleaning",
     subcategory: "Air Freshener",
     imageUrl:
-      "https://source.unsplash.com/300x300/?air-freshener-spray-can-lavender",
+      "https://images.unsplash.com/photo-1527515545081-5db817172677?w=300&h=300&fit=crop&auto=format&q=80",
     price: 299,
     originalPrice: 350,
     discount: 15,
@@ -341,7 +345,8 @@ export const products = [
     brand: "Prestige",
     category: "cleaning",
     subcategory: "Mops",
-    imageUrl: "https://source.unsplash.com/300x300/?mop-cleaning-floor-bucket",
+    imageUrl:
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=300&h=300&fit=crop&auto=format&q=80",
     price: 349,
     originalPrice: 450,
     discount: 22,
@@ -359,7 +364,7 @@ export const products = [
     category: "cleaning",
     subcategory: "Pest Control",
     imageUrl:
-      "https://source.unsplash.com/300x300/?insect-spray-can-pest-control",
+      "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=300&h=300&fit=crop&auto=format&q=80",
     price: 119,
     originalPrice: 145,
     discount: 18,
@@ -415,7 +420,7 @@ export const products = [
     category: "rice-dal",
     subcategory: "Moong Dal",
     imageUrl:
-      "https://source.unsplash.com/300x300/?moong-dal-yellow-lentils-bowl",
+      "https://images.unsplash.com/photo-1585568686851-5f87ba417b11?w=300&h=300&fit=crop&auto=format&q=80",
     price: 179,
     originalPrice: 220,
     discount: 19,
@@ -433,7 +438,7 @@ export const products = [
     category: "rice-dal",
     subcategory: "Chana Dal",
     imageUrl:
-      "https://source.unsplash.com/300x300/?chana-dal-yellow-chickpeas-split",
+      "https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=300&h=300&fit=crop&auto=format&q=80",
     price: 119,
     originalPrice: 145,
     discount: 18,
@@ -451,7 +456,7 @@ export const products = [
     category: "rice-dal",
     subcategory: "Basmati Rice",
     imageUrl:
-      "https://source.unsplash.com/300x300/?basmati-rice-grains-white-long",
+      "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=300&h=300&fit=crop&auto=format&q=80",
     price: 699,
     originalPrice: 850,
     discount: 18,
@@ -469,7 +474,7 @@ export const products = [
     category: "rice-dal",
     subcategory: "Masoor Dal",
     imageUrl:
-      "https://source.unsplash.com/300x300/?red-lentils-masoor-dal-bowl",
+      "https://images.unsplash.com/photo-1506459668175-b23f8a3c9ae9?w=300&h=300&fit=crop&auto=format&q=80",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -487,7 +492,7 @@ export const products = [
     category: "rice-dal",
     subcategory: "Besan",
     imageUrl:
-      "https://source.unsplash.com/300x300/?chickpea-flour-besan-yellow-powder",
+      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=300&fit=crop&auto=format&q=80",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -541,7 +546,7 @@ export const products = [
     category: "rice-dal",
     subcategory: "Sona Masoori Rice",
     imageUrl:
-      "https://source.unsplash.com/300x300/?raw-white-rice-uncooked-grains",
+      "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=300&h=300&fit=crop&auto=format&q=80",
     price: 329,
     originalPrice: 399,
     discount: 18,
@@ -579,7 +584,7 @@ export const products = [
     category: "personal-hygiene",
     subcategory: "Handwash",
     imageUrl:
-      "https://source.unsplash.com/300x300/?liquid-handwash-pump-dispenser",
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?w=300&h=300&fit=crop&auto=format&q=80",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -597,7 +602,7 @@ export const products = [
     category: "personal-hygiene",
     subcategory: "Toothpaste",
     imageUrl:
-      "https://source.unsplash.com/300x300/?toothpaste-tube-white-dental",
+      "https://images.unsplash.com/photo-1571887829034-7f8591462e2d?w=300&h=300&fit=crop&auto=format&q=80",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -633,7 +638,7 @@ export const products = [
     category: "personal-hygiene",
     subcategory: "Shaving",
     imageUrl:
-      "https://source.unsplash.com/300x300/?shaving-razor-gillette-blade",
+      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=300&h=300&fit=crop&auto=format&q=80",
     price: 199,
     originalPrice: 249,
     discount: 20,
@@ -669,7 +674,7 @@ export const products = [
     category: "personal-hygiene",
     subcategory: "Feminine Hygiene",
     imageUrl:
-      "https://source.unsplash.com/300x300/?sanitary-pad-feminine-hygiene",
+      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=300&fit=crop&auto=format&q=80",
     price: 249,
     originalPrice: 299,
     discount: 17,
@@ -687,7 +692,7 @@ export const products = [
     category: "personal-hygiene",
     subcategory: "Hair Removal",
     imageUrl:
-      "https://source.unsplash.com/300x300/?hair-removal-cream-body-lotion",
+      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=300&h=300&fit=crop&auto=format&q=80",
     price: 179,
     originalPrice: 225,
     discount: 20,
@@ -704,7 +709,8 @@ export const products = [
     brand: "Pampers",
     category: "personal-hygiene",
     subcategory: "Baby Care",
-    imageUrl: "https://source.unsplash.com/300x300/?baby-diaper-pampers-infant",
+    imageUrl:
+      "https://images.unsplash.com/photo-1544126592-807ade215a0b?w=300&h=300&fit=crop&auto=format&q=80",
     price: 399,
     originalPrice: 499,
     discount: 20,
@@ -721,7 +727,8 @@ export const products = [
     brand: "Johnson's",
     category: "personal-hygiene",
     subcategory: "Baby Care",
-    imageUrl: "https://source.unsplash.com/300x300/?baby-lotion-bottle-johnson",
+    imageUrl:
+      "https://images.unsplash.com/photo-1609086316867-e5f4a3baf5dc?w=300&h=300&fit=crop&auto=format&q=80",
     price: 129,
     originalPrice: 160,
     discount: 19,
@@ -759,7 +766,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Shampoo",
     imageUrl:
-      "https://source.unsplash.com/300x300/?dove-shampoo-bottle-hair-care",
+      "https://images.unsplash.com/photo-1631390706998-e6c02e6b95a4?w=300&h=300&fit=crop&auto=format&q=80",
     price: 189,
     originalPrice: 235,
     discount: 20,
@@ -777,7 +784,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Conditioner",
     imageUrl:
-      "https://source.unsplash.com/300x300/?hair-conditioner-bottle-pantene",
+      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=300&h=300&fit=crop&auto=format&q=80",
     price: 219,
     originalPrice: 269,
     discount: 19,
@@ -795,7 +802,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Hair Oil",
     imageUrl:
-      "https://source.unsplash.com/300x300/?hair-oil-bottle-herbal-ayurvedic",
+      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=300&h=300&fit=crop&auto=format&q=80",
     price: 399,
     originalPrice: 499,
     discount: 20,
@@ -813,7 +820,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Shampoo",
     imageUrl:
-      "https://source.unsplash.com/300x300/?onion-hair-shampoo-natural-bottle",
+      "https://images.unsplash.com/photo-1631390706998-e6c02e6b95a4?w=300&h=300&fit=crop&auto=format&q=80",
     price: 299,
     originalPrice: 380,
     discount: 21,
@@ -831,7 +838,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Hair Serum",
     imageUrl:
-      "https://source.unsplash.com/300x300/?hair-serum-bottle-smooth-silky",
+      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=300&h=300&fit=crop&auto=format&q=80",
     price: 149,
     originalPrice: 189,
     discount: 21,
@@ -849,7 +856,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Shampoo",
     imageUrl:
-      "https://source.unsplash.com/300x300/?keratin-shampoo-tresemme-smooth",
+      "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=300&h=300&fit=crop&auto=format&q=80",
     price: 349,
     originalPrice: 435,
     discount: 20,
@@ -885,7 +892,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Shampoo",
     imageUrl:
-      "https://source.unsplash.com/300x300/?herbal-shampoo-bottle-natural-growth",
+      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=300&h=300&fit=crop&auto=format&q=80",
     price: 179,
     originalPrice: 225,
     discount: 21,
@@ -903,7 +910,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Hair Colour",
     imageUrl:
-      "https://source.unsplash.com/300x300/?hair-dye-box-color-permanent",
+      "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=300&h=300&fit=crop&auto=format&q=80",
     price: 129,
     originalPrice: 165,
     discount: 22,
@@ -923,7 +930,7 @@ export const products = [
     category: "snacks",
     subcategory: "Chips & Crisps",
     imageUrl:
-      "https://source.unsplash.com/300x300/?crunchy-indian-snack-namkeen-bag",
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=300&fit=crop&auto=format&q=80",
     price: 30,
     originalPrice: 35,
     discount: 14,
@@ -995,7 +1002,7 @@ export const products = [
     category: "snacks",
     subcategory: "Namkeen",
     imageUrl:
-      "https://source.unsplash.com/300x300/?indian-bhujia-sev-namkeen-snack",
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=300&h=300&fit=crop&auto=format&q=80",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -1031,7 +1038,7 @@ export const products = [
     category: "snacks",
     subcategory: "Biscuits & Cookies",
     imageUrl:
-      "https://source.unsplash.com/300x300/?cashew-cookies-biscuit-pack",
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=300&fit=crop&auto=format&q=80",
     price: 45,
     originalPrice: 55,
     discount: 18,
@@ -1049,7 +1056,7 @@ export const products = [
     category: "snacks",
     subcategory: "Chips & Crisps",
     imageUrl:
-      "https://source.unsplash.com/300x300/?spicy-potato-chips-snack-bag",
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=300&fit=crop&auto=format&q=80",
     price: 20,
     originalPrice: 20,
     discount: 0,
@@ -1067,7 +1074,7 @@ export const products = [
     category: "snacks",
     subcategory: "Nachos",
     imageUrl:
-      "https://source.unsplash.com/300x300/?nachos-tortilla-chips-cheese",
+      "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=300&h=300&fit=crop&auto=format&q=80",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -1084,7 +1091,8 @@ export const products = [
     brand: "Pringles",
     category: "snacks",
     subcategory: "Chips & Crisps",
-    imageUrl: "https://source.unsplash.com/300x300/?pringles-tube-chips-crisps",
+    imageUrl:
+      "https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=300&h=300&fit=crop&auto=format&q=80",
     price: 199,
     originalPrice: 249,
     discount: 20,
@@ -1158,7 +1166,7 @@ export const products = [
     category: "beverages",
     subcategory: "Coffee",
     imageUrl:
-      "https://source.unsplash.com/300x300/?instant-coffee-jar-powder-bru",
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=300&fit=crop&auto=format&q=80",
     price: 349,
     originalPrice: 430,
     discount: 19,
@@ -1194,7 +1202,7 @@ export const products = [
     category: "beverages",
     subcategory: "Fruit Drinks",
     imageUrl:
-      "https://source.unsplash.com/300x300/?mango-juice-drink-pack-carton",
+      "https://images.unsplash.com/photo-1553279768-865429fa0078?w=300&h=300&fit=crop&auto=format&q=80",
     price: 30,
     originalPrice: 35,
     discount: 14,
@@ -1230,7 +1238,7 @@ export const products = [
     category: "beverages",
     subcategory: "Fruit Juice",
     imageUrl:
-      "https://source.unsplash.com/300x300/?fruit-juice-carton-mixed-pack",
+      "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300&h=300&fit=crop&auto=format&q=80",
     price: 75,
     originalPrice: 95,
     discount: 21,
@@ -1286,7 +1294,7 @@ export const products = [
     category: "dairy",
     subcategory: "Milk",
     imageUrl:
-      "https://images.unsplash.com/photo-1550258782-bbac78c28ef5?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&h=300&fit=crop&auto=format&q=80",
     price: 57,
     originalPrice: 60,
     discount: 5,
@@ -1322,7 +1330,7 @@ export const products = [
     category: "dairy",
     subcategory: "Curd & Yoghurt",
     imageUrl:
-      "https://images.unsplash.com/photo-1488477181228-c84bcd440c58?w=300&h=300&fit=crop&auto=format&q=80",
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=300&fit=crop&auto=format&q=80",
     price: 45,
     originalPrice: 50,
     discount: 10,
@@ -1340,7 +1348,7 @@ export const products = [
     category: "dairy",
     subcategory: "Paneer",
     imageUrl:
-      "https://source.unsplash.com/300x300/?paneer-fresh-cheese-indian-block",
+      "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300&h=300&fit=crop&auto=format&q=80",
     price: 89,
     originalPrice: 99,
     discount: 10,
@@ -1357,7 +1365,8 @@ export const products = [
     brand: "Nestlé",
     category: "dairy",
     subcategory: "Chilled Desserts",
-    imageUrl: "https://source.unsplash.com/300x300/?kitkat-chocolate-wafer-bar",
+    imageUrl:
+      "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=300&h=300&fit=crop&auto=format&q=80",
     price: 30,
     originalPrice: 35,
     discount: 14,
@@ -1393,7 +1402,7 @@ export const products = [
     category: "dairy",
     subcategory: "Curd & Yoghurt",
     imageUrl:
-      "https://source.unsplash.com/300x300/?greek-yogurt-cup-berry-dessert",
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=300&fit=crop&auto=format&q=80",
     price: 55,
     originalPrice: 65,
     discount: 15,
@@ -1411,7 +1420,7 @@ export const products = [
     category: "dairy",
     subcategory: "Milk",
     imageUrl:
-      "https://source.unsplash.com/300x300/?milk-pouch-packet-full-cream",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&h=300&fit=crop&auto=format&q=80",
     price: 31,
     originalPrice: 33,
     discount: 6,
@@ -1429,7 +1438,7 @@ export const products = [
     category: "dairy",
     subcategory: "Curd & Yoghurt",
     imageUrl:
-      "https://source.unsplash.com/300x300/?probiotic-yoghurt-cup-danone",
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=300&fit=crop&auto=format&q=80",
     price: 69,
     originalPrice: 85,
     discount: 19,
@@ -1447,7 +1456,7 @@ export const products = [
     category: "dairy",
     subcategory: "Condensed Milk",
     imageUrl:
-      "https://source.unsplash.com/300x300/?condensed-milk-tin-can-sweet",
+      "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=300&h=300&fit=crop&auto=format&q=80",
     price: 99,
     originalPrice: 120,
     discount: 18,
@@ -1701,7 +1710,7 @@ export const products = [
     category: "fruits",
     subcategory: "Mosambi",
     imageUrl:
-      "https://source.unsplash.com/300x300/?sweet-lime-mosambi-citrus-fruit",
+      "https://images.unsplash.com/photo-1547514701-42782101795e?w=300&h=300&fit=crop&auto=format&q=80",
     price: 59,
     originalPrice: 75,
     discount: 21,
