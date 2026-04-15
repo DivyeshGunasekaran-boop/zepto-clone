@@ -1,5 +1,77 @@
 import { Facebook, Instagram, Linkedin, Twitter, Zap } from "lucide-react";
 
+const CATEGORIES = [
+  {
+    heading: "Fruits & Vegetables",
+    links: [
+      "Fresh Fruits",
+      "Fresh Vegetables",
+      "Exotic Fruits",
+      "Herbs & Seasonings",
+      "Cut & Sprouts",
+    ],
+  },
+  {
+    heading: "Dairy & Breakfast",
+    links: [
+      "Milk",
+      "Cheese",
+      "Butter",
+      "Eggs",
+      "Yogurt",
+      "Breakfast Cereals",
+      "Bread",
+    ],
+  },
+  {
+    heading: "Snacks & Munchies",
+    links: [
+      "Chips & Crisps",
+      "Namkeen",
+      "Cookies & Biscuits",
+      "Chocolates",
+      "Dry Fruits",
+      "Popcorn",
+    ],
+  },
+  {
+    heading: "Beverages",
+    links: [
+      "Cold Drinks",
+      "Juices",
+      "Water",
+      "Tea & Coffee",
+      "Energy Drinks",
+      "Milkshakes",
+    ],
+  },
+  {
+    heading: "Household",
+    links: [
+      "Cleaning Supplies",
+      "Laundry",
+      "Kitchen Essentials",
+      "Garbage Bags",
+      "Tissues & Towels",
+    ],
+  },
+  {
+    heading: "Personal Care",
+    links: [
+      "Shampoo",
+      "Body Wash",
+      "Toothpaste",
+      "Face Wash",
+      "Deodorants",
+      "Skin Care",
+    ],
+  },
+  {
+    heading: "Baby & Kids",
+    links: ["Baby Food", "Diapers", "Baby Care", "Toys", "Baby Hygiene"],
+  },
+];
+
 const COMPANY_LINKS = [
   { label: "About Us", href: "#" },
   { label: "Careers", href: "#" },
@@ -29,102 +101,103 @@ export default function Footer() {
 
   return (
     <footer
-      className="mt-12 border-t border-white/5"
-      style={{
-        background:
-          "linear-gradient(160deg, oklch(0.13 0.07 308) 0%, oklch(0.10 0.05 300) 50%, oklch(0.08 0.03 290) 100%)",
-      }}
+      className="mt-10 border-t border-border"
+      style={{ background: "oklch(0.13 0.05 310)" }}
       data-ocid="footer"
     >
-      <div className="max-w-[1400px] mx-auto px-6 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Brand column */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #FFD600 0%, #FF9800 100%)",
-                  boxShadow: "0 3px 12px rgba(255,152,0,0.45)",
-                }}
+      <div className="max-w-[1400px] mx-auto px-6 pt-12 pb-10">
+        <h2
+          className="text-xs font-bold tracking-[0.18em] uppercase mb-8"
+          style={{ color: "rgba(255,255,255,0.35)" }}
+        >
+          Shop by Category
+        </h2>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-x-6 gap-y-8">
+          {CATEGORIES.map(({ heading, links }) => (
+            <div
+              key={heading}
+              className="footer-section"
+              data-ocid={`footer.category.${heading.toLowerCase().replace(/[^a-z0-9]/g, "_")}`}
+            >
+              <h3
+                className="text-sm font-semibold leading-snug mb-1"
+                style={{ color: "rgba(255,255,255,0.88)" }}
               >
-                <Zap className="w-5 h-5 text-purple-900 fill-purple-900" />
-              </div>
+                {heading}
+              </h3>
+              <ul className="space-y-2">
+                {links.map((link) => (
+                  <li key={link}>
+                    <a
+                      href="#category"
+                      className="footer-link block leading-snug"
+                      style={{ color: "rgba(180,150,230,0.65)" }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = "rgba(255,255,255,0.95)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = "rgba(180,150,230,0.65)";
+                      }}
+                    >
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="max-w-[1400px] mx-auto px-6"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.09)" }}
+      />
+
+      <div className="max-w-[1400px] mx-auto px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-2 mb-3">
+              <Zap className="w-6 h-6 text-primary fill-primary" />
               <span className="text-2xl font-black text-white tracking-tight">
                 QuickCart
               </span>
             </div>
             <p
-              className="text-sm mb-5 leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.50)" }}
+              className="text-sm mb-4"
+              style={{ color: "rgba(255,255,255,0.5)" }}
             >
               India's fastest grocery delivery. Fresh produce, daily essentials
               &amp; more — delivered in 10 minutes.
             </p>
-            {/* Stats row */}
-            <div className="flex gap-4 mb-5">
-              {[
-                { value: "10 min", label: "Delivery" },
-                { value: "50K+", label: "Products" },
-                { value: "1Cr+", label: "Customers" },
-              ].map(({ value, label }) => (
-                <div key={label} className="text-center">
-                  <div className="text-sm font-extrabold text-white">
-                    {value}
-                  </div>
-                  <div
-                    className="text-[10px] font-medium"
-                    style={{ color: "rgba(255,255,255,0.45)" }}
-                  >
-                    {label}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-2.5 mt-2">
+            <div className="flex items-center gap-3 mt-4">
               {SOCIAL_LINKS.map(({ label, icon: Icon, href }) => (
                 <a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-xl flex items-center justify-center transition-smooth hover:scale-110"
-                  style={{
-                    background: "rgba(255,255,255,0.07)",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(255,255,255,0.16)";
-                    e.currentTarget.style.borderColor =
-                      "rgba(255,255,255,0.30)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(255,255,255,0.07)";
-                    e.currentTarget.style.borderColor =
-                      "rgba(255,255,255,0.12)";
-                  }}
+                  data-ocid={`footer.social_${label.toLowerCase()}`}
+                  className="w-9 h-9 rounded-full flex items-center justify-center transition-smooth hover:scale-110"
+                  style={{ background: "rgba(255,255,255,0.1)" }}
                 >
-                  <Icon className="w-4 h-4 text-white/80" />
+                  <Icon className="w-4 h-4 text-white" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Company */}
           <div>
-            <h3
-              className="text-xs font-extrabold text-white mb-4 tracking-widest uppercase"
-              style={{ color: "rgba(255,255,255,0.90)" }}
-            >
+            <h3 className="text-sm font-bold text-white mb-4 tracking-wide uppercase">
               Company
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {COMPANY_LINKS.map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-sm transition-smooth hover:text-white inline-block hover:translate-x-0.5"
-                    style={{ color: "rgba(255,255,255,0.50)" }}
+                    className="footer-link"
+                    style={{ color: "rgba(255,255,255,0.5)" }}
                   >
                     {label}
                   </a>
@@ -133,21 +206,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
-            <h3
-              className="text-xs font-extrabold mb-4 tracking-widest uppercase"
-              style={{ color: "rgba(255,255,255,0.90)" }}
-            >
+            <h3 className="text-sm font-bold text-white mb-4 tracking-wide uppercase">
               Legal
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {LEGAL_LINKS.map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-sm transition-smooth hover:text-white inline-block hover:translate-x-0.5"
-                    style={{ color: "rgba(255,255,255,0.50)" }}
+                    className="footer-link"
+                    style={{ color: "rgba(255,255,255,0.5)" }}
                   >
                     {label}
                   </a>
@@ -156,74 +225,71 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* App download */}
           <div>
-            <h3
-              className="text-xs font-extrabold mb-4 tracking-widest uppercase"
-              style={{ color: "rgba(255,255,255,0.90)" }}
-            >
+            <h3 className="text-sm font-bold text-white mb-4 tracking-wide uppercase">
               Download App
             </h3>
             <p
-              className="text-sm mb-5"
-              style={{ color: "rgba(255,255,255,0.50)" }}
+              className="text-sm mb-4"
+              style={{ color: "rgba(255,255,255,0.5)" }}
             >
               Get 10-minute delivery on the go.
             </p>
-            {[
-              {
-                icon: "▶",
-                label: "Get it on",
-                store: "Google Play",
-                href: "#download-android",
-              },
-              {
-                icon: "🍎",
-                label: "Download on",
-                store: "App Store",
-                href: "#download-ios",
-              },
-            ].map(({ icon, label, store, href }) => (
-              <a
-                key={store}
-                href={href}
-                aria-label={`${label} ${store}`}
-                className="flex items-center gap-3 rounded-xl px-4 py-2.5 mb-3 transition-smooth hover:scale-[1.02] w-fit"
-                style={{
-                  background: "rgba(255,255,255,0.07)",
-                  border: "1px solid rgba(255,255,255,0.13)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.13)";
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.07)";
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.13)";
-                }}
-              >
-                <span className="text-2xl" aria-hidden="true">
-                  {icon}
-                </span>
-                <div>
-                  <p
-                    className="text-[10px] uppercase tracking-wider font-medium"
-                    style={{ color: "rgba(255,255,255,0.55)" }}
-                  >
-                    {label}
-                  </p>
-                  <p className="text-sm font-bold text-white leading-tight">
-                    {store}
-                  </p>
-                </div>
-              </a>
-            ))}
+            <a
+              href="#download-android"
+              aria-label="Download on Google Play"
+              data-ocid="footer.google_play_button"
+              className="flex items-center gap-3 rounded-xl px-4 py-2.5 mb-3 transition-smooth hover:opacity-90 w-fit"
+              style={{
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.14)",
+              }}
+            >
+              <span className="text-2xl" aria-hidden="true">
+                ▶
+              </span>
+              <div>
+                <p
+                  className="text-[10px] uppercase tracking-wider"
+                  style={{ color: "rgba(255,255,255,0.55)" }}
+                >
+                  Get it on
+                </p>
+                <p className="text-sm font-bold text-white leading-tight">
+                  Google Play
+                </p>
+              </div>
+            </a>
+            <a
+              href="#download-ios"
+              aria-label="Download on App Store"
+              data-ocid="footer.app_store_button"
+              className="flex items-center gap-3 rounded-xl px-4 py-2.5 transition-smooth hover:opacity-90 w-fit"
+              style={{
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.14)",
+              }}
+            >
+              <span className="text-2xl" aria-hidden="true">
+                🍎
+              </span>
+              <div>
+                <p
+                  className="text-[10px] uppercase tracking-wider"
+                  style={{ color: "rgba(255,255,255,0.55)" }}
+                >
+                  Download on
+                </p>
+                <p className="text-sm font-bold text-white leading-tight">
+                  App Store
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
         <div className="max-w-[1400px] mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
             © {year} QuickCart. All rights reserved.
@@ -240,7 +306,7 @@ export default function Footer() {
             </a>
           </p>
           <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-            ⚡ 10-min delivery · 🇮🇳 Made in India
+            🚀 10-min delivery · 🇮🇳 Made in India
           </p>
         </div>
       </div>

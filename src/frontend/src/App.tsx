@@ -4,27 +4,73 @@ import CategoryTabs from "./components/CategoryTabs";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroCarousel from "./components/HeroCarousel";
+// @ts-ignore - JSX component
+import PaymentModal from "./components/PaymentModal";
+// @ts-ignore - JSX component
+import PaymentSuccessModal from "./components/PaymentSuccessModal";
+// @ts-ignore - JSX component
+import ProductDetailModal from "./components/ProductDetailModal";
 import ProductSection from "./components/ProductSection";
-import { CartProvider } from "./context/CartContext";
+import { CartProvider, useCart } from "./context/CartContext";
 import {
   bestsellers,
   categories,
   featuredProducts,
   productsByCategory,
 } from "./data/products";
-import type { Category } from "./types";
+import type { Category, Product } from "./types";
 
 const SHOP_BY_CATEGORY = [
-  { id: "rice-dal", icon: "🌾", label: "Dal & Pulses" },
-  { id: "snacks", icon: "🍿", label: "Snacks" },
-  { id: "dairy", icon: "🥛", label: "Dairy" },
-  { id: "rice-dal", icon: "🍚", label: "Rice & Atta" },
-  { id: "cleaning", icon: "🧹", label: "Household" },
-  { id: "beverages", icon: "🥤", label: "Beverages" },
-  { id: "personal-hygiene", icon: "🧴", label: "Personal Hygiene" },
-  { id: "hair-care", icon: "💆", label: "Hair Care" },
-  { id: "fruits", icon: "🍎", label: "Fresh Fruits" },
-  { id: "laundry", icon: "👕", label: "Laundry Care" },
+  {
+    id: "rice-dal",
+    label: "Dal & Pulses",
+    img: "https://images.unsplash.com/photo-1536304993881-ff86e0c9e5c6?w=120&q=80",
+  },
+  {
+    id: "snacks",
+    label: "Snacks",
+    img: "https://images.unsplash.com/photo-1528825871115-3581a5387919?w=120&q=80",
+  },
+  {
+    id: "dairy",
+    label: "Dairy",
+    img: "https://images.unsplash.com/photo-1550583724-aa285b6f3a31?w=120&q=80",
+  },
+  {
+    id: "rice-dal",
+    label: "Rice & Atta",
+    img: "https://images.unsplash.com/photo-1536304993881-ff86e0c9e5c6?w=120&q=80",
+  },
+  {
+    id: "cleaning",
+    label: "Household",
+    img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=120&q=80",
+  },
+  {
+    id: "beverages",
+    label: "Beverages",
+    img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=120&q=80",
+  },
+  {
+    id: "personal-hygiene",
+    label: "Personal Hygiene",
+    img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=120&q=80",
+  },
+  {
+    id: "hair-care",
+    label: "Hair Care",
+    img: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=120&q=80",
+  },
+  {
+    id: "fruits",
+    label: "Fresh Fruits",
+    img: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=120&q=80",
+  },
+  {
+    id: "laundry",
+    label: "Laundry Care",
+    img: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=120&q=80",
+  },
 ];
 
 function ShopByCategory({
@@ -57,20 +103,23 @@ function ShopByCategory({
             type="button"
             key={`${cat.id}-${cat.label}`}
             onClick={() => onCategorySelect(cat.id)}
-            className="flex flex-col items-center gap-2 p-2.5 md:p-3.5 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg transition-smooth group cursor-pointer card-glow"
+            className="flex flex-col items-center gap-0 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg transition-smooth group cursor-pointer card-glow overflow-hidden"
             style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}
             data-ocid={`category-icon-${cat.id}`}
           >
-            <span
-              className="text-2xl md:text-3xl group-hover:scale-115 transition-smooth"
-              style={{
-                transition: "transform 0.25s cubic-bezier(0.4,0,0.2,1)",
-              }}
-              aria-hidden="true"
-            >
-              {cat.icon}
+            <span className="block w-full aspect-square overflow-hidden">
+              <img
+                src={cat.img}
+                alt={cat.label}
+                className="category-card-image w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                loading="lazy"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src =
+                    "https://images.unsplash.com/photo-1542838132-92c53300491e?w=120&q=80";
+                }}
+              />
             </span>
-            <span className="text-[10px] md:text-xs font-bold text-foreground text-center leading-tight line-clamp-2">
+            <span className="text-[10px] md:text-xs font-bold text-foreground text-center leading-tight line-clamp-2 py-1.5 px-1 w-full">
               {cat.label}
             </span>
           </button>
@@ -83,10 +132,22 @@ function ShopByCategory({
 function AppContent() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [paymentOpen, setPaymentOpen] = useState(false);
+  const [paymentSuccessOpen, setPaymentSuccessOpen] = useState(false);
+  const [grandTotal, setGrandTotal] = useState(0);
+  const { clearCart, closeCart, totalPrice } = useCart();
+
+  const PLATFORM_FEE = 5;
+  const DELIVERY_FEE = 30;
+  const FREE_DELIVERY_THRESHOLD = 199;
+  const isFreeDelivery = totalPrice >= FREE_DELIVERY_THRESHOLD;
+  const deliveryFee = isFreeDelivery ? 0 : DELIVERY_FEE;
+  const computedGrandTotal = totalPrice + deliveryFee + PLATFORM_FEE;
 
   const currentProducts = searchQuery.trim()
     ? productsByCategory("all").filter(
-        (p) =>
+        (p: Product) =>
           p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
           p.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
           p.category.toLowerCase().includes(searchQuery.toLowerCase()),
@@ -108,6 +169,22 @@ function AppContent() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleProceedToPayment = (total: number) => {
+    setGrandTotal(total);
+    closeCart();
+    setPaymentOpen(true);
+  };
+
+  const handlePaymentSuccess = () => {
+    setPaymentOpen(false);
+    setPaymentSuccessOpen(true);
+    clearCart();
+  };
+
+  const handlePaymentSuccessClose = () => {
+    setPaymentSuccessOpen(false);
+  };
+
   const isHome = !searchQuery && activeCategory === "all";
 
   return (
@@ -125,15 +202,17 @@ function AppContent() {
             title={`Results for "${searchQuery}"`}
             products={currentProducts}
             layout="grid"
+            onProductClick={setSelectedProduct}
           />
         ) : activeCategory !== "all" ? (
           <ProductSection
             title={
-              categories.find((c) => c.id === activeCategory)?.label ??
-              "Products"
+              categories.find((c: { id: string }) => c.id === activeCategory)
+                ?.label ?? "Products"
             }
             products={currentProducts}
             layout="grid"
+            onProductClick={setSelectedProduct}
           />
         ) : (
           <>
@@ -145,6 +224,7 @@ function AppContent() {
               products={featured}
               layout="scroll"
               onViewAll={() => handleCategorySelect("all")}
+              onProductClick={setSelectedProduct}
             />
 
             <ProductSection
@@ -152,6 +232,7 @@ function AppContent() {
               products={topSellers}
               layout="scroll"
               onViewAll={() => handleCategorySelect("all")}
+              onProductClick={setSelectedProduct}
             />
 
             <ProductSection
@@ -160,6 +241,7 @@ function AppContent() {
               layout="scroll"
               categoryId="laundry"
               onViewAll={() => handleCategorySelect("laundry")}
+              onProductClick={setSelectedProduct}
             />
 
             <ProductSection
@@ -168,6 +250,7 @@ function AppContent() {
               layout="scroll"
               categoryId="cleaning"
               onViewAll={() => handleCategorySelect("cleaning")}
+              onProductClick={setSelectedProduct}
             />
 
             <ProductSection
@@ -176,6 +259,7 @@ function AppContent() {
               layout="scroll"
               categoryId="rice-dal"
               onViewAll={() => handleCategorySelect("rice-dal")}
+              onProductClick={setSelectedProduct}
             />
 
             {isHome && (
@@ -185,6 +269,7 @@ function AppContent() {
                 layout="scroll"
                 categoryId="snacks"
                 onViewAll={() => handleCategorySelect("snacks")}
+                onProductClick={setSelectedProduct}
               />
             )}
 
@@ -194,6 +279,7 @@ function AppContent() {
               layout="scroll"
               categoryId="dairy"
               onViewAll={() => handleCategorySelect("dairy")}
+              onProductClick={setSelectedProduct}
             />
 
             <ProductSection
@@ -202,6 +288,7 @@ function AppContent() {
               layout="scroll"
               categoryId="personal-hygiene"
               onViewAll={() => handleCategorySelect("personal-hygiene")}
+              onProductClick={setSelectedProduct}
             />
 
             <ProductSection
@@ -210,6 +297,7 @@ function AppContent() {
               layout="scroll"
               categoryId="hair-care"
               onViewAll={() => handleCategorySelect("hair-care")}
+              onProductClick={setSelectedProduct}
             />
 
             <ProductSection
@@ -218,13 +306,37 @@ function AppContent() {
               layout="scroll"
               categoryId="beverages"
               onViewAll={() => handleCategorySelect("beverages")}
+              onProductClick={setSelectedProduct}
             />
           </>
         )}
       </main>
 
-      <CartSidebar />
+      <CartSidebar onProceedToPayment={handleProceedToPayment} />
       <Footer />
+
+      {/* Product Detail Modal */}
+      {selectedProduct && (
+        <ProductDetailModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
+
+      {/* Payment Modal */}
+      <PaymentModal
+        isOpen={paymentOpen}
+        onClose={() => setPaymentOpen(false)}
+        onPaymentSuccess={handlePaymentSuccess}
+        grandTotal={grandTotal || computedGrandTotal}
+      />
+
+      {/* Payment Success Modal */}
+      <PaymentSuccessModal
+        isOpen={paymentSuccessOpen}
+        onClose={handlePaymentSuccessClose}
+        grandTotal={grandTotal}
+      />
     </div>
   );
 }

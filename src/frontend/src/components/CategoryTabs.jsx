@@ -1,5 +1,19 @@
 import { useRef } from "react";
 
+const CATEGORY_IMAGES = {
+  all: "https://source.unsplash.com/200x200/?grocery,supermarket&sig=100",
+  laundry: "https://source.unsplash.com/200x200/?detergent,laundry&sig=10",
+  cleaning: "https://source.unsplash.com/200x200/?cleaning,household&sig=20",
+  "rice-dal": "https://source.unsplash.com/200x200/?rice,grain&sig=40",
+  "personal-hygiene":
+    "https://source.unsplash.com/200x200/?soap,hygiene&sig=70",
+  "hair-care": "https://source.unsplash.com/200x200/?shampoo,hair&sig=80",
+  snacks: "https://source.unsplash.com/200x200/?chips,snacks&sig=20",
+  beverages: "https://source.unsplash.com/200x200/?juice,beverage&sig=60",
+  dairy: "https://source.unsplash.com/200x200/?milk,dairy&sig=30",
+  fruits: "https://source.unsplash.com/200x200/?fruits,fresh&sig=90",
+};
+
 export default function CategoryTabs({
   categories,
   activeCategory,
@@ -9,71 +23,45 @@ export default function CategoryTabs({
 
   return (
     <nav
-      className="sticky top-16 z-30 border-b border-border"
-      style={{
-        background: "rgba(255,255,255,0.96)",
-        backdropFilter: "blur(12px)",
-        boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-      }}
+      className="sticky top-16 z-30 bg-background border-b border-border shadow-sm"
       aria-label="Product categories"
       data-ocid="category-tabs"
     >
       <div className="max-w-[1400px] mx-auto px-3 md:px-5">
         <div
           ref={scrollRef}
-          className="flex gap-1.5 overflow-x-auto py-2.5"
+          className="flex gap-2 overflow-x-auto py-2.5 scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {categories.map((cat) => {
             const isActive = activeCategory === cat.id;
+            const imgSrc = CATEGORY_IMAGES[cat.id] ?? CATEGORY_IMAGES.all;
             return (
               <button
                 type="button"
                 key={cat.id}
                 onClick={() => onCategoryChange(cat)}
-                className={`
-                  flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap
-                  flex-shrink-0 transition-all duration-200 select-none cursor-pointer
-                `}
-                style={
-                  isActive
-                    ? {
-                        background:
-                          "linear-gradient(135deg, oklch(0.50 0.27 310), oklch(0.40 0.26 292))",
-                        color: "white",
-                        boxShadow: "0 3px 12px oklch(0.50 0.27 310 / 0.40)",
-                        border: "1.5px solid oklch(0.50 0.27 310)",
-                      }
-                    : {
-                        background: "transparent",
-                        color: "oklch(0.40 0.01 0)",
-                        border: "1.5px solid oklch(0.88 0.008 0)",
-                      }
-                }
-                onMouseEnter={(e) => {
-                  if (!isActive) {
-                    e.currentTarget.style.background =
-                      "oklch(0.50 0.27 310 / 0.08)";
-                    e.currentTarget.style.borderColor =
-                      "oklch(0.50 0.27 310 / 0.40)";
-                    e.currentTarget.style.color = "oklch(0.44 0.27 310)";
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!isActive) {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.borderColor = "oklch(0.88 0.008 0)";
-                    e.currentTarget.style.color = "oklch(0.40 0.01 0)";
-                  }
-                }}
+                className={`flex flex-col items-center gap-1.5 px-2.5 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap cursor-pointer flex-shrink-0 transition-all duration-200 select-none min-w-[62px] ${isActive ? "bg-primary/8 text-primary" : "bg-transparent text-muted-foreground hover:text-foreground hover:bg-muted"}`}
                 aria-pressed={isActive}
                 aria-label={cat.label}
                 data-ocid={`category-tab-${cat.id}`}
               >
-                <span className="text-base leading-none" aria-hidden="true">
-                  {cat.icon}
+                <span
+                  className={`block w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 ${isActive ? "ring-2 ring-primary ring-offset-1" : "ring-1 ring-border"}`}
+                >
+                  <img
+                    src={imgSrc}
+                    alt={cat.label}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = CATEGORY_IMAGES.all;
+                    }}
+                  />
                 </span>
-                <span className="leading-none">{cat.label}</span>
+                <span className="leading-tight text-center line-clamp-2 max-w-[60px]">
+                  {cat.label}
+                </span>
               </button>
             );
           })}

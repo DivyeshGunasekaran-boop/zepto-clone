@@ -9,6 +9,7 @@ interface ProductSectionProps {
   layout: "scroll" | "grid";
   categoryId?: string;
   onViewAll?: () => void;
+  onProductClick?: (product: Product) => void;
 }
 
 export default function ProductSection({
@@ -16,6 +17,7 @@ export default function ProductSection({
   products,
   layout,
   onViewAll,
+  onProductClick,
 }: ProductSectionProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -95,7 +97,11 @@ export default function ProductSection({
             style={{ scrollbarWidth: "none" }}
           >
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                onClick={onProductClick}
+              />
             ))}
           </div>
         </div>
@@ -105,7 +111,11 @@ export default function ProductSection({
           data-ocid="product-grid"
         >
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              onClick={onProductClick}
+            />
           ))}
         </div>
       )}

@@ -1,7 +1,7 @@
 import { X, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-export default function LoginModal({ isOpen, onClose }) {
+export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
   const [phone, setPhone] = useState("");
   const [step, setStep] = useState("phone");
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
@@ -49,13 +49,24 @@ export default function LoginModal({ isOpen, onClose }) {
     next[index] = value;
     setOtp(next);
     if (value && index < 5) {
-      document.getElementById(`otp-${index + 1}`)?.focus();
+      const nextInput = document.getElementById(`otp-${index + 1}`);
+      nextInput?.focus();
     }
   };
 
   const handleOtpKeyDown = (index, e) => {
     if (e.key === "Backspace" && !otp[index] && index > 0) {
-      document.getElementById(`otp-${index - 1}`)?.focus();
+      const prev = document.getElementById(`otp-${index - 1}`);
+      prev?.focus();
+    }
+  };
+
+  const handleVerifyOtp = () => {
+    if (otp.some((d) => d === "")) return;
+    if (onLoginSuccess) {
+      onLoginSuccess(phone);
+    } else {
+      onClose();
     }
   };
 
@@ -65,89 +76,54 @@ export default function LoginModal({ isOpen, onClose }) {
     <div
       ref={backdropRef}
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(6px)" }}
+      style={{ background: "rgba(0,0,0,0.55)" }}
       onClick={handleBackdropClick}
       onKeyDown={(e) => e.key === "Escape" && onClose()}
       data-ocid="login-modal-backdrop"
     >
       <dialog
         open
-        className="bg-card rounded-3xl w-full max-w-[400px] overflow-hidden relative p-0 border border-border"
-        style={{
-          boxShadow:
-            "0 24px 80px rgba(0,0,0,0.38), 0 8px 30px rgba(80,30,180,0.25)",
-        }}
+        className="bg-card rounded-2xl shadow-2xl w-full max-w-[400px] overflow-hidden relative p-0 border border-border"
         aria-label="Login to QuickCart"
       >
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/35 text-white transition-smooth"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-muted hover:bg-muted/80 text-muted-foreground transition-smooth"
           aria-label="Close login modal"
           data-ocid="login-modal-close"
         >
           <X className="w-4 h-4" />
         </button>
 
-        {/* Header */}
-        <div
-          className="px-6 pt-7 pb-6 text-center relative overflow-hidden"
-          style={{
-            background:
-              "linear-gradient(140deg, oklch(0.46 0.30 308) 0%, oklch(0.34 0.27 292) 100%)",
-          }}
-        >
-          {/* Decorative */}
-          <div
-            className="absolute -top-8 -right-8 w-32 h-32 rounded-full pointer-events-none"
-            style={{ background: "rgba(255,214,0,0.12)" }}
-          />
-          <div
-            className="absolute -bottom-4 -left-4 w-20 h-20 rounded-full pointer-events-none"
-            style={{ background: "rgba(255,255,255,0.06)" }}
-          />
-
-          <div className="relative z-10">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #FFD600 0%, #FF9800 100%)",
-                  boxShadow: "0 3px 10px rgba(255,152,0,0.50)",
-                }}
-              >
-                <Zap className="w-5 h-5 text-purple-900 fill-purple-900" />
-              </div>
-              <span className="text-white font-black text-2xl tracking-tight">
-                QuickCart
-              </span>
-            </div>
-            <p className="text-white/85 text-sm font-semibold">
-              India's Fastest Grocery App
-            </p>
-            <p className="text-white/55 text-xs mt-0.5 font-medium">
-              Delivered in 10 minutes ⚡
-            </p>
+        <div className="bg-primary px-6 pt-6 pb-5 text-center">
+          <div className="flex items-center justify-center gap-1.5 mb-1">
+            <Zap className="w-6 h-6 text-yellow-300 fill-yellow-300" />
+            <span className="text-primary-foreground font-extrabold text-2xl tracking-tight leading-none">
+              QuickCart
+            </span>
           </div>
+          <p className="text-primary-foreground/80 text-sm font-medium mt-1">
+            India's Fastest Grocery App
+          </p>
+          <p className="text-primary-foreground/60 text-xs mt-0.5">
+            Delivered in 10 minutes ⚡
+          </p>
         </div>
 
         <div className="px-6 py-6">
           {step === "phone" ? (
             <>
-              <p className="text-foreground font-extrabold text-base mb-1.5">
+              <p className="text-foreground font-semibold text-base mb-4">
                 Login or Sign Up
               </p>
-              <p className="text-muted-foreground text-xs mb-4">
-                Enter your mobile number to get started
-              </p>
-              <div
-                className="flex rounded-xl border-2 border-input focus-within:border-primary overflow-hidden mb-4 transition-colors"
-                style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.05)" }}
-              >
+
+              <div className="flex rounded-xl border-2 border-input focus-within:border-primary overflow-hidden mb-4 transition-colors">
                 <div className="flex items-center gap-2 px-3 bg-muted border-r border-border">
                   <span className="text-base">🇮🇳</span>
-                  <span className="text-sm font-bold text-foreground">+91</span>
+                  <span className="text-sm font-semibold text-foreground">
+                    +91
+                  </span>
                 </div>
                 <input
                   ref={inputRef}
@@ -163,20 +139,17 @@ export default function LoginModal({ isOpen, onClose }) {
                   onKeyDown={(e) => e.key === "Enter" && handlePhoneContinue()}
                 />
               </div>
+
               <button
                 type="button"
                 onClick={handlePhoneContinue}
-                className="w-full h-11 text-white font-extrabold text-sm rounded-xl hover:brightness-110 active:scale-[0.98] transition-smooth disabled:opacity-50"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(0.48 0.27 308) 0%, oklch(0.38 0.26 290) 100%)",
-                  boxShadow: "0 4px 16px oklch(0.48 0.27 308 / 0.40)",
-                }}
+                className="w-full h-11 bg-primary text-primary-foreground font-bold text-sm rounded-xl hover:opacity-90 active:scale-[0.98] transition-smooth disabled:opacity-50"
                 disabled={phone.length < 10}
                 data-ocid="phone-continue-btn"
               >
-                Continue →
+                Continue
               </button>
+
               <div className="flex items-center gap-3 my-4">
                 <div className="flex-1 h-px bg-border" />
                 <span className="text-xs text-muted-foreground font-medium">
@@ -184,6 +157,7 @@ export default function LoginModal({ isOpen, onClose }) {
                 </span>
                 <div className="flex-1 h-px bg-border" />
               </div>
+
               <button
                 type="button"
                 className="w-full h-11 flex items-center justify-center gap-2.5 border-2 border-border rounded-xl text-foreground text-sm font-semibold hover:bg-muted transition-smooth"
@@ -247,10 +221,11 @@ export default function LoginModal({ isOpen, onClose }) {
                   </p>
                 </div>
               </div>
+
               <div className="flex gap-2 mb-5 justify-center">
-                {[0, 1, 2, 3, 4, 5].map((i) => (
+                {["p0", "p1", "p2", "p3", "p4", "p5"].map((pos, i) => (
                   <input
-                    key={i}
+                    key={pos}
                     id={`otp-${i}`}
                     type="text"
                     inputMode="numeric"
@@ -258,30 +233,27 @@ export default function LoginModal({ isOpen, onClose }) {
                     maxLength={1}
                     onChange={(e) => handleOtpChange(i, e.target.value)}
                     onKeyDown={(e) => handleOtpKeyDown(i, e)}
-                    className="w-11 h-12 text-center text-lg font-extrabold rounded-xl border-2 border-input focus:border-primary bg-background text-foreground outline-none transition-colors"
+                    className="w-11 h-12 text-center text-lg font-bold rounded-xl border-2 border-input focus:border-primary bg-background text-foreground outline-none transition-colors"
                     data-ocid={`otp-input-${i}`}
                   />
                 ))}
               </div>
+
               <button
                 type="button"
-                onClick={onClose}
-                className="w-full h-11 text-white font-extrabold text-sm rounded-xl hover:brightness-110 active:scale-[0.98] transition-smooth disabled:opacity-50"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(0.48 0.27 308) 0%, oklch(0.38 0.26 290) 100%)",
-                  boxShadow: "0 4px 16px oklch(0.48 0.27 308 / 0.40)",
-                }}
+                onClick={handleVerifyOtp}
+                className="w-full h-11 bg-primary text-primary-foreground font-bold text-sm rounded-xl hover:opacity-90 active:scale-[0.98] transition-smooth disabled:opacity-50"
                 disabled={otp.some((d) => d === "")}
                 data-ocid="otp-verify-btn"
               >
-                Verify OTP
+                Verify &amp; Login
               </button>
+
               <p className="text-center text-xs text-muted-foreground mt-3">
                 Didn't receive OTP?{" "}
                 <button
                   type="button"
-                  className="text-primary font-bold hover:underline"
+                  className="text-primary font-semibold hover:underline"
                   data-ocid="resend-otp-btn"
                 >
                   Resend
@@ -292,17 +264,11 @@ export default function LoginModal({ isOpen, onClose }) {
 
           <p className="text-center text-[11px] text-muted-foreground mt-4 leading-relaxed">
             By continuing, you agree to our{" "}
-            <a
-              href="/terms"
-              className="text-primary hover:underline font-medium"
-            >
+            <a href="/terms" className="text-primary hover:underline">
               Terms of Service
             </a>{" "}
             &amp;{" "}
-            <a
-              href="/privacy"
-              className="text-primary hover:underline font-medium"
-            >
+            <a href="/privacy" className="text-primary hover:underline">
               Privacy Policy
             </a>
           </p>

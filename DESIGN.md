@@ -1,65 +1,71 @@
-# Design Brief: QuickCart — Premium Grocery Delivery
+# Design Brief: QuickCart — Zepto-Parity Premium Grocery
 
 ## Direction
-Premium modern grocery tech. Refined, polished UI with clear hierarchy, depth through refined shadows, and elevated card treatments. Purple-dominant brand identity with vibrant green accents and warm orange highlights. SaaS-quality visual system.
+QuickCart — Zepto-exact frontend UX with refined purple brand, smooth carousel animations, and elevated grocery shopping experience.
 
 ## Tone
-Refined, approachable, modern. Polished visual hierarchy with elegant spacing. Premium grocery experience without pretension.
+Fast-commerce premium. Functional, polished, no pretension. Zepto-inspired UX patterns with premium shadow depth and smooth interactions.
 
-## Palette
+## Differentiation
+Smooth carousel animations with CSS transitions, category tabs display real product images, map modal on location click, profile panel replaces login after authentication, Zepto-style footer category grid.
 
-| Token | OKLCH | Usage |
-|-------|-------|-------|
-| Primary (Purple) | 0.50 0.27 310 | Header, primary CTAs, refined brand identity |
-| Accent (Green) | 0.52 0.18 145 | ADD buttons, success actions, vibrant CTAs |
-| Secondary (Orange) | 0.68 0.18 50 | Discount badges, promotional highlights |
-| Background | 0.995 0.002 0 | Main content area, light mode |
-| Card | 0.975 0.004 0 | Product cards, elevated surfaces with depth |
-| Foreground | 0.14 0.01 0 | Body text, high contrast |
-| Border | 0.88 0.008 0 | Refined card edges, subtle dividers |
-| Muted | 0.91 0.005 0 | Secondary text, inactive states |
+## Color Palette
+
+| Token | OKLCH | Role |
+|-------|-------|------|
+| Primary (Purple) | 0.48 0.27 308 | Header, CTAs, brand identity — Zepto purple #7B2FF7 |
+| Accent (Green) | 0.51 0.19 145 | ADD buttons, success — vibrant fast-commerce action |
+| Secondary (Orange) | 0.65 0.2 50 | Discount badges — promotional highlights |
+| Background | 0.985 0.003 285 | Main content — pure white, light mode |
+| Card | 1 0 0 | Product cards, modals — elevated surfaces |
+| Foreground | 0.12 0.02 285 | Body text — high contrast dark |
+| Border | 0.9 0.008 285 | Card edges, dividers — subtle refinement |
+| Muted | 0.94 0.006 285 | Secondary text, inactive — gentle hierarchy |
 
 ## Typography
-**Display/Body**: DM Sans (400, 600, 700 weights) — clean, modern, grocery-ready
-**Mono**: JetBrains Mono — technical clarity if needed
-
-## Shape & Radius
-Card corners: 8px (rounded-lg). Badges: 0px (sharp). Button corners: 6px (rounded-md). Header: 0px.
+- **Display**: DM Sans 700 — hero carousel, section headers, price
+- **Body**: DM Sans 400-600 — product names, descriptions, labels
+- **Scale**: H1 text-3xl, H2 text-xl, Body text-sm, Label text-xs
 
 ## Elevation & Depth
-Refined shadow hierarchy: cards use `shadow-lg` on hover for subtle elevation. Sticky header with `shadow-md` bottom border. Layered z-hierarchy with glassmorphic depth. No flat surfaces — every zone has intentional visual separation.
+Refined shadow hierarchy: cards use shadow-lg on hover, sticky header shadow-md, modals shadow-2xl. Layer z-hierarchy with glassmorphic modal overlay. Smooth 0.5s carousel transitions create premium motion.
 
 ## Structural Zones
 
-| Zone | Background | Border | Usage |
+| Zone | Background | Border | Notes |
 |------|-----------|--------|-------|
-| Header | Primary (purple) | None | Sticky, search, cart icon |
-| Category Tabs | Background (white) | Bottom border-border | Scrollable, active = bold text + underline |
-| Product Grid | Background (white) | None | Card-based, 2 columns mobile, 4+ desktop |
-| Product Card | Card (off-white) | border-border | Image, name, description, price, discount badge, quantity, ADD button |
-| Cart Sidebar | Card (off-white) | border-border left | Fixed or modal on mobile |
-| Footer | Muted/30% | border-top | Light divider |
+| Header | Primary purple | None | Sticky, white search bar, location + cart icons |
+| Hero Carousel | Gradient/photo | None | Full-width, smooth slide transitions, 5 banners auto-rotate |
+| Category Tabs | Background white | border-border bottom | Horizontal scroll, images instead of emoji icons |
+| Product Grid | Background white | None | 2 col mobile, 3-4 col tablet, 4+ col desktop |
+| Product Card | Card white | border-border | Image, name, price, discount badge, ADD button |
+| Map Modal | Card white | border-border | Centered pop-up, location picker, close button |
+| Profile Panel | Primary/10 | border-primary/20 | Header right, shows phone + logout after login |
+| Footer | Muted/40 | border-top | Zepto-style category sections (Groceries, Fresh Produce, Household, Snacks, Beverages, Personal Care, Medicines) |
+
+## Spacing & Rhythm
+Consistent 16px (1rem) gaps between sections, 12px (0.75rem) inside cards, 8px (0.5rem) micro-spacing. Product grid uses 2-3 col on mobile, 4 col on desktop with 16px gutters. Category tabs: 12px gap between images.
 
 ## Component Patterns
-- **Product Card**: Image → Name/Description → Price crossed out + discounted price → Discount badge (secondary background, sharp corners) → Quantity selector → ADD button (green, bold)
-- **Discount Badge**: Orange background, dark text, sharp corners, small text
-- **ADD Button**: Green background, white text, bold font weight, rounded corners
-- **Category Tabs**: Text-only active state with bold weight + underline in primary color
-- **Search Bar**: Animated placeholder cycling through suggestions
+- **Hero Carousel**: Full-width container, smooth CSS slide transition (0.5s), auto-advance every 3s, clickable indicators at bottom
+- **Category Tabs**: Horizontal scrollable row, product image (48x48px) + label, active state = border-bottom primary
+- **Product Card**: Image 100% width, discount badge (top-left), name (2-line clamp), crossed price + sale price, ADD button (bottom-right, green, bold)
+- **Map Modal**: Centered overlay, map placeholder, location search input, confirm button
+- **Profile Panel**: Shows user phone (from login state), logout link, rounded pill shape
 
 ## Motion
-- Fade-in on load (300ms)
-- Card hover: shadow-lg + border primary/20 (smooth 0.25s)
-- Button states: shadow-md on hover, scale-95 on active (0.25s)
-- Entry animations: slide-up + fade (300ms staggered)
-- Smooth placeholder cycling in search bar (400ms per cycle)
+- **Carousel**: 0.5s smooth slide transition, fade opacity on transition
+- **Modal Pop**: Scale 0.95→1 over 0.3s, backdrop blur entrance
+- **Card Hover**: Shadow-lg + border-primary/15, smooth 0.22s transition
+- **Button States**: Shadow-md hover, scale-95 active, all 0.22s
+- **Indicators**: Fade opacity on hover (200ms)
 
 ## Constraints
-- All colors token-driven via OKLCH CSS variables
-- Shadows: sm (hover subtle), md (hover buttons), lg (card elevation) only
-- Border-radius: consistent lg (8px), no extreme radius
-- Gradients: accent gradient for interactive hover states only
-- No flat surfaces; every zone has intentional depth
+- All colors OKLCH token-driven, no hex literals
+- Shadows: sm (subtle), md (hover buttons), lg (card elevation), xl (modals)
+- Border-radius: 0px header, 8px cards/modals, 6px buttons, 4px badges
+- No gradients except carousel backgrounds and accent hover states
+- Every surface has intentional depth — no flat backgrounds
 
 ## Signature Detail
-Refined deep purple (#6B2FD7) paired with vibrant green action buttons creates premium brand identity. Elegant shadow hierarchy and smooth transitions elevate the experience beyond typical grocery apps. Premium SaaS aesthetic applied to fast commerce.
+Seamless purple→green action flow with smooth 0.5s carousel animations creates premium fast-commerce identity. Zepto UX patterns elevated with refined motion and professional shadow depth.

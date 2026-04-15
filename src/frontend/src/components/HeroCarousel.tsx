@@ -3,69 +3,93 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const SLIDES = [
   {
-    id: "slide-purple",
-    title: "Groceries in 10 Minutes",
-    subtitle: "Fresh fruits, veggies & daily essentials at your doorstep",
-    cta: "Shop Now",
-    bgFrom: "#7B2FF7",
-    bgTo: "#5b1cbf",
-    accent: "#FFD600",
-    emoji: "🛒",
-    badge: "⚡ 10 MIN DELIVERY",
+    id: "slide-fruits",
+    title: "Farm-Fresh Fruits & Vegetables",
+    subtitle:
+      "Handpicked produce delivered within hours of harvest — 100% quality assured",
+    cta: "Shop Fresh",
+    badge: "🌱 FRESHNESS GUARANTEE",
     highlight: "Free delivery on first order!",
     discount: null,
+    theme: {
+      from: "#1a7c3e",
+      to: "#0f5a2b",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1542838132-2d5c6e7f8f9a?w=1200&q=80",
   },
   {
-    id: "slide-orange",
-    title: "Up to 40% OFF on Dairy",
-    subtitle: "Amul, Mother Dairy, Epigamia & more top brands",
-    cta: "Explore Deals",
-    bgFrom: "#FF6B00",
-    bgTo: "#e84c00",
-    accent: "#FFD600",
-    emoji: "🥛",
-    badge: "🔥 LIMITED TIME",
-    highlight: "Best prices guaranteed",
-    discount: "40%",
-  },
-  {
-    id: "slide-green",
-    title: "Farm-Fresh Fruits & Veggies",
-    subtitle: "Handpicked produce delivered within hours of harvest",
-    cta: "Order Fresh",
-    bgFrom: "#0C831F",
-    bgTo: "#077015",
-    accent: "#FFD600",
-    emoji: "🍎",
-    badge: "🌱 FRESHNESS GUARANTEE",
-    highlight: "100% quality assured",
-    discount: null,
-  },
-  {
-    id: "slide-blue",
-    title: "Snacks & Beverages Fest",
-    subtitle: "Kurkure, Lay's, Maggi, Red Bull & 500+ brands",
-    cta: "Browse Snacks",
-    bgFrom: "#0052CC",
-    bgTo: "#003d99",
-    accent: "#FFD600",
-    emoji: "🍿",
-    badge: "🏆 BESTSELLERS",
+    id: "slide-beverages",
+    title: "Beverages & Cold Drinks",
+    subtitle:
+      "Pepsi, Tropicana, Red Bull, Minute Maid & 200+ refreshing choices",
+    cta: "Explore Drinks",
+    badge: "🧊 CHILLED & READY",
     highlight: "New arrivals every day",
-    discount: "25%",
+    discount: "20%",
+    theme: {
+      from: "#0a4c8c",
+      to: "#062f5e",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1509042239860-f55ce641ab05?w=1200&q=80",
   },
   {
-    id: "slide-teal",
-    title: "Personal Care Essentials",
-    subtitle: "Dettol, Gillette, Dove, Pantene & top hygiene brands",
-    cta: "Shop Personal Care",
-    bgFrom: "#00897B",
-    bgTo: "#00695C",
-    accent: "#FFD600",
-    emoji: "🧴",
-    badge: "✨ TOP RATED",
+    id: "slide-snacks",
+    title: "Snacks & Munchies Fest",
+    subtitle:
+      "Kurkure, Lay's, Maggi, Oreo & 500+ brands delivered in 10 minutes",
+    cta: "Browse Snacks",
+    badge: "🔥 BESTSELLERS",
     highlight: "Trusted by 1Cr+ customers",
+    discount: "25%",
+    theme: {
+      from: "#c44b00",
+      to: "#8c3300",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=1200&q=80",
+  },
+  {
+    id: "slide-household",
+    title: "Household Essentials",
+    subtitle: "Surf Excel, Harpic, Colin, Dettol — everything your home needs",
+    cta: "Shop Essentials",
+    badge: "⚡ 10 MIN DELIVERY",
+    highlight: "Best prices guaranteed",
     discount: "30%",
+    theme: {
+      from: "#5a1cbf",
+      to: "#3d0e8c",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1583242702831-b3562c8ef9f5?w=1200&q=80",
+  },
+  {
+    id: "slide-dairy",
+    title: "Dairy & Breakfast Staples",
+    subtitle:
+      "Amul, Mother Dairy, Epigamia — fresh milk, eggs & more at your door",
+    cta: "Order Dairy",
+    badge: "🥛 UP TO 40% OFF",
+    highlight: "Same-day delivery available",
+    discount: "40%",
+    theme: {
+      from: "#b07800",
+      to: "#7a5200",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1550583724-aa285b6f3a31?w=1200&q=80",
   },
 ];
 
@@ -78,7 +102,7 @@ export default function HeroCarousel() {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setCurrent((c) => (c + 1) % SLIDES.length);
-    }, 3000);
+    }, 4000);
   }, []);
 
   useEffect(() => {
@@ -96,8 +120,6 @@ export default function HeroCarousel() {
   const prev = () => goTo((current - 1 + SLIDES.length) % SLIDES.length);
   const next = () => goTo((current + 1) % SLIDES.length);
 
-  const slide = SLIDES[current];
-
   return (
     <section
       className="relative mt-4 rounded-2xl overflow-hidden shadow-lg select-none"
@@ -106,70 +128,81 @@ export default function HeroCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Slide content */}
+      {/* Sliding track — translateX moves by multiples of 100% */}
       <div
-        className="relative h-44 md:h-64 flex items-center px-8 md:px-16 transition-colors duration-500"
-        style={{
-          background: `linear-gradient(135deg, ${slide.bgFrom} 0%, ${slide.bgTo} 100%)`,
-        }}
+        className="flex transition-carousel"
+        style={{ transform: `translateX(-${current * 100}%)` }}
+        aria-live="polite"
       >
-        {/* Decorative circles */}
-        <div
-          className="absolute right-0 top-0 w-64 h-64 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"
-          style={{ background: slide.accent }}
-          aria-hidden="true"
-        />
-        <div
-          className="absolute right-16 bottom-0 w-32 h-32 rounded-full opacity-10 translate-y-1/2"
-          style={{ background: "#ffffff" }}
-          aria-hidden="true"
-        />
+        {SLIDES.map((slide) => (
+          <div
+            key={slide.id}
+            className="carousel-slide relative h-44 md:h-64 flex-shrink-0 w-full"
+            aria-hidden={SLIDES.indexOf(slide) !== current}
+          >
+            {/* Background image */}
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
+            />
 
-        {/* Left: text content */}
-        <div className="flex-1 text-white z-10">
-          <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-[10px] font-extrabold px-3 py-1 rounded-full mb-2 tracking-widest uppercase">
-            {slide.badge}
-          </span>
-          <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-xl md:text-4xl font-extrabold leading-tight">
-              {slide.title}
-            </h1>
-            {slide.discount && (
-              <span
-                className="hidden md:flex items-center justify-center w-16 h-16 rounded-full text-lg font-black text-center leading-tight flex-shrink-0"
-                style={{ background: slide.accent, color: "#111" }}
-              >
-                {slide.discount}
-                <br />
-                OFF
-              </span>
-            )}
-          </div>
-          <p className="text-white/80 text-xs md:text-sm mb-3 max-w-md">
-            {slide.subtitle}
-          </p>
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              className="bg-white font-bold text-xs md:text-sm px-5 py-2 rounded-full hover:opacity-90 active:scale-95 transition-smooth"
-              style={{ color: slide.bgFrom }}
-            >
-              {slide.cta} →
-            </button>
-            <span className="hidden md:block text-white/70 text-xs">
-              {slide.highlight}
-            </span>
-          </div>
-        </div>
+            {/* Color overlay matching theme */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `linear-gradient(110deg, ${slide.theme.from}ee 0%, ${slide.theme.to}bb 50%, transparent 100%)`,
+              }}
+              aria-hidden="true"
+            />
 
-        {/* Right: emoji */}
-        <div
-          className="hidden md:flex text-8xl lg:text-9xl z-10 flex-shrink-0 ml-4 drop-shadow-xl"
-          aria-hidden="true"
-          style={{ filter: "drop-shadow(0 8px 20px rgba(0,0,0,0.3))" }}
-        >
-          {slide.emoji}
-        </div>
+            {/* Text content */}
+            <div className="relative z-10 flex items-center h-full px-8 md:px-14">
+              <div className="max-w-lg">
+                {/* Badge */}
+                <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-[10px] font-extrabold px-3 py-1 rounded-full mb-2 tracking-widest uppercase">
+                  {slide.badge}
+                </span>
+
+                {/* Title + discount bubble */}
+                <div className="flex items-center gap-3 mb-1">
+                  <h1 className="text-xl md:text-4xl font-extrabold leading-tight text-white drop-shadow-sm">
+                    {slide.title}
+                  </h1>
+                  {slide.discount && (
+                    <span
+                      className="hidden md:flex items-center justify-center w-16 h-16 rounded-full text-sm font-black text-center leading-tight flex-shrink-0 shadow-lg"
+                      style={{ background: slide.theme.accent, color: "#111" }}
+                    >
+                      {slide.discount}
+                      <br />
+                      OFF
+                    </span>
+                  )}
+                </div>
+
+                <p className="text-white/80 text-xs md:text-sm mb-4 max-w-md">
+                  {slide.subtitle}
+                </p>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    className="bg-white font-bold text-xs md:text-sm px-5 py-2 rounded-full hover:opacity-90 active:scale-95 transition-smooth shadow-md"
+                    style={{ color: slide.theme.from }}
+                    data-ocid={`carousel-cta-${slide.id}`}
+                  >
+                    {slide.cta} →
+                  </button>
+                  <span className="hidden md:block text-white/70 text-xs">
+                    {slide.highlight}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Left Arrow */}
@@ -201,12 +234,21 @@ export default function HeroCarousel() {
             type="button"
             key={s.id}
             onClick={() => goTo(i)}
-            className={`rounded-full transition-all duration-300 ${
-              i === current
-                ? "w-6 h-2.5 bg-white"
-                : "w-2.5 h-2.5 bg-white/45 hover:bg-white/70"
-            }`}
             aria-label={`Go to slide ${i + 1}`}
+            data-ocid={`carousel-dot-${i + 1}`}
+            style={{
+              width: i === current ? "24px" : "10px",
+              height: "10px",
+              borderRadius: "9999px",
+              background:
+                i === current
+                  ? "rgba(255,255,255,0.95)"
+                  : "rgba(255,255,255,0.5)",
+              cursor: "pointer",
+              border: "none",
+              padding: 0,
+              transition: "all 0.3s ease",
+            }}
           />
         ))}
       </div>

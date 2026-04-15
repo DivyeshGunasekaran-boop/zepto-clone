@@ -58,6 +58,6 @@ export default defineConfig({
       },
     ],
     dedupe: ["@dfinity/agent"],
-    extensions: [".jsx", ".js", ".json"],
+    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
 });

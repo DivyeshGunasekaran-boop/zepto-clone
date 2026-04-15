@@ -6,7 +6,11 @@ const FREE_DELIVERY_THRESHOLD = 199;
 const PLATFORM_FEE = 5;
 const DELIVERY_FEE = 30;
 
-export default function CartSidebar() {
+interface CartSidebarProps {
+  onProceedToPayment?: (grandTotal: number) => void;
+}
+
+export default function CartSidebar({ onProceedToPayment }: CartSidebarProps) {
   const {
     isOpen,
     closeCart,
@@ -436,12 +440,13 @@ export default function CartSidebar() {
             <div className="px-4 pb-4 pt-1 flex flex-col gap-2">
               <button
                 type="button"
+                onClick={() => onProceedToPayment?.(grandTotal)}
                 className="w-full py-3.5 rounded-xl font-extrabold text-sm text-white flex items-center justify-between px-5 transition-opacity hover:opacity-90 active:scale-[0.98]"
                 style={{ backgroundColor: "#7B2FF7" }}
-                aria-label="Proceed to checkout"
+                aria-label="Proceed to payment"
                 data-ocid="cart-checkout"
               >
-                <span>Proceed to Checkout</span>
+                <span>Proceed to Payment</span>
                 <span className="text-base">₹{grandTotal} →</span>
               </button>
               <button

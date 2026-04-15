@@ -6,7 +6,7 @@ const FREE_DELIVERY_THRESHOLD = 199;
 const PLATFORM_FEE = 5;
 const DELIVERY_FEE = 30;
 
-export default function CartSidebar() {
+export default function CartSidebar({ onProceedToPayment }) {
   const {
     isOpen,
     closeCart,
@@ -31,12 +31,16 @@ export default function CartSidebar() {
   const couponDiscount = couponApplied ? Math.round(totalPrice * 0.05) : 0;
   const grandTotal = totalPrice + deliveryFee + PLATFORM_FEE - couponDiscount;
 
+  const handleOverlayKeyDown = (e) => {
+    if (e.key === "Escape" || e.key === "Enter" || e.key === " ") closeCart();
+  };
+
   const handleApplyCoupon = () => {
     if (!coupon.trim()) {
       setCouponError("Please enter a coupon code");
       return;
     }
-    if (coupon.toUpperCase() === "QUICK5") {
+    if (coupon.toUpperCase() === "ZEPTO5") {
       setCouponApplied(true);
       setCouponError("");
     } else {
@@ -51,55 +55,44 @@ export default function CartSidebar() {
     setCouponError("");
   };
 
+  const handleCheckout = () => {
+    onProceedToPayment?.(grandTotal);
+    closeCart();
+  };
+
   return (
     <>
-      {/* Overlay */}
       <div
         role="button"
         tabIndex={0}
-        className={`fixed inset-0 z-40 transition-opacity duration-300 ${
-          isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-        style={{ background: "rgba(0,0,0,0.50)" }}
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         onClick={closeCart}
-        onKeyDown={(e) =>
-          (e.key === "Escape" || e.key === "Enter") && closeCart()
-        }
+        onKeyDown={handleOverlayKeyDown}
         aria-label="Close cart"
         data-ocid="cart-overlay"
       />
 
-      {/* Sidebar */}
       <aside
-        className={`fixed top-0 right-0 h-full w-[340px] sm:w-[380px] bg-white shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        style={{ boxShadow: "-8px 0 40px rgba(0,0,0,0.18)" }}
+        className={`fixed top-0 right-0 h-full w-[340px] sm:w-[380px] bg-white shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
         aria-label="Shopping cart"
         aria-hidden={!isOpen}
         data-ocid="cart-sidebar"
       >
-        {/* Header */}
         <div
-          className="flex items-center justify-between px-4 py-3.5"
-          style={{
-            background:
-              "linear-gradient(135deg, oklch(0.46 0.30 308) 0%, oklch(0.34 0.27 292) 100%)",
-          }}
+          className="flex items-center justify-between px-4 py-3.5 border-b"
+          style={{ borderColor: "#e5e7eb" }}
         >
           <div className="flex items-center gap-2.5">
-            <div
-              className="w-8 h-8 rounded-xl flex items-center justify-center"
-              style={{ background: "rgba(255,255,255,0.15)" }}
-            >
-              <ShoppingCart className="w-4 h-4 text-white" />
-            </div>
+            <ShoppingCart className="w-5 h-5" style={{ color: "#7B2FF7" }} />
             <div>
-              <h2 className="text-base font-extrabold text-white">My Cart</h2>
+              <h2
+                className="text-base font-extrabold"
+                style={{ color: "#1a1a1a" }}
+              >
+                My Cart
+              </h2>
               {items.length > 0 && (
-                <p className="text-xs text-white/65">
+                <p className="text-xs" style={{ color: "#6b7280" }}>
                   {totalItems} item{totalItems !== 1 ? "s" : ""}
                 </p>
               )}
@@ -108,19 +101,18 @@ export default function CartSidebar() {
           <button
             type="button"
             onClick={closeCart}
-            className="w-8 h-8 rounded-full flex items-center justify-center bg-white/15 hover:bg-white/30 transition-colors"
+            className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
             aria-label="Close cart"
             data-ocid="cart-close"
           >
-            <X className="w-4.5 h-4.5 text-white" />
+            <X className="w-5 h-5" style={{ color: "#374151" }} />
           </button>
         </div>
 
-        {/* Delivery badge */}
         {items.length > 0 && (
           <div
-            className="mx-4 mt-3 px-3 py-2 rounded-xl flex items-center gap-2 border"
-            style={{ backgroundColor: "#f0fdf4", borderColor: "#bbf7d0" }}
+            className="mx-4 mt-3 px-3 py-2 rounded-xl flex items-center gap-2"
+            style={{ backgroundColor: "#f0fdf4", border: "1px solid #bbf7d0" }}
           >
             <Zap
               className="w-4 h-4 flex-shrink-0"
@@ -132,7 +124,6 @@ export default function CartSidebar() {
           </div>
         )}
 
-        {/* Items list */}
         <div className="flex-1 overflow-y-auto px-4 py-3">
           {items.length === 0 ? (
             <div
@@ -140,32 +131,27 @@ export default function CartSidebar() {
               data-ocid="cart-empty"
             >
               <div
-                className="w-24 h-24 rounded-3xl flex items-center justify-center text-5xl"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(0.94 0.012 308) 0%, oklch(0.90 0.020 308) 100%)",
-                  boxShadow: "inset 0 2px 8px rgba(80,30,180,0.10)",
-                }}
+                className="w-24 h-24 rounded-full flex items-center justify-center text-5xl"
+                style={{ backgroundColor: "#f5f0ff" }}
               >
                 🛒
               </div>
               <div className="text-center">
-                <p className="text-lg font-extrabold text-foreground">
+                <p
+                  className="text-lg font-extrabold"
+                  style={{ color: "#1a1a1a" }}
+                >
                   Your cart is empty
                 </p>
-                <p className="text-sm mt-1.5 text-muted-foreground">
+                <p className="text-sm mt-1.5" style={{ color: "#6b7280" }}>
                   Add items to get started
                 </p>
               </div>
               <button
                 type="button"
                 onClick={closeCart}
-                className="px-8 py-2.5 rounded-full font-bold text-sm text-white transition-smooth hover:brightness-110"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(0.48 0.27 308) 0%, oklch(0.38 0.26 290) 100%)",
-                  boxShadow: "0 4px 16px oklch(0.48 0.27 308 / 0.40)",
-                }}
+                className="px-8 py-2.5 rounded-xl font-bold text-sm text-white transition-opacity hover:opacity-90"
+                style={{ backgroundColor: "#7B2FF7" }}
                 data-ocid="cart-start-shopping"
               >
                 Shop Now
@@ -181,10 +167,9 @@ export default function CartSidebar() {
                   data-ocid={`cart-item-${item.product.id}`}
                 >
                   <div
-                    className="w-16 h-16 rounded-xl flex-shrink-0 overflow-hidden border"
+                    className="w-16 h-16 rounded-xl flex-shrink-0 overflow-hidden"
                     style={{
-                      backgroundColor: "#f9fafb",
-                      borderColor: "#e5e7eb",
+                      border: "1px solid #e5e7eb",
                     }}
                   >
                     <img
@@ -225,23 +210,26 @@ export default function CartSidebar() {
                     <button
                       type="button"
                       onClick={() => removeFromCart(item.product.id)}
-                      className="w-6 h-6 rounded-lg flex items-center justify-center hover:bg-red-50 transition-colors"
+                      className="w-6 h-6 rounded flex items-center justify-center hover:bg-red-50 transition-colors"
                       aria-label={`Remove ${item.product.name}`}
                       data-ocid={`cart-remove-${item.product.id}`}
                     >
-                      <Trash2 className="w-3.5 h-3.5 text-red-400" />
+                      <Trash2
+                        className="w-3.5 h-3.5"
+                        style={{ color: "#ef4444" }}
+                      />
                     </button>
                     <div
                       className="flex items-center rounded-xl overflow-hidden"
-                      style={{ border: "2px solid oklch(0.50 0.27 310)" }}
+                      style={{ border: "2px solid #7B2FF7" }}
                     >
                       <button
                         type="button"
                         onClick={() =>
                           updateQuantity(item.product.id, item.quantity - 1)
                         }
-                        className="w-7 h-7 flex items-center justify-center font-bold text-white hover:opacity-85 transition-opacity"
-                        style={{ background: "oklch(0.50 0.27 310)" }}
+                        className="w-7 h-7 flex items-center justify-center font-bold text-white transition-opacity hover:opacity-90"
+                        style={{ backgroundColor: "#7B2FF7" }}
                         aria-label="Decrease quantity"
                         data-ocid={`cart-decrease-${item.product.id}`}
                       >
@@ -249,7 +237,7 @@ export default function CartSidebar() {
                       </button>
                       <span
                         className="w-8 text-center text-sm font-extrabold"
-                        style={{ color: "oklch(0.50 0.27 310)" }}
+                        style={{ color: "#7B2FF7" }}
                       >
                         {item.quantity}
                       </span>
@@ -258,8 +246,8 @@ export default function CartSidebar() {
                         onClick={() =>
                           updateQuantity(item.product.id, item.quantity + 1)
                         }
-                        className="w-7 h-7 flex items-center justify-center font-bold text-white hover:opacity-85 transition-opacity"
-                        style={{ background: "oklch(0.50 0.27 310)" }}
+                        className="w-7 h-7 flex items-center justify-center font-bold text-white transition-opacity hover:opacity-90"
+                        style={{ backgroundColor: "#7B2FF7" }}
                         aria-label="Increase quantity"
                         data-ocid={`cart-increase-${item.product.id}`}
                       >
@@ -273,13 +261,11 @@ export default function CartSidebar() {
           )}
         </div>
 
-        {/* Footer */}
         {items.length > 0 && (
           <div
-            className="border-t flex flex-col"
+            className="border-t flex flex-col gap-0"
             style={{ borderColor: "#e5e7eb" }}
           >
-            {/* Coupon */}
             <div
               className="px-4 py-3 border-b"
               style={{ borderColor: "#e5e7eb", backgroundColor: "#fafafa" }}
@@ -287,7 +273,7 @@ export default function CartSidebar() {
               <div className="flex items-center gap-2">
                 <Tag
                   className="w-4 h-4 flex-shrink-0"
-                  style={{ color: "oklch(0.50 0.27 310)" }}
+                  style={{ color: "#7B2FF7" }}
                 />
                 {couponApplied ? (
                   <div className="flex-1 flex items-center justify-between">
@@ -295,12 +281,13 @@ export default function CartSidebar() {
                       className="text-sm font-semibold"
                       style={{ color: "#0C831F" }}
                     >
-                      QUICK5 applied — 5% off!
+                      ZEPTO5 applied — 5% off!
                     </span>
                     <button
                       type="button"
                       onClick={handleRemoveCoupon}
-                      className="text-xs font-bold text-red-500 hover:text-red-700"
+                      className="text-xs font-bold"
+                      style={{ color: "#ef4444" }}
                       data-ocid="cart-coupon-remove"
                     >
                       Remove
@@ -315,7 +302,7 @@ export default function CartSidebar() {
                         setCoupon(e.target.value.toUpperCase());
                         setCouponError("");
                       }}
-                      placeholder="Use QUICK5 for 5% off"
+                      placeholder="Apply coupon code"
                       className="flex-1 text-sm bg-transparent outline-none placeholder:text-gray-400"
                       style={{ color: "#111827" }}
                       data-ocid="cart-coupon-input"
@@ -323,8 +310,8 @@ export default function CartSidebar() {
                     <button
                       type="button"
                       onClick={handleApplyCoupon}
-                      className="text-sm font-extrabold hover:opacity-75 transition-opacity"
-                      style={{ color: "oklch(0.50 0.27 310)" }}
+                      className="text-sm font-bold transition-opacity hover:opacity-80"
+                      style={{ color: "#7B2FF7" }}
                       data-ocid="cart-coupon-apply"
                     >
                       Apply
@@ -333,14 +320,15 @@ export default function CartSidebar() {
                 )}
               </div>
               {couponError && (
-                <p className="text-xs mt-1 ml-6 text-red-500">{couponError}</p>
+                <p className="text-xs mt-1 ml-6" style={{ color: "#ef4444" }}>
+                  {couponError}
+                </p>
               )}
             </div>
 
-            {/* Bill details */}
             <div className="px-4 pt-3 pb-2 space-y-2">
               <p
-                className="text-xs font-extrabold uppercase tracking-wider"
+                className="text-xs font-extrabold uppercase tracking-wide"
                 style={{ color: "#6b7280" }}
               >
                 Bill Details
@@ -348,7 +336,7 @@ export default function CartSidebar() {
               <div className="space-y-1.5 text-sm">
                 <div className="flex justify-between">
                   <span style={{ color: "#374151" }}>Item Total</span>
-                  <span className="font-bold" style={{ color: "#111827" }}>
+                  <span className="font-semibold" style={{ color: "#111827" }}>
                     ₹{totalPrice}
                   </span>
                 </div>
@@ -362,10 +350,7 @@ export default function CartSidebar() {
                       >
                         ₹{DELIVERY_FEE}
                       </span>
-                      <span
-                        className="font-extrabold text-xs"
-                        style={{ color: "#0C831F" }}
-                      >
+                      <span className="font-bold" style={{ color: "#0C831F" }}>
                         FREE
                       </span>
                     </div>
@@ -380,7 +365,7 @@ export default function CartSidebar() {
                 </div>
                 {!isFreeDelivery && (
                   <div
-                    className="flex items-center gap-1.5 px-2 py-1.5 rounded-xl text-xs"
+                    className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-xs"
                     style={{ backgroundColor: "#fef3c7", color: "#92400e" }}
                   >
                     <span>🚀</span>
@@ -397,15 +382,15 @@ export default function CartSidebar() {
                   </span>
                 </div>
                 {couponApplied && (
-                  <div
-                    className="flex justify-between"
-                    style={{ color: "#0C831F" }}
-                  >
-                    <span>Coupon Discount</span>
-                    <span className="font-extrabold">−₹{couponDiscount}</span>
+                  <div className="flex justify-between">
+                    <span style={{ color: "#0C831F" }}>Coupon Discount</span>
+                    <span className="font-bold" style={{ color: "#0C831F" }}>
+                      −₹{couponDiscount}
+                    </span>
                   </div>
                 )}
               </div>
+
               <div
                 className="flex justify-between pt-2 mt-1 border-t font-extrabold text-base"
                 style={{ borderColor: "#e5e7eb", color: "#111827" }}
@@ -413,6 +398,7 @@ export default function CartSidebar() {
                 <span>Grand Total</span>
                 <span>₹{grandTotal}</span>
               </div>
+
               {(discount > 0 || couponApplied) && (
                 <div
                   className="flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl text-xs font-bold"
@@ -427,26 +413,23 @@ export default function CartSidebar() {
               )}
             </div>
 
-            {/* Checkout */}
             <div className="px-4 pb-4 pt-1 flex flex-col gap-2">
               <button
                 type="button"
-                className="w-full py-3.5 rounded-2xl font-extrabold text-sm text-white flex items-center justify-between px-5 transition-smooth hover:brightness-110 active:scale-[0.98]"
-                style={{
-                  background:
-                    "linear-gradient(135deg, oklch(0.48 0.27 308) 0%, oklch(0.38 0.26 290) 100%)",
-                  boxShadow: "0 4px 20px oklch(0.48 0.27 308 / 0.45)",
-                }}
-                aria-label="Proceed to checkout"
+                onClick={handleCheckout}
+                className="w-full py-3.5 rounded-xl font-extrabold text-sm text-white flex items-center justify-between px-5 transition-opacity hover:opacity-90 active:scale-[0.98]"
+                style={{ backgroundColor: "#7B2FF7" }}
+                aria-label="Proceed to payment"
                 data-ocid="cart-checkout"
               >
-                <span>Proceed to Checkout</span>
-                <span className="text-base font-black">₹{grandTotal} →</span>
+                <span>Proceed to Payment</span>
+                <span className="text-base">₹{grandTotal} →</span>
               </button>
               <button
                 type="button"
                 onClick={clearCart}
-                className="w-full text-center text-xs py-1 text-muted-foreground hover:text-foreground transition-colors"
+                className="w-full text-center text-xs py-1 hover:opacity-70 transition-opacity"
+                style={{ color: "#9ca3af" }}
                 aria-label="Clear cart"
                 data-ocid="cart-clear"
               >

@@ -1,4 +1,4 @@
-import { Minus, Plus, ShoppingCart, Star } from "lucide-react";
+import { Minus, Plus, Star } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
 function formatReviewCount(count) {
@@ -6,61 +6,32 @@ function formatReviewCount(count) {
   return String(count);
 }
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, onProductClick }) {
   const { addToCart, updateQuantity, getItemQuantity } = useCart();
   const qty = getItemQuantity(product.id);
-  const savings = product.originalPrice - product.price;
+
+  const handleCardClick = () => {
+    onProductClick?.(product);
+  };
+
+  const handleCardKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") onProductClick?.(product);
+  };
 
   return (
-    <article
-      className="w-[158px] md:w-[188px] flex flex-col group rounded-2xl bg-card overflow-hidden cursor-pointer"
-      style={{
-        border: "1px solid oklch(0.90 0.006 0)",
-        boxShadow:
-          "0 2px 12px rgba(107,47,215,0.06), 0 1px 3px rgba(0,0,0,0.05)",
-        transition:
-          "box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow =
-          "0 8px 32px rgba(107,47,215,0.18), 0 2px 8px rgba(0,0,0,0.08)";
-        e.currentTarget.style.transform = "translateY(-3px)";
-        e.currentTarget.style.borderColor = "oklch(0.65 0.20 310)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow =
-          "0 2px 12px rgba(107,47,215,0.06), 0 1px 3px rgba(0,0,0,0.05)";
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.borderColor = "oklch(0.90 0.006 0)";
-      }}
+    <div
+      className="relative bg-card rounded-xl border border-border overflow-hidden flex flex-col w-[160px] md:w-[180px] min-w-[160px] md:min-w-[180px] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-smooth cursor-pointer group"
       aria-label={product.name}
-      data-ocid={`product-card-${product.id}`}
+      data-ocid={`product.card.${product.id}`}
+      onClick={handleCardClick}
+      onKeyDown={handleCardKeyDown}
     >
-      {/* Image container */}
-      <div
-        className="relative flex items-center justify-center h-[148px] md:h-[172px] overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(145deg, oklch(0.97 0.004 300) 0%, oklch(0.94 0.008 280) 100%)",
-        }}
-      >
-        {/* Bottom gradient for button readability */}
-        <div
-          className="absolute inset-x-0 bottom-0 h-20 pointer-events-none z-[1]"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)",
-          }}
-        />
-
+      <div className="relative h-[150px] md:h-[180px] w-full overflow-hidden bg-muted">
         {product.discount > 0 && (
           <span
-            className="absolute top-2 left-2 z-10 text-[10px] font-extrabold px-2 py-0.5 rounded-md text-white leading-tight"
-            style={{
-              background: "linear-gradient(135deg, #FF6B00, #ff4500)",
-              boxShadow: "0 2px 6px rgba(255,107,0,0.45)",
-            }}
+            className="absolute top-2 left-2 z-10 bg-[#FF6B35] text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full leading-tight shadow-sm"
             aria-label={`${product.discount}% off`}
+            data-ocid={`product.discount_badge.${product.id}`}
           >
             {product.discount}% OFF
           </span>
@@ -69,124 +40,98 @@ export default function ProductCard({ product }) {
         <img
           src={product.imageUrl}
           alt={product.name}
-          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-smooth"
           loading="lazy"
-          width={188}
-          height={172}
           onError={(e) => {
-            e.target.onerror = null;
-            e.target.src =
-              "https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=300&fit=crop&auto=format&q=80";
+            e.currentTarget.src =
+              "https://placehold.co/400x400/f3f4f6/94a3b8?text=Product";
           }}
         />
 
-        {/* Add to Cart / Qty stepper — absolute bottom-right over image */}
         <div
-          className="absolute bottom-2 right-2 z-10"
-          data-ocid={`product-qty-${product.id}`}
+          className="absolute bottom-2 right-2 z-20"
+          data-ocid={`product.qty_control.${product.id}`}
         >
           {qty === 0 ? (
             <button
               type="button"
-              onClick={() => addToCart(product)}
-              className="flex items-center justify-center w-9 h-9 rounded-xl text-white font-bold shadow-lg hover:scale-110 active:scale-95 transition-smooth"
-              style={{
-                background:
-                  "linear-gradient(135deg, oklch(0.50 0.27 310), oklch(0.42 0.26 290))",
-                boxShadow: "0 3px 12px rgba(107,47,215,0.55)",
-                border: "2px solid rgba(255,255,255,0.5)",
+              onClick={(e) => {
+                e.stopPropagation();
+                addToCart(product);
               }}
+              className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-accent text-accent-foreground font-bold text-lg flex items-center justify-center shadow-md hover:brightness-105 active:scale-90 transition-smooth border border-accent/80 select-none"
               aria-label={`Add ${product.name} to cart`}
-              data-ocid={`add-to-cart-${product.id}`}
+              data-ocid={`product.add_button.${product.id}`}
             >
-              <Plus className="w-4 h-4 stroke-[2.5]" />
+              <Plus className="w-4 h-4 stroke-[3]" />
             </button>
           ) : (
             <div
-              className="flex items-center rounded-xl overflow-hidden shadow-lg"
-              style={{
-                background:
-                  "linear-gradient(135deg, oklch(0.50 0.27 310), oklch(0.42 0.26 290))",
-                boxShadow: "0 3px 12px rgba(107,47,215,0.55)",
-                border: "2px solid rgba(255,255,255,0.5)",
-              }}
+              className="flex items-center gap-0.5 bg-accent rounded-lg px-1 py-0.5 shadow-md border border-accent/80"
+              data-ocid={`product.stepper.${product.id}`}
             >
               <button
                 type="button"
-                onClick={() => updateQuantity(product.id, qty - 1)}
-                className="w-7 h-7 flex items-center justify-center text-white font-bold hover:bg-white/20 active:scale-90 transition-smooth"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  updateQuantity(product.id, qty - 1);
+                }}
+                className="w-6 h-6 md:w-7 md:h-7 rounded-md flex items-center justify-center text-accent-foreground font-bold hover:bg-white/20 active:scale-90 transition-smooth select-none"
                 aria-label="Decrease quantity"
-                data-ocid={`decrease-qty-${product.id}`}
+                data-ocid={`product.decrease_button.${product.id}`}
               >
-                <Minus className="w-3 h-3 stroke-[2.5]" />
+                <Minus className="w-3 h-3 stroke-[3]" />
               </button>
-              <span className="text-xs font-extrabold text-white min-w-[1.2rem] text-center">
+              <span className="text-xs font-bold text-accent-foreground min-w-[1rem] text-center tabular-nums">
                 {qty}
               </span>
               <button
                 type="button"
-                onClick={() => addToCart(product)}
-                className="w-7 h-7 flex items-center justify-center text-white font-bold hover:bg-white/20 active:scale-90 transition-smooth"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  addToCart(product);
+                }}
+                className="w-6 h-6 md:w-7 md:h-7 rounded-md flex items-center justify-center text-accent-foreground font-bold hover:bg-white/20 active:scale-90 transition-smooth select-none"
                 aria-label="Increase quantity"
-                data-ocid={`increase-qty-${product.id}`}
+                data-ocid={`product.increase_button.${product.id}`}
               >
-                <Plus className="w-3 h-3 stroke-[2.5]" />
+                <Plus className="w-3 h-3 stroke-[3]" />
               </button>
             </div>
           )}
         </div>
       </div>
 
-      {/* Card info */}
-      <div className="p-2.5 flex flex-col flex-1 gap-0.5">
-        <p
-          className="text-[11px] font-medium truncate"
-          style={{ color: "oklch(0.55 0.01 0)" }}
-        >
-          {product.weight}
-        </p>
-        <h3 className="text-xs font-semibold text-foreground line-clamp-2 leading-snug min-h-[2.5em]">
+      <div className="p-2.5 flex flex-col gap-0.5 flex-1">
+        <h3 className="text-[13px] font-semibold text-foreground line-clamp-2 leading-snug min-h-[2.6em]">
           {product.name}
         </h3>
+        <p className="text-[11px] text-muted-foreground font-medium truncate">
+          {product.weight}
+        </p>
         <div className="flex items-center gap-1 mt-0.5">
           <Star
             className="w-3 h-3 fill-yellow-400 text-yellow-400"
             aria-hidden="true"
           />
-          <span
-            className="text-[11px] font-medium"
-            style={{ color: "oklch(0.55 0.01 0)" }}
-          >
-            {product.rating} ({formatReviewCount(product.reviewCount)})
+          <span className="text-[11px] text-muted-foreground font-medium">
+            {product.rating}{" "}
+            <span className="text-[10px]">
+              ({formatReviewCount(product.reviewCount)})
+            </span>
           </span>
         </div>
         <div className="flex items-baseline gap-1.5 mt-1">
-          <span className="text-sm font-extrabold text-foreground">
+          <span className="text-sm font-bold text-foreground">
             ₹{product.price}
           </span>
           {product.originalPrice > product.price && (
-            <span
-              className="text-[11px] line-through"
-              style={{ color: "oklch(0.65 0.01 0)" }}
-            >
+            <span className="text-[11px] text-muted-foreground line-through">
               ₹{product.originalPrice}
             </span>
           )}
         </div>
-        {savings > 0 && (
-          <div className="mt-0.5">
-            <span
-              className="inline-block text-[10px] font-extrabold px-1.5 py-0.5 rounded-lg"
-              style={{
-                background: "oklch(0.52 0.18 145 / 0.12)",
-                color: "oklch(0.38 0.18 145)",
-              }}
-            >
-              SAVE ₹{savings}
-            </span>
-          </div>
-        )}
       </div>
-    </article>
+    </div>
   );
 }

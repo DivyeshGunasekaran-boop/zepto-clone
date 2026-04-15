@@ -4,9 +4,14 @@ import { useEffect, useRef, useState } from "react";
 interface LoginModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onLoginSuccess?: (phone: string) => void;
 }
 
-export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
+export default function LoginModal({
+  isOpen,
+  onClose,
+  onLoginSuccess,
+}: LoginModalProps) {
   const [phone, setPhone] = useState("");
   const [step, setStep] = useState<"phone" | "otp">("phone");
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
@@ -66,6 +71,15 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
     }
   };
 
+  const handleVerifyOtp = () => {
+    if (otp.some((d) => d === "")) return;
+    if (onLoginSuccess) {
+      onLoginSuccess(phone);
+    } else {
+      onClose();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -80,13 +94,13 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
       <dialog
         open
         className="bg-card rounded-2xl shadow-2xl w-full max-w-[400px] overflow-hidden relative p-0 border border-border"
-        aria-label="Login to Zepto"
+        aria-label="Login to QuickCart"
       >
         {/* Close button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 text-primary-foreground transition-smooth"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-muted hover:bg-muted/80 text-muted-foreground transition-smooth"
           aria-label="Close login modal"
           data-ocid="login-modal-close"
         >
@@ -95,14 +109,14 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
         {/* Purple header */}
         <div className="bg-primary px-6 pt-6 pb-5 text-center">
-          <div className="flex items-center justify-center gap-1 mb-1">
-            <span className="text-primary-foreground font-extrabold text-3xl tracking-tighter leading-none">
-              zepto
+          <div className="flex items-center justify-center gap-1.5 mb-1">
+            <Zap className="w-6 h-6 text-yellow-300 fill-yellow-300" />
+            <span className="text-primary-foreground font-extrabold text-2xl tracking-tight leading-none">
+              QuickCart
             </span>
-            <Zap className="w-5 h-5 text-yellow-300 fill-yellow-300 -mt-1.5" />
           </div>
-          <p className="text-primary-foreground/80 text-sm font-medium">
-            India's #1 Grocery App
+          <p className="text-primary-foreground/80 text-sm font-medium mt-1">
+            India's Fastest Grocery App
           </p>
           <p className="text-primary-foreground/60 text-xs mt-0.5">
             Delivered in 10 minutes ⚡
@@ -242,12 +256,12 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
               <button
                 type="button"
-                onClick={onClose}
+                onClick={handleVerifyOtp}
                 className="w-full h-11 bg-primary text-primary-foreground font-bold text-sm rounded-xl hover:opacity-90 active:scale-[0.98] transition-smooth disabled:opacity-50"
                 disabled={otp.some((d) => d === "")}
                 data-ocid="otp-verify-btn"
               >
-                Verify OTP
+                Verify &amp; Login
               </button>
 
               <p className="text-center text-xs text-muted-foreground mt-3">
@@ -268,7 +282,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
             <a href="/terms" className="text-primary hover:underline">
               Terms of Service
             </a>{" "}
-            &{" "}
+            &amp;{" "}
             <a href="/privacy" className="text-primary hover:underline">
               Privacy Policy
             </a>

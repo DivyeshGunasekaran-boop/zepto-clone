@@ -124,6 +124,11 @@
     transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .transition-carousel {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s
+      ease-out;
+  }
+
   .btn-primary {
     @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-bold hover:shadow-lg hover:brightness-110 active:scale-95 transition-smooth;
   }
@@ -211,5 +216,48 @@
   /* Section divider accent */
   .section-accent-bar {
     @apply inline-block w-8 h-1 rounded-full bg-primary mr-2 align-middle;
+  }
+
+  /* Carousel slide container */
+  .carousel-slide {
+    @apply w-full flex-shrink-0;
+  }
+
+  /* Carousel indicator dot */
+  .carousel-dot {
+    @apply w-2 h-2 rounded-full bg-white/50 cursor-pointer transition-all hover:bg-white/80;
+  }
+
+  .carousel-dot-active {
+    @apply bg-white/95;
+  }
+
+  /* Modal overlay */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/40 backdrop-blur-sm z-50;
+  }
+
+  /* Map modal */
+  .map-modal {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-card rounded-2xl shadow-2xl z-50 w-11/12 max-w-lg max-h-96 border border-border;
+  }
+
+  /* Profile panel */
+  .profile-panel {
+    @apply flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary hover:bg-primary/15 transition-smooth;
+  }
+
+  /* Category card with image */
+  .category-card-image {
+    @apply w-12 h-12 rounded-lg bg-muted overflow-hidden flex items-center justify-center border border-border object-cover;
+  }
+
+  /* Footer category section */
+  .footer-section {
+    @apply flex flex-col gap-3;
+  }
+
+  .footer-link {
+    @apply text-sm text-muted-foreground hover:text-foreground transition-smooth cursor-pointer;
   }
 }
