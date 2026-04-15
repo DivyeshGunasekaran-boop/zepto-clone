@@ -1,17 +1,17 @@
 import { useRef } from "react";
 
 const CATEGORY_IMAGES = {
-  all: "https://source.unsplash.com/200x200/?grocery,supermarket&sig=100",
-  laundry: "https://source.unsplash.com/200x200/?detergent,laundry&sig=10",
-  cleaning: "https://source.unsplash.com/200x200/?cleaning,household&sig=20",
-  "rice-dal": "https://source.unsplash.com/200x200/?rice,grain&sig=40",
+  all: "https://picsum.photos/seed/grocery-all/200/200",
+  laundry: "https://picsum.photos/seed/laundry-detergent/200/200",
+  cleaning: "https://picsum.photos/seed/household-cleaning/200/200",
+  "rice-dal": "https://picsum.photos/seed/rice-dal-pulses/200/200",
   "personal-hygiene":
-    "https://source.unsplash.com/200x200/?soap,hygiene&sig=70",
-  "hair-care": "https://source.unsplash.com/200x200/?shampoo,hair&sig=80",
-  snacks: "https://source.unsplash.com/200x200/?chips,snacks&sig=20",
-  beverages: "https://source.unsplash.com/200x200/?juice,beverage&sig=60",
-  dairy: "https://source.unsplash.com/200x200/?milk,dairy&sig=30",
-  fruits: "https://source.unsplash.com/200x200/?fruits,fresh&sig=90",
+    "https://picsum.photos/seed/personal-hygiene-soap/200/200",
+  "hair-care": "https://picsum.photos/seed/hair-care-shampoo/200/200",
+  snacks: "https://picsum.photos/seed/snacks-chips-crisps/200/200",
+  beverages: "https://picsum.photos/seed/beverages-juice-drinks/200/200",
+  dairy: "https://picsum.photos/seed/dairy-milk-butter/200/200",
+  fruits: "https://picsum.photos/seed/fresh-fruits-veggies/200/200",
 };
 
 export default function CategoryTabs({
@@ -41,13 +41,13 @@ export default function CategoryTabs({
                 type="button"
                 key={cat.id}
                 onClick={() => onCategoryChange(cat)}
-                className={`flex flex-col items-center gap-1.5 px-2.5 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap cursor-pointer flex-shrink-0 transition-all duration-200 select-none min-w-[62px] ${isActive ? "bg-primary/8 text-primary" : "bg-transparent text-muted-foreground hover:text-foreground hover:bg-muted"}`}
+                className={`flex flex-col items-center gap-1.5 px-2 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap cursor-pointer flex-shrink-0 transition-all duration-200 select-none min-w-[72px] ${isActive ? "bg-primary/8 text-primary" : "bg-transparent text-muted-foreground hover:text-foreground hover:bg-muted"}`}
                 aria-pressed={isActive}
                 aria-label={cat.label}
                 data-ocid={`category-tab-${cat.id}`}
               >
                 <span
-                  className={`block w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 ${isActive ? "ring-2 ring-primary ring-offset-1" : "ring-1 ring-border"}`}
+                  className={`block w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 ${isActive ? "ring-2 ring-primary ring-offset-1" : "ring-1 ring-border"}`}
                 >
                   <img
                     src={imgSrc}
@@ -59,7 +59,7 @@ export default function CategoryTabs({
                     }}
                   />
                 </span>
-                <span className="leading-tight text-center line-clamp-2 max-w-[60px]">
+                <span className="leading-tight text-center line-clamp-2 max-w-[68px]">
                   {cat.label}
                 </span>
               </button>

@@ -40,7 +40,7 @@ export default function ProductCard({ product, onProductClick }) {
         <img
           src={product.imageUrl}
           alt={product.name}
-          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-smooth"
+          className="absolute inset-0 w-full h-full object-cover object-center block group-hover:scale-105 transition-smooth"
           loading="lazy"
           onError={(e) => {
             e.currentTarget.src =
