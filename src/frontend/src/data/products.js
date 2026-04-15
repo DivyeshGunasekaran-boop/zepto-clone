@@ -19,7 +19,8 @@ export const products = [
     brand: "Surf Excel",
     category: "laundry",
     subcategory: "Detergent Powder",
-    imageUrl: "https://picsum.photos/seed/surf-excel-easy-wash/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&seed=1",
     price: 149,
     originalPrice: 185,
     discount: 19,
@@ -38,7 +39,8 @@ export const products = [
     brand: "Rin",
     category: "laundry",
     subcategory: "Detergent Powder",
-    imageUrl: "https://picsum.photos/seed/rin-advanced-detergent/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&seed=2",
     price: 109,
     originalPrice: 140,
     discount: 22,
@@ -57,7 +59,8 @@ export const products = [
     brand: "Ariel",
     category: "laundry",
     subcategory: "Detergent Powder",
-    imageUrl: "https://picsum.photos/seed/ariel-matic-front-load/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&seed=3",
     price: 299,
     originalPrice: 380,
     discount: 21,
@@ -76,7 +79,8 @@ export const products = [
     brand: "Comfort",
     category: "laundry",
     subcategory: "Fabric Conditioner",
-    imageUrl: "https://picsum.photos/seed/comfort-fabric-conditioner/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&seed=1",
     price: 179,
     originalPrice: 220,
     discount: 19,
@@ -95,7 +99,8 @@ export const products = [
     brand: "Tide",
     category: "laundry",
     subcategory: "Detergent Powder",
-    imageUrl: "https://picsum.photos/seed/tide-plus-detergent-powder/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&seed=4",
     price: 89,
     originalPrice: 115,
     discount: 23,
@@ -114,7 +119,8 @@ export const products = [
     brand: "Henko",
     category: "laundry",
     subcategory: "Detergent Powder",
-    imageUrl: "https://picsum.photos/seed/henko-stain-care/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&seed=5",
     price: 135,
     originalPrice: 165,
     discount: 18,
@@ -133,7 +139,8 @@ export const products = [
     brand: "Surf Excel",
     category: "laundry",
     subcategory: "Detergent Bar",
-    imageUrl: "https://picsum.photos/seed/surf-excel-bar-detergent/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=300&fit=crop&seed=6",
     price: 45,
     originalPrice: 55,
     discount: 18,
@@ -152,7 +159,8 @@ export const products = [
     brand: "Ezee",
     category: "laundry",
     subcategory: "Liquid Detergent",
-    imageUrl: "https://picsum.photos/seed/ezee-liquid-gentle-wash/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&seed=2",
     price: 199,
     originalPrice: 245,
     discount: 19,
@@ -171,7 +179,8 @@ export const products = [
     brand: "Vim",
     category: "laundry",
     subcategory: "Dishwash",
-    imageUrl: "https://picsum.photos/seed/vim-dishwash-lemon-gel/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600697395543-76a17fc3c1f8?w=300&h=300&fit=crop&seed=1",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -190,7 +199,8 @@ export const products = [
     brand: "Pril",
     category: "laundry",
     subcategory: "Dishwash",
-    imageUrl: "https://picsum.photos/seed/pril-active-lime-dishwash/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600697395543-76a17fc3c1f8?w=300&h=300&fit=crop&seed=2",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -211,7 +221,8 @@ export const products = [
     brand: "Dettol",
     category: "cleaning",
     subcategory: "Disinfectant",
-    imageUrl: "https://picsum.photos/seed/dettol-disinfectant-original/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&seed=1",
     price: 149,
     originalPrice: 185,
     discount: 19,
@@ -230,7 +241,8 @@ export const products = [
     brand: "Harpic",
     category: "cleaning",
     subcategory: "Toilet Cleaner",
-    imageUrl: "https://picsum.photos/seed/harpic-power-plus-toilet/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&h=300&fit=crop&seed=1",
     price: 89,
     originalPrice: 112,
     discount: 21,
@@ -249,7 +261,8 @@ export const products = [
     brand: "Colin",
     category: "cleaning",
     subcategory: "Surface Cleaner",
-    imageUrl: "https://picsum.photos/seed/colin-glass-surface-cleaner/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&seed=2",
     price: 129,
     originalPrice: 160,
     discount: 19,
@@ -268,7 +281,8 @@ export const products = [
     brand: "Lizol",
     category: "cleaning",
     subcategory: "Floor Cleaner",
-    imageUrl: "https://picsum.photos/seed/lizol-floor-cleaner-citrus/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&seed=3",
     price: 199,
     originalPrice: 249,
     discount: 20,
@@ -287,7 +301,8 @@ export const products = [
     brand: "Scotch-Brite",
     category: "cleaning",
     subcategory: "Scrubbers",
-    imageUrl: "https://picsum.photos/seed/scotch-brite-heavy-scrub/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&seed=4",
     price: 49,
     originalPrice: 65,
     discount: 25,
@@ -306,7 +321,8 @@ export const products = [
     brand: "Domex",
     category: "cleaning",
     subcategory: "Bleach",
-    imageUrl: "https://picsum.photos/seed/domex-ultra-thick-bleach/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&h=300&fit=crop&seed=2",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -325,7 +341,8 @@ export const products = [
     brand: "Febreze",
     category: "cleaning",
     subcategory: "Air Freshener",
-    imageUrl: "https://picsum.photos/seed/febreze-air-lavender/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&seed=5",
     price: 299,
     originalPrice: 350,
     discount: 15,
@@ -344,7 +361,8 @@ export const products = [
     brand: "Good Knight",
     category: "cleaning",
     subcategory: "Pest Control",
-    imageUrl: "https://picsum.photos/seed/good-knight-mosquito-refill/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&seed=6",
     price: 65,
     originalPrice: 85,
     discount: 24,
@@ -363,7 +381,8 @@ export const products = [
     brand: "Prestige",
     category: "cleaning",
     subcategory: "Mops",
-    imageUrl: "https://picsum.photos/seed/prestige-smart-mop-set/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop&seed=3",
     price: 349,
     originalPrice: 450,
     discount: 22,
@@ -382,7 +401,8 @@ export const products = [
     brand: "HIT",
     category: "cleaning",
     subcategory: "Pest Control",
-    imageUrl: "https://picsum.photos/seed/hit-cockroach-killer-spray/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=300&fit=crop&seed=7",
     price: 119,
     originalPrice: 145,
     discount: 18,
@@ -403,7 +423,8 @@ export const products = [
     brand: "India Gate",
     category: "rice-dal",
     subcategory: "Basmati Rice",
-    imageUrl: "https://picsum.photos/seed/india-gate-basmati-rice/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=300&fit=crop&seed=1",
     price: 189,
     originalPrice: 230,
     discount: 18,
@@ -422,7 +443,8 @@ export const products = [
     brand: "Fortune",
     category: "rice-dal",
     subcategory: "Toor Dal",
-    imageUrl: "https://picsum.photos/seed/fortune-toor-dal-arhar/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=300&h=300&fit=crop&seed=1",
     price: 139,
     originalPrice: 165,
     discount: 16,
@@ -441,7 +463,8 @@ export const products = [
     brand: "24 Mantra",
     category: "rice-dal",
     subcategory: "Moong Dal",
-    imageUrl: "https://picsum.photos/seed/24-mantra-organic-moong/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1612257416648-10c6462abb21?w=300&h=300&fit=crop&seed=1",
     price: 179,
     originalPrice: 220,
     discount: 19,
@@ -460,7 +483,8 @@ export const products = [
     brand: "Tata Sampann",
     category: "rice-dal",
     subcategory: "Chana Dal",
-    imageUrl: "https://picsum.photos/seed/tata-sampann-chana-dal/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=300&h=300&fit=crop&seed=2",
     price: 119,
     originalPrice: 145,
     discount: 18,
@@ -479,7 +503,8 @@ export const products = [
     brand: "Daawat",
     category: "rice-dal",
     subcategory: "Basmati Rice",
-    imageUrl: "https://picsum.photos/seed/daawat-super-basmati-5kg/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=300&fit=crop&seed=2",
     price: 699,
     originalPrice: 850,
     discount: 18,
@@ -498,7 +523,8 @@ export const products = [
     brand: "Patanjali",
     category: "rice-dal",
     subcategory: "Masoor Dal",
-    imageUrl: "https://picsum.photos/seed/patanjali-red-masoor-dal/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=300&h=300&fit=crop&seed=3",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -517,7 +543,8 @@ export const products = [
     brand: "Rajdhani",
     category: "rice-dal",
     subcategory: "Besan",
-    imageUrl: "https://picsum.photos/seed/rajdhani-besan-premium/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=300&fit=crop&seed=1",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -536,7 +563,8 @@ export const products = [
     brand: "Aashirvaad",
     category: "rice-dal",
     subcategory: "Atta",
-    imageUrl: "https://picsum.photos/seed/aashirvaad-whole-wheat-atta/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=300&fit=crop&seed=2",
     price: 280,
     originalPrice: 340,
     discount: 18,
@@ -555,7 +583,8 @@ export const products = [
     brand: "Fortune",
     category: "rice-dal",
     subcategory: "Edible Oil",
-    imageUrl: "https://picsum.photos/seed/fortune-sunflower-oil/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=300&h=300&fit=crop&seed=1",
     price: 175,
     originalPrice: 215,
     discount: 19,
@@ -574,7 +603,8 @@ export const products = [
     brand: "BB Royal",
     category: "rice-dal",
     subcategory: "Sona Masoori Rice",
-    imageUrl: "https://picsum.photos/seed/bb-royal-sona-masoori-rice/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=300&fit=crop&seed=3",
     price: 329,
     originalPrice: 399,
     discount: 18,
@@ -593,7 +623,8 @@ export const products = [
     brand: "Tata Sampann",
     category: "rice-dal",
     subcategory: "Urad Dal",
-    imageUrl: "https://picsum.photos/seed/tata-sampann-urad-dal-black/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=300&h=300&fit=crop&seed=4",
     price: 159,
     originalPrice: 195,
     discount: 18,
@@ -612,7 +643,8 @@ export const products = [
     brand: "Tata Sampann",
     category: "rice-dal",
     subcategory: "Rajma",
-    imageUrl: "https://picsum.photos/seed/rajma-red-kidney-beans/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?w=300&h=300&fit=crop&seed=5",
     price: 129,
     originalPrice: 159,
     discount: 19,
@@ -633,7 +665,8 @@ export const products = [
     brand: "Dettol",
     category: "personal-hygiene",
     subcategory: "Soaps",
-    imageUrl: "https://picsum.photos/seed/dettol-original-soap-bar/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556228578-dd539282b964?w=300&h=300&fit=crop&seed=1",
     price: 129,
     originalPrice: 160,
     discount: 19,
@@ -652,7 +685,8 @@ export const products = [
     brand: "Dove",
     category: "personal-hygiene",
     subcategory: "Soaps",
-    imageUrl: "https://picsum.photos/seed/dove-beauty-cream-bar/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556228578-dd539282b964?w=300&h=300&fit=crop&seed=2",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -671,7 +705,8 @@ export const products = [
     brand: "Lifebuoy",
     category: "personal-hygiene",
     subcategory: "Handwash",
-    imageUrl: "https://picsum.photos/seed/lifebuoy-total10-handwash/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=300&h=300&fit=crop&seed=1",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -690,7 +725,8 @@ export const products = [
     brand: "Himalaya",
     category: "personal-hygiene",
     subcategory: "Face Wash",
-    imageUrl: "https://picsum.photos/seed/himalaya-neem-face-wash/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&h=300&fit=crop&seed=1",
     price: 149,
     originalPrice: 185,
     discount: 19,
@@ -709,7 +745,8 @@ export const products = [
     brand: "Colgate",
     category: "personal-hygiene",
     subcategory: "Toothpaste",
-    imageUrl: "https://picsum.photos/seed/colgate-maxfresh-mint/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1559304787-9a6bde4b7b3c?w=300&h=300&fit=crop&seed=1",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -728,7 +765,8 @@ export const products = [
     brand: "Oral-B",
     category: "personal-hygiene",
     subcategory: "Toothbrush",
-    imageUrl: "https://picsum.photos/seed/oral-b-pro-toothbrush/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1559304787-9a6bde4b7b3c?w=300&h=300&fit=crop&seed=2",
     price: 69,
     originalPrice: 89,
     discount: 22,
@@ -747,7 +785,8 @@ export const products = [
     brand: "Gillette",
     category: "personal-hygiene",
     subcategory: "Shaving",
-    imageUrl: "https://picsum.photos/seed/gillette-mach3-razor/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1607006483224-9c6d985c8dca?w=300&h=300&fit=crop&seed=1",
     price: 199,
     originalPrice: 249,
     discount: 20,
@@ -767,7 +806,7 @@ export const products = [
     category: "personal-hygiene",
     subcategory: "Moisturiser",
     imageUrl:
-      "https://picsum.photos/seed/nivea-soft-moisturising-cream/300/300",
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=300&h=300&fit=crop&seed=1",
     price: 149,
     originalPrice: 180,
     discount: 17,
@@ -786,7 +825,8 @@ export const products = [
     brand: "Whisper",
     category: "personal-hygiene",
     subcategory: "Feminine Hygiene",
-    imageUrl: "https://picsum.photos/seed/whisper-ultra-sanitary-pads/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=300&h=300&fit=crop&seed=1",
     price: 249,
     originalPrice: 299,
     discount: 17,
@@ -805,7 +845,8 @@ export const products = [
     brand: "Pampers",
     category: "personal-hygiene",
     subcategory: "Baby Care",
-    imageUrl: "https://picsum.photos/seed/pampers-active-baby-diapers/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=300&h=300&fit=crop&seed=1",
     price: 399,
     originalPrice: 499,
     discount: 20,
@@ -824,7 +865,8 @@ export const products = [
     brand: "Johnson's",
     category: "personal-hygiene",
     subcategory: "Baby Care",
-    imageUrl: "https://picsum.photos/seed/johnsons-baby-milk-lotion/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=300&h=300&fit=crop&seed=2",
     price: 129,
     originalPrice: 160,
     discount: 19,
@@ -846,7 +888,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Shampoo",
     imageUrl:
-      "https://picsum.photos/seed/head-shoulders-classic-shampoo/300/300",
+      "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=300&h=300&fit=crop&seed=1",
     price: 199,
     originalPrice: 250,
     discount: 20,
@@ -865,7 +907,8 @@ export const products = [
     brand: "Pantene",
     category: "hair-care",
     subcategory: "Shampoo",
-    imageUrl: "https://picsum.photos/seed/pantene-smooth-silky-shampoo/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=300&h=300&fit=crop&seed=2",
     price: 219,
     originalPrice: 270,
     discount: 19,
@@ -884,7 +927,8 @@ export const products = [
     brand: "Dove",
     category: "hair-care",
     subcategory: "Shampoo",
-    imageUrl: "https://picsum.photos/seed/dove-intense-repair-shampoo/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=300&h=300&fit=crop&seed=3",
     price: 189,
     originalPrice: 235,
     discount: 20,
@@ -903,7 +947,8 @@ export const products = [
     brand: "Sunsilk",
     category: "hair-care",
     subcategory: "Shampoo",
-    imageUrl: "https://picsum.photos/seed/sunsilk-black-shine-shampoo/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=300&h=300&fit=crop&seed=4",
     price: 169,
     originalPrice: 210,
     discount: 20,
@@ -922,7 +967,8 @@ export const products = [
     brand: "Indulekha",
     category: "hair-care",
     subcategory: "Hair Oil",
-    imageUrl: "https://picsum.photos/seed/indulekha-bringha-hair-oil/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=300&h=300&fit=crop&seed=1",
     price: 399,
     originalPrice: 499,
     discount: 20,
@@ -941,7 +987,8 @@ export const products = [
     brand: "L'Oréal",
     category: "hair-care",
     subcategory: "Shampoo",
-    imageUrl: "https://picsum.photos/seed/loreal-total-repair-shampoo/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=300&h=300&fit=crop&seed=5",
     price: 289,
     originalPrice: 360,
     discount: 20,
@@ -961,7 +1008,7 @@ export const products = [
     category: "hair-care",
     subcategory: "Hair Oil",
     imageUrl:
-      "https://picsum.photos/seed/parachute-advansed-coconut-oil/300/300",
+      "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=300&h=300&fit=crop&seed=2",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -980,7 +1027,8 @@ export const products = [
     brand: "Vatika",
     category: "hair-care",
     subcategory: "Hair Oil",
-    imageUrl: "https://picsum.photos/seed/vatika-enriched-coconut-oil/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=300&h=300&fit=crop&seed=3",
     price: 149,
     originalPrice: 185,
     discount: 19,
@@ -999,7 +1047,8 @@ export const products = [
     brand: "Biotique",
     category: "hair-care",
     subcategory: "Shampoo",
-    imageUrl: "https://picsum.photos/seed/biotique-bio-kelp-shampoo/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&h=300&fit=crop&seed=1",
     price: 179,
     originalPrice: 225,
     discount: 21,
@@ -1018,7 +1067,8 @@ export const products = [
     brand: "TRESemme",
     category: "hair-care",
     subcategory: "Shampoo",
-    imageUrl: "https://picsum.photos/seed/tresemme-keratin-smooth/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=300&h=300&fit=crop&seed=6",
     price: 349,
     originalPrice: 435,
     discount: 20,
@@ -1039,7 +1089,8 @@ export const products = [
     brand: "Lay's",
     category: "snacks",
     subcategory: "Chips & Crisps",
-    imageUrl: "https://picsum.photos/seed/lays-classic-salted-chips/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=300&fit=crop&seed=1",
     price: 20,
     originalPrice: 20,
     discount: 0,
@@ -1058,7 +1109,8 @@ export const products = [
     brand: "Kurkure",
     category: "snacks",
     subcategory: "Chips & Crisps",
-    imageUrl: "https://picsum.photos/seed/kurkure-masala-munch/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=300&fit=crop&seed=2",
     price: 30,
     originalPrice: 35,
     discount: 14,
@@ -1077,7 +1129,8 @@ export const products = [
     brand: "Doritos",
     category: "snacks",
     subcategory: "Nachos",
-    imageUrl: "https://picsum.photos/seed/doritos-nacho-cheese-chips/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=300&fit=crop&seed=3",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -1096,7 +1149,8 @@ export const products = [
     brand: "Pringles",
     category: "snacks",
     subcategory: "Chips & Crisps",
-    imageUrl: "https://picsum.photos/seed/pringles-original-tube/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=300&fit=crop&seed=4",
     price: 199,
     originalPrice: 249,
     discount: 20,
@@ -1115,7 +1169,8 @@ export const products = [
     brand: "Haldiram's",
     category: "snacks",
     subcategory: "Namkeen",
-    imageUrl: "https://picsum.photos/seed/haldirams-bhujia-sev/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=300&h=300&fit=crop&seed=1",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -1134,7 +1189,8 @@ export const products = [
     brand: "Haldiram's",
     category: "snacks",
     subcategory: "Namkeen",
-    imageUrl: "https://picsum.photos/seed/haldirams-aloo-bhujia-sev/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=300&h=300&fit=crop&seed=2",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -1153,7 +1209,8 @@ export const products = [
     brand: "Maggi",
     category: "snacks",
     subcategory: "Instant Noodles",
-    imageUrl: "https://picsum.photos/seed/maggi-2min-masala-noodles/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=300&h=300&fit=crop&seed=1",
     price: 60,
     originalPrice: 75,
     discount: 20,
@@ -1172,7 +1229,8 @@ export const products = [
     brand: "Top Ramen",
     category: "snacks",
     subcategory: "Instant Noodles",
-    imageUrl: "https://picsum.photos/seed/top-ramen-smoodles-masala/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=300&h=300&fit=crop&seed=2",
     price: 40,
     originalPrice: 50,
     discount: 20,
@@ -1191,7 +1249,8 @@ export const products = [
     brand: "Oreo",
     category: "snacks",
     subcategory: "Biscuits & Cookies",
-    imageUrl: "https://picsum.photos/seed/oreo-chocolate-sandwich/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=300&fit=crop&seed=1",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -1210,7 +1269,8 @@ export const products = [
     brand: "Britannia",
     category: "snacks",
     subcategory: "Biscuits & Cookies",
-    imageUrl: "https://picsum.photos/seed/britannia-bourbon-biscuits/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=300&fit=crop&seed=2",
     price: 35,
     originalPrice: 40,
     discount: 13,
@@ -1229,7 +1289,8 @@ export const products = [
     brand: "Britannia",
     category: "snacks",
     subcategory: "Biscuits & Cookies",
-    imageUrl: "https://picsum.photos/seed/britannia-goodday-cashew/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=300&fit=crop&seed=3",
     price: 45,
     originalPrice: 55,
     discount: 18,
@@ -1248,7 +1309,8 @@ export const products = [
     brand: "Cadbury",
     category: "snacks",
     subcategory: "Chocolates",
-    imageUrl: "https://picsum.photos/seed/cadbury-dairy-milk-silk/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&h=300&fit=crop&seed=1",
     price: 199,
     originalPrice: 245,
     discount: 19,
@@ -1267,7 +1329,8 @@ export const products = [
     brand: "Nestlé",
     category: "snacks",
     subcategory: "Chocolates",
-    imageUrl: "https://picsum.photos/seed/kitkat-4finger-wafer-bar/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&h=300&fit=crop&seed=2",
     price: 30,
     originalPrice: 35,
     discount: 14,
@@ -1286,7 +1349,8 @@ export const products = [
     brand: "Parle",
     category: "snacks",
     subcategory: "Biscuits & Cookies",
-    imageUrl: "https://picsum.photos/seed/parle-g-glucose-biscuits/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=300&fit=crop&seed=4",
     price: 50,
     originalPrice: 60,
     discount: 17,
@@ -1305,7 +1369,8 @@ export const products = [
     brand: "Nestlé",
     category: "snacks",
     subcategory: "Chocolates",
-    imageUrl: "https://picsum.photos/seed/nestle-munch-chocolate-bar/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&h=300&fit=crop&seed=3",
     price: 10,
     originalPrice: 10,
     discount: 0,
@@ -1324,7 +1389,8 @@ export const products = [
     brand: "Cadbury",
     category: "snacks",
     subcategory: "Chocolates",
-    imageUrl: "https://picsum.photos/seed/cadbury-5star-caramel-bar/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300&h=300&fit=crop&seed=4",
     price: 20,
     originalPrice: 20,
     discount: 0,
@@ -1343,7 +1409,8 @@ export const products = [
     brand: "Britannia",
     category: "snacks",
     subcategory: "Health Biscuits",
-    imageUrl: "https://picsum.photos/seed/britannia-nutrichoice-5grain/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=300&fit=crop&seed=5",
     price: 65,
     originalPrice: 80,
     discount: 19,
@@ -1362,7 +1429,8 @@ export const products = [
     brand: "Parle",
     category: "snacks",
     subcategory: "Biscuits & Cookies",
-    imageUrl: "https://picsum.photos/seed/parle-monaco-salted-crackers/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=300&fit=crop&seed=6",
     price: 35,
     originalPrice: 40,
     discount: 13,
@@ -1383,7 +1451,8 @@ export const products = [
     brand: "Coca-Cola",
     category: "beverages",
     subcategory: "Soft Drinks",
-    imageUrl: "https://picsum.photos/seed/coca-cola-original-bottle/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=300&h=300&fit=crop&seed=1",
     price: 40,
     originalPrice: 40,
     discount: 0,
@@ -1402,7 +1471,8 @@ export const products = [
     brand: "Pepsi",
     category: "beverages",
     subcategory: "Soft Drinks",
-    imageUrl: "https://picsum.photos/seed/pepsi-cola-carbonated-drink/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=300&h=300&fit=crop&seed=2",
     price: 40,
     originalPrice: 40,
     discount: 0,
@@ -1421,7 +1491,8 @@ export const products = [
     brand: "Sprite",
     category: "beverages",
     subcategory: "Soft Drinks",
-    imageUrl: "https://picsum.photos/seed/sprite-lime-flavour-soda/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=300&h=300&fit=crop&seed=3",
     price: 40,
     originalPrice: 40,
     discount: 0,
@@ -1440,7 +1511,8 @@ export const products = [
     brand: "Mountain Dew",
     category: "beverages",
     subcategory: "Soft Drinks",
-    imageUrl: "https://picsum.photos/seed/mountain-dew-citrus-energy/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=300&h=300&fit=crop&seed=4",
     price: 40,
     originalPrice: 40,
     discount: 0,
@@ -1459,7 +1531,8 @@ export const products = [
     brand: "Tropicana",
     category: "beverages",
     subcategory: "Fruit Juice",
-    imageUrl: "https://picsum.photos/seed/tropicana-orange-100-juice/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300&h=300&fit=crop&seed=1",
     price: 99,
     originalPrice: 125,
     discount: 21,
@@ -1478,7 +1551,8 @@ export const products = [
     brand: "Real",
     category: "beverages",
     subcategory: "Fruit Juice",
-    imageUrl: "https://picsum.photos/seed/real-fruit-mango-juice/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300&h=300&fit=crop&seed=2",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -1497,7 +1571,8 @@ export const products = [
     brand: "Paper Boat",
     category: "beverages",
     subcategory: "Fruit Drinks",
-    imageUrl: "https://picsum.photos/seed/paper-boat-aamras-mango/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300&h=300&fit=crop&seed=3",
     price: 30,
     originalPrice: 35,
     discount: 14,
@@ -1516,7 +1591,8 @@ export const products = [
     brand: "Minute Maid",
     category: "beverages",
     subcategory: "Fruit Juice",
-    imageUrl: "https://picsum.photos/seed/minute-maid-pulpy-orange/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300&h=300&fit=crop&seed=4",
     price: 75,
     originalPrice: 95,
     discount: 21,
@@ -1535,7 +1611,8 @@ export const products = [
     brand: "Red Bull",
     category: "beverages",
     subcategory: "Energy Drinks",
-    imageUrl: "https://picsum.photos/seed/red-bull-energy-drink-can/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=300&h=300&fit=crop&seed=1",
     price: 125,
     originalPrice: 150,
     discount: 17,
@@ -1555,7 +1632,7 @@ export const products = [
     category: "beverages",
     subcategory: "Coffee",
     imageUrl:
-      "https://picsum.photos/seed/nescafe-classic-instant-coffee/300/300",
+      "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&h=300&fit=crop&seed=1",
     price: 229,
     originalPrice: 285,
     discount: 20,
@@ -1574,7 +1651,8 @@ export const products = [
     brand: "Bru",
     category: "beverages",
     subcategory: "Coffee",
-    imageUrl: "https://picsum.photos/seed/bru-gold-freeze-dried-coffee/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&h=300&fit=crop&seed=2",
     price: 349,
     originalPrice: 430,
     discount: 19,
@@ -1593,7 +1671,8 @@ export const products = [
     brand: "Lipton",
     category: "beverages",
     subcategory: "Tea",
-    imageUrl: "https://picsum.photos/seed/lipton-pure-green-tea-bags/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&h=300&fit=crop&seed=1",
     price: 149,
     originalPrice: 185,
     discount: 19,
@@ -1612,7 +1691,8 @@ export const products = [
     brand: "Tata Tea",
     category: "beverages",
     subcategory: "Tea",
-    imageUrl: "https://picsum.photos/seed/tata-tea-gold-premium/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300&h=300&fit=crop&seed=2",
     price: 179,
     originalPrice: 220,
     discount: 19,
@@ -1632,7 +1712,7 @@ export const products = [
     category: "beverages",
     subcategory: "Health Drinks",
     imageUrl:
-      "https://picsum.photos/seed/horlicks-original-health-drink/300/300",
+      "https://images.unsplash.com/photo-1561043433-9265f73e685f?w=300&h=300&fit=crop&seed=1",
     price: 269,
     originalPrice: 320,
     discount: 16,
@@ -1653,7 +1733,8 @@ export const products = [
     brand: "Amul",
     category: "dairy",
     subcategory: "Milk",
-    imageUrl: "https://picsum.photos/seed/amul-taaza-toned-milk/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=300&h=300&fit=crop&seed=1",
     price: 57,
     originalPrice: 60,
     discount: 5,
@@ -1672,7 +1753,8 @@ export const products = [
     brand: "Mother Dairy",
     category: "dairy",
     subcategory: "Milk",
-    imageUrl: "https://picsum.photos/seed/mother-dairy-toned-milk/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=300&h=300&fit=crop&seed=2",
     price: 28,
     originalPrice: 30,
     discount: 7,
@@ -1691,7 +1773,8 @@ export const products = [
     brand: "Britannia",
     category: "dairy",
     subcategory: "Cheese",
-    imageUrl: "https://picsum.photos/seed/britannia-cheese-slices/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=300&h=300&fit=crop&seed=1",
     price: 159,
     originalPrice: 190,
     discount: 16,
@@ -1710,7 +1793,8 @@ export const products = [
     brand: "Amul",
     category: "dairy",
     subcategory: "Butter",
-    imageUrl: "https://picsum.photos/seed/amul-pasteurised-butter/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&h=300&fit=crop&seed=1",
     price: 249,
     originalPrice: 275,
     discount: 9,
@@ -1729,7 +1813,8 @@ export const products = [
     brand: "Mother Dairy",
     category: "dairy",
     subcategory: "Curd & Yoghurt",
-    imageUrl: "https://picsum.photos/seed/mother-dairy-full-cream-curd/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=300&fit=crop&seed=1",
     price: 45,
     originalPrice: 50,
     discount: 10,
@@ -1748,7 +1833,8 @@ export const products = [
     brand: "Amul",
     category: "dairy",
     subcategory: "Curd & Yoghurt",
-    imageUrl: "https://picsum.photos/seed/amul-greek-yogurt-protein/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=300&fit=crop&seed=2",
     price: 89,
     originalPrice: 110,
     discount: 19,
@@ -1767,7 +1853,8 @@ export const products = [
     brand: "Amul",
     category: "dairy",
     subcategory: "Paneer",
-    imageUrl: "https://picsum.photos/seed/amul-fresh-paneer-cottage/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300&h=300&fit=crop&seed=1",
     price: 89,
     originalPrice: 99,
     discount: 10,
@@ -1786,7 +1873,8 @@ export const products = [
     brand: "Britannia",
     category: "dairy",
     subcategory: "Ghee",
-    imageUrl: "https://picsum.photos/seed/britannia-milkman-pure-ghee/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=300&h=300&fit=crop&seed=2",
     price: 345,
     originalPrice: 399,
     discount: 14,
@@ -1805,7 +1893,8 @@ export const products = [
     brand: "Kwality Wall's",
     category: "dairy",
     subcategory: "Ice Cream",
-    imageUrl: "https://picsum.photos/seed/kwality-cornetto-choco-cone/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=300&h=300&fit=crop&seed=1",
     price: 55,
     originalPrice: 65,
     discount: 15,
@@ -1824,7 +1913,8 @@ export const products = [
     brand: "Amul",
     category: "dairy",
     subcategory: "Curd & Yoghurt",
-    imageUrl: "https://picsum.photos/seed/amul-mast-dahi-curd-bowl/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=300&fit=crop&seed=3",
     price: 35,
     originalPrice: 40,
     discount: 13,
@@ -1843,7 +1933,8 @@ export const products = [
     brand: "Amul",
     category: "dairy",
     subcategory: "Ice Cream",
-    imageUrl: "https://picsum.photos/seed/amul-real-vanilla-ice-cream/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=300&h=300&fit=crop&seed=2",
     price: 149,
     originalPrice: 175,
     discount: 15,
@@ -1862,7 +1953,8 @@ export const products = [
     brand: "Amul",
     category: "dairy",
     subcategory: "Milk",
-    imageUrl: "https://picsum.photos/seed/amul-taaza-uht-tetra-milk/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=300&h=300&fit=crop&seed=3",
     price: 65,
     originalPrice: 70,
     discount: 7,
@@ -1881,7 +1973,8 @@ export const products = [
     brand: "Nestlé",
     category: "dairy",
     subcategory: "Condensed Milk",
-    imageUrl: "https://picsum.photos/seed/nestle-milkmaid-condensed/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=300&h=300&fit=crop&seed=4",
     price: 99,
     originalPrice: 120,
     discount: 18,
@@ -1902,7 +1995,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Bananas",
-    imageUrl: "https://picsum.photos/seed/fresh-yellow-banana-bunch/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=300&h=300&fit=crop&seed=1",
     price: 49,
     originalPrice: 60,
     discount: 18,
@@ -1921,7 +2015,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Apples",
-    imageUrl: "https://picsum.photos/seed/himachal-apple-red-crisp/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=300&h=300&fit=crop&seed=1",
     price: 99,
     originalPrice: 130,
     discount: 24,
@@ -1940,7 +2035,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Oranges",
-    imageUrl: "https://picsum.photos/seed/nagpur-mandarin-orange-juicy/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1547514701-42782101795e?w=300&h=300&fit=crop&seed=1",
     price: 69,
     originalPrice: 89,
     discount: 22,
@@ -1959,7 +2055,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Watermelon",
-    imageUrl: "https://picsum.photos/seed/whole-watermelon-seedless/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1563114773-84221bd62daa?w=300&h=300&fit=crop&seed=1",
     price: 89,
     originalPrice: 120,
     discount: 26,
@@ -1978,7 +2075,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Mangoes",
-    imageUrl: "https://picsum.photos/seed/alphonso-mango-premium/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1553279768-865429fa0078?w=300&h=300&fit=crop&seed=1",
     price: 299,
     originalPrice: 399,
     discount: 25,
@@ -1997,7 +2095,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Grapes",
-    imageUrl: "https://picsum.photos/seed/green-seedless-grapes/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=300&h=300&fit=crop&seed=1",
     price: 89,
     originalPrice: 115,
     discount: 23,
@@ -2016,7 +2115,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Pomegranate",
-    imageUrl: "https://picsum.photos/seed/fresh-pomegranate-ruby/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1541344999736-83eca272f6fc?w=300&h=300&fit=crop&seed=1",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -2035,7 +2135,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Papaya",
-    imageUrl: "https://picsum.photos/seed/fresh-papaya-ripe-yellow/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=300&h=300&fit=crop&seed=1",
     price: 59,
     originalPrice: 75,
     discount: 21,
@@ -2054,7 +2155,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Pineapple",
-    imageUrl: "https://picsum.photos/seed/golden-pineapple-tropical/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=300&h=300&fit=crop&seed=1",
     price: 79,
     originalPrice: 99,
     discount: 20,
@@ -2073,7 +2175,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Strawberries",
-    imageUrl: "https://picsum.photos/seed/fresh-strawberries-red/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=300&h=300&fit=crop&seed=1",
     price: 149,
     originalPrice: 189,
     discount: 21,
@@ -2092,7 +2195,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Kiwi",
-    imageUrl: "https://picsum.photos/seed/gold-kiwi-sweet-premium/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1585059895524-72359e06133a?w=300&h=300&fit=crop&seed=1",
     price: 149,
     originalPrice: 185,
     discount: 19,
@@ -2111,7 +2215,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Guava",
-    imageUrl: "https://picsum.photos/seed/guava-fresh-white-sweet/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?w=300&h=300&fit=crop&seed=1",
     price: 39,
     originalPrice: 50,
     discount: 22,
@@ -2130,7 +2235,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Pears",
-    imageUrl: "https://picsum.photos/seed/fresh-pears-green-juicy/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1587404558760-e2d1ef82ee3a?w=300&h=300&fit=crop&seed=1",
     price: 119,
     originalPrice: 149,
     discount: 20,
@@ -2149,7 +2255,8 @@ export const products = [
     brand: "Fresh",
     category: "fruits",
     subcategory: "Mosambi",
-    imageUrl: "https://picsum.photos/seed/sweet-lime-mosambi-fresh/300/300",
+    imageUrl:
+      "https://images.unsplash.com/photo-1547514701-42782101795e?w=300&h=300&fit=crop&seed=2",
     price: 59,
     originalPrice: 75,
     discount: 21,

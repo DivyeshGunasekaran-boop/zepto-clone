@@ -24,52 +24,52 @@ const SHOP_BY_CATEGORY = [
   {
     id: "rice-dal",
     label: "Dal & Pulses",
-    img: "https://images.unsplash.com/photo-1536304993881-ff86e0c9e5c6?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=200&fit=crop",
   },
   {
     id: "snacks",
     label: "Snacks",
-    img: "https://images.unsplash.com/photo-1528825871115-3581a5387919?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=200&fit=crop",
   },
   {
     id: "dairy",
     label: "Dairy",
-    img: "https://images.unsplash.com/photo-1550583724-aa285b6f3a31?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=300&h=200&fit=crop",
   },
   {
     id: "rice-dal",
     label: "Rice & Atta",
-    img: "https://images.unsplash.com/photo-1536304993881-ff86e0c9e5c6?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=200&fit=crop",
   },
   {
     id: "cleaning",
     label: "Household",
-    img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=200&fit=crop",
   },
   {
     id: "beverages",
     label: "Beverages",
-    img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=300&h=200&fit=crop",
   },
   {
     id: "personal-hygiene",
     label: "Personal Hygiene",
-    img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1556228578-dd539282b964?w=300&h=200&fit=crop",
   },
   {
     id: "hair-care",
     label: "Hair Care",
-    img: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=300&h=200&fit=crop",
   },
   {
     id: "fruits",
     label: "Fresh Fruits",
-    img: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=200&fit=crop",
   },
   {
     id: "laundry",
     label: "Laundry Care",
-    img: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=120&q=80",
+    img: "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=200&fit=crop",
   },
 ];
 
@@ -107,15 +107,29 @@ function ShopByCategory({
             style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}
             data-ocid={`category-icon-${cat.id}`}
           >
-            <span className="block w-full aspect-square overflow-hidden">
+            <span
+              className="block w-full overflow-hidden"
+              style={{
+                height: "80px",
+                borderRadius: "14px 14px 0 0",
+                flexShrink: 0,
+              }}
+            >
               <img
                 src={cat.img}
                 alt={cat.label}
-                className="category-card-image w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  display: "block",
+                }}
+                className="group-hover:scale-105 transition-smooth"
                 loading="lazy"
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).src =
-                    "https://images.unsplash.com/photo-1542838132-92c53300491e?w=120&q=80";
+                    "https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=200&fit=crop";
                 }}
               />
             </span>

@@ -1,17 +1,25 @@
 import { useRef } from "react";
 
 const CATEGORY_IMAGES = {
-  all: "https://picsum.photos/seed/grocery-all/200/200",
-  laundry: "https://picsum.photos/seed/laundry-detergent/200/200",
-  cleaning: "https://picsum.photos/seed/household-cleaning/200/200",
-  "rice-dal": "https://picsum.photos/seed/rice-dal-pulses/200/200",
+  all: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=200&h=200&fit=crop",
+  laundry:
+    "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=200&h=200&fit=crop",
+  cleaning:
+    "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop",
+  "rice-dal":
+    "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop",
   "personal-hygiene":
-    "https://picsum.photos/seed/personal-hygiene-soap/200/200",
-  "hair-care": "https://picsum.photos/seed/hair-care-shampoo/200/200",
-  snacks: "https://picsum.photos/seed/snacks-chips-crisps/200/200",
-  beverages: "https://picsum.photos/seed/beverages-juice-drinks/200/200",
-  dairy: "https://picsum.photos/seed/dairy-milk-butter/200/200",
-  fruits: "https://picsum.photos/seed/fresh-fruits-veggies/200/200",
+    "https://images.unsplash.com/photo-1556228578-dd539282b964?w=200&h=200&fit=crop",
+  "hair-care":
+    "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=200&h=200&fit=crop",
+  snacks:
+    "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=200&h=200&fit=crop",
+  beverages:
+    "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop",
+  dairy:
+    "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=200&h=200&fit=crop",
+  fruits:
+    "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=200&h=200&fit=crop",
 };
 
 export default function CategoryTabs({

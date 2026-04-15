@@ -8,35 +8,91 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-// Brand logo images from reliable CDN sources
+// Inline SVG logo components — no external URLs needed
+const GooglePayLogo = () => (
+  <svg width="56" height="40" viewBox="0 0 56 40" aria-hidden="true">
+    <rect width="56" height="40" rx="6" fill="white" />
+    <text x="4" y="28" fontSize="22" fontWeight="bold" fill="#4285F4">
+      G
+    </text>
+    <text x="22" y="27" fontSize="13" fontWeight="600" fill="#5F6368">
+      Pay
+    </text>
+    <circle cx="9" cy="36" r="2.5" fill="#EA4335" />
+    <circle cx="16" cy="36" r="2.5" fill="#FBBC04" />
+    <circle cx="23" cy="36" r="2.5" fill="#34A853" />
+    <circle cx="30" cy="36" r="2.5" fill="#4285F4" />
+  </svg>
+);
+
+const PhonePeLogo = () => (
+  <svg width="56" height="40" viewBox="0 0 56 40" aria-hidden="true">
+    <rect width="56" height="40" rx="6" fill="#5F259F" />
+    <text x="6" y="22" fontSize="16" fontWeight="bold" fill="white">
+      Ph
+    </text>
+    <text x="6" y="36" fontSize="11" fill="#E0D4F7">
+      Pe
+    </text>
+    <circle cx="44" cy="16" r="7" fill="white" opacity="0.2" />
+    <text x="40" y="20" fontSize="11" fontWeight="bold" fill="white">
+      ₹
+    </text>
+  </svg>
+);
+
+const PaytmLogo = () => (
+  <svg width="56" height="40" viewBox="0 0 56 40" aria-hidden="true">
+    <rect width="56" height="40" rx="6" fill="#002970" />
+    <text x="4" y="18" fontSize="12" fontWeight="bold" fill="#00BAF2">
+      Pay
+    </text>
+    <text x="4" y="31" fontSize="12" fontWeight="bold" fill="white">
+      tm
+    </text>
+    <rect x="4" y="34" width="48" height="2.5" rx="1.25" fill="#00BAF2" />
+  </svg>
+);
+
+const BhimLogo = () => (
+  <svg width="56" height="40" viewBox="0 0 56 40" aria-hidden="true">
+    <rect width="56" height="40" rx="6" fill="#00529C" />
+    <text x="4" y="17" fontSize="10" fontWeight="bold" fill="#FF6B00">
+      BHIM
+    </text>
+    <text x="4" y="29" fontSize="10" fontWeight="bold" fill="white">
+      UPI
+    </text>
+    <path
+      d="M38 10 L48 20 L38 30 M48 20 L32 20"
+      stroke="#FF6B00"
+      strokeWidth="2.5"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const UPI_OPTIONS = [
   {
     id: "googlepay",
     label: "Google Pay",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png",
-    bgColor: "#fff",
+    LogoComponent: GooglePayLogo,
+    bgColor: "#f8f9fa",
   },
   {
     id: "phonepe",
     label: "PhonePe",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/PhonePe_logo.png/512px-PhonePe_logo.png",
-    bgColor: "#5f259f",
+    LogoComponent: PhonePeLogo,
+    bgColor: "#5F259F",
   },
-  {
-    id: "paytm",
-    label: "Paytm",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Paytm_logo.png/512px-Paytm_logo.png",
-    bgColor: "#002970",
-  },
+  { id: "paytm", label: "Paytm", LogoComponent: PaytmLogo, bgColor: "#002970" },
   {
     id: "bhim",
     label: "BHIM UPI",
-    logoUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/512px-UPI-Logo-vector.svg.png",
-    bgColor: "#fff",
+    LogoComponent: BhimLogo,
+    bgColor: "#00529C",
   },
 ];
 
@@ -51,162 +107,52 @@ const BANKS = [
   "Canara Bank",
 ];
 
-// Fallback inline SVG logos in case CDN fails
-function UpiLogoFallback({ appId }) {
-  if (appId === "googlepay") {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 48 48" width="36" height="36">
-        <path
-          fill="#4285F4"
-          d="M24 9.5c3.5 0 6.6 1.3 9 3.4l6.7-6.7C35.8 2.4 30.3 0 24 0 14.7 0 6.7 5.3 2.7 13.1l7.8 6.1C12.5 13.2 17.8 9.5 24 9.5z"
-        />
-        <path
-          fill="#34A853"
-          d="M46.9 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.8c-.6 3-2.3 5.5-4.9 7.2l7.6 5.9c4.4-4.1 7.4-10.1 7.4-17.1z"
-        />
-        <path
-          fill="#FBBC05"
-          d="M10.5 28.6A14.6 14.6 0 0 1 9.5 24c0-1.6.3-3.2.8-4.7l-7.8-6.1A23.9 23.9 0 0 0 0 24c0 3.8.9 7.5 2.5 10.7l8-6.1z"
-        />
-        <path
-          fill="#EA4335"
-          d="M24 48c6.3 0 11.6-2.1 15.5-5.7l-7.6-5.9c-2.1 1.4-4.8 2.2-7.9 2.2-6.2 0-11.5-3.7-13.5-9.2l-8 6.1C6.7 42.7 14.7 48 24 48z"
-        />
-      </svg>
-    );
-  }
-  if (appId === "phonepe") {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 48 48" width="36" height="36">
-        <rect width="48" height="48" rx="12" fill="#5f259f" />
-        <text
-          x="24"
-          y="30"
-          textAnchor="middle"
-          fill="white"
-          fontSize="16"
-          fontWeight="bold"
-        >
-          Pe
-        </text>
-      </svg>
-    );
-  }
-  if (appId === "paytm") {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 48 48" width="36" height="36">
-        <rect width="48" height="48" rx="4" fill="#002970" />
-        <text
-          x="24"
-          y="30"
-          textAnchor="middle"
-          fill="#00B9F1"
-          fontSize="11"
-          fontWeight="bold"
-        >
-          Paytm
-        </text>
-      </svg>
-    );
-  }
-  // BHIM UPI
-  return (
-    <svg aria-hidden="true" viewBox="0 0 48 48" width="36" height="36">
-      <rect
-        width="48"
-        height="48"
-        rx="8"
-        fill="#FFFFFF"
-        stroke="#e5e7eb"
-        strokeWidth="1"
-      />
-      <text
-        x="24"
-        y="22"
-        textAnchor="middle"
-        fill="#FF6600"
-        fontSize="8"
-        fontWeight="bold"
-      >
-        UPI
-      </text>
-      <text
-        x="24"
-        y="34"
-        textAnchor="middle"
-        fill="#0066CC"
-        fontSize="8"
-        fontWeight="bold"
-      >
-        BHIM
-      </text>
-    </svg>
-  );
-}
-
 function UpiAppCard({ upi, isSelected, onSelect }) {
-  const [imgError, setImgError] = useState(false);
-
+  const { LogoComponent } = upi;
   return (
     <button
       type="button"
       onClick={() => onSelect(upi.id)}
-      className={`relative flex flex-col items-center justify-center gap-2 p-3 rounded-2xl border-2 transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 focus:outline-none ${
+      className={`relative flex flex-col items-center justify-center gap-0 rounded-2xl border-2 transition-all duration-200 focus:outline-none overflow-hidden ${
         isSelected
-          ? "border-[#7B2FF7] bg-[#f5f0ff] shadow-[0_0_0_3px_rgba(123,47,247,0.15)]"
-          : "border-gray-200 bg-white hover:border-[#c4a8ff] hover:bg-[#faf5ff]"
+          ? "border-[#7B2FF7] shadow-[0_0_0_3px_rgba(123,47,247,0.18)] scale-[1.03]"
+          : "border-gray-200 hover:border-[#c4a8ff] hover:scale-[1.01]"
       }`}
+      style={{ minHeight: "96px", padding: 0 }}
       data-ocid={`upi-option-${upi.id}`}
       aria-pressed={isSelected}
     >
-      {/* Checkmark when selected */}
-      {isSelected && (
-        <div className="absolute top-2 right-2 w-4 h-4 rounded-full bg-[#7B2FF7] flex items-center justify-center">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 10 10"
-            width="8"
-            height="8"
-            fill="none"
-          >
-            <path
-              d="M1.5 5l2.5 2.5 4.5-4.5"
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      )}
-
-      {/* Logo area */}
+      {/* Inline SVG logo fills top portion */}
       <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0"
+        className="w-full flex items-center justify-center"
         style={{
-          backgroundColor: upi.bgColor === "#fff" ? "#f8f9fa" : upi.bgColor,
+          backgroundColor: upi.bgColor,
+          height: "64px",
+          borderRadius: "14px 14px 0 0",
+          padding: "8px 10px",
         }}
       >
-        {!imgError ? (
-          <img
-            src={upi.logoUrl}
-            alt={`${upi.label} logo`}
-            className="w-10 h-10 object-contain"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <UpiLogoFallback appId={upi.id} />
-        )}
+        <LogoComponent />
       </div>
 
-      {/* App name */}
-      <span
-        className={`text-xs font-bold leading-tight text-center ${
-          isSelected ? "text-[#7B2FF7]" : "text-gray-700"
+      {/* App name strip */}
+      <div
+        className={`w-full flex items-center justify-center gap-1 py-1.5 ${
+          isSelected ? "bg-[#f5f0ff]" : "bg-white"
         }`}
+        style={{ borderRadius: "0 0 14px 14px" }}
       >
-        {upi.label}
-      </span>
+        {isSelected && (
+          <span className="text-[#7B2FF7] text-[10px] font-bold">✓</span>
+        )}
+        <span
+          className={`text-xs font-bold leading-tight text-center ${
+            isSelected ? "text-[#7B2FF7]" : "text-gray-700"
+          }`}
+        >
+          {upi.label}
+        </span>
+      </div>
     </button>
   );
 }
