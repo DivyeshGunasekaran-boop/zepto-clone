@@ -1,109 +1,135 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import CartSidebar from "./components/CartSidebar";
 import CategoryTabs from "./components/CategoryTabs";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroCarousel from "./components/HeroCarousel";
+// @ts-ignore - JSX component
 import PaymentModal from "./components/PaymentModal";
+// @ts-ignore - JSX component
 import PaymentSuccessModal from "./components/PaymentSuccessModal";
+// @ts-ignore - JSX component
 import ProductDetailModal from "./components/ProductDetailModal";
 import ProductSection from "./components/ProductSection";
 import { CartProvider, useCart } from "./context/CartContext";
-import { categories, products, productsByCategory } from "./data/products";
+import {
+  bestsellers,
+  categories,
+  featuredProducts,
+  productsByCategory,
+} from "./data/products";
+import type { Category, Product } from "./types";
 
-// Shop By Category quick links shown on home page — all use permanent Unsplash photo IDs
 const SHOP_BY_CATEGORY = [
   {
     id: "rice-dal",
     label: "Dal & Pulses",
-    img: "https://images.unsplash.com/photo-1585664811087-47f65abbad64?w=200&h=200&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=200&fit=crop",
   },
   {
     id: "snacks",
     label: "Snacks",
-    img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&h=200&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=200&fit=crop",
   },
   {
     id: "dairy",
     label: "Dairy",
-    img: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=200&h=200&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=300&h=200&fit=crop",
   },
   {
     id: "rice-dal",
     label: "Rice & Atta",
-    img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=200&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=200&fit=crop",
   },
   {
     id: "cleaning",
     label: "Household",
-    img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300&h=200&fit=crop",
   },
   {
     id: "beverages",
     label: "Beverages",
-    img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=200&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=300&h=200&fit=crop",
   },
   {
     id: "personal-hygiene",
-    label: "Personal Care",
-    img: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=200&h=200&fit=crop&q=80",
+    label: "Personal Hygiene",
+    img: "https://images.unsplash.com/photo-1556228578-dd539282b964?w=300&h=200&fit=crop",
   },
   {
     id: "hair-care",
     label: "Hair Care",
-    img: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=200&h=200&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1585232351009-aa29f6a88c47?w=300&h=200&fit=crop",
   },
   {
     id: "fruits",
     label: "Fresh Fruits",
-    img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=200&h=200&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=200&fit=crop",
   },
   {
     id: "laundry",
-    label: "Laundry",
-    img: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=200&h=200&fit=crop&q=80",
+    label: "Laundry Care",
+    img: "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=300&h=200&fit=crop",
   },
 ];
 
-function ShopByCategory({ onCategorySelect }) {
+function ShopByCategory({
+  onCategorySelect,
+}: { onCategorySelect: (id: string) => void }) {
   return (
     <section
       className="mt-8"
       aria-label="Shop by category"
-      data-ocid="shop-by-category.section"
+      data-ocid="shop-by-category"
     >
-      <div className="flex items-center gap-2.5 mb-4 px-0.5">
-        <div
-          className="w-1 h-5 rounded-full flex-shrink-0"
-          style={{
-            background:
-              "linear-gradient(180deg, oklch(0.48 0.27 308) 0%, oklch(0.55 0.22 290) 100%)",
-          }}
-          aria-hidden="true"
-        />
-        <h2 className="text-base md:text-[1.15rem] font-extrabold text-foreground tracking-tight">
-          Shop By Category
-        </h2>
+      <div className="flex items-center justify-between mb-4 px-0.5">
+        <div className="flex items-center gap-2.5">
+          <div
+            className="w-1 h-5 rounded-full"
+            style={{
+              background:
+                "linear-gradient(180deg, oklch(0.48 0.27 308) 0%, oklch(0.55 0.22 290) 100%)",
+            }}
+            aria-hidden="true"
+          />
+          <h2 className="text-base md:text-[1.15rem] font-extrabold text-foreground tracking-tight">
+            Shop By Category
+          </h2>
+        </div>
       </div>
       <div className="grid grid-cols-5 md:grid-cols-10 gap-2.5 md:gap-3">
-        {SHOP_BY_CATEGORY.map((cat, idx) => (
+        {SHOP_BY_CATEGORY.map((cat) => (
           <button
             type="button"
-            key={`${cat.id}-${idx}`}
+            key={`${cat.id}-${cat.label}`}
             onClick={() => onCategorySelect(cat.id)}
             className="flex flex-col items-center gap-0 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg transition-smooth group cursor-pointer card-glow overflow-hidden"
             style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.05)" }}
-            data-ocid={`shop-by-category.item.${idx + 1}`}
+            data-ocid={`category-icon-${cat.id}`}
           >
-            <span className="block w-full aspect-square overflow-hidden">
+            <span
+              className="block w-full overflow-hidden"
+              style={{
+                height: "80px",
+                borderRadius: "14px 14px 0 0",
+                flexShrink: 0,
+              }}
+            >
               <img
                 src={cat.img}
                 alt={cat.label}
-                className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  display: "block",
+                }}
+                className="group-hover:scale-105 transition-smooth"
                 loading="lazy"
                 onError={(e) => {
-                  e.currentTarget.onerror = null;
-                  e.currentTarget.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='13' fill='%236b7280' text-anchor='middle' dy='.3em'%3E${encodeURIComponent(cat.label)}%3C/text%3E%3C/svg%3E`;
+                  (e.currentTarget as HTMLImageElement).src =
+                    "https://images.unsplash.com/photo-1542838132-92c53300491e?w=300&h=200&fit=crop";
                 }}
               />
             </span>
@@ -118,57 +144,59 @@ function ShopByCategory({ onCategorySelect }) {
 }
 
 function AppContent() {
-  const { clearCart } = useCart();
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
-
-  // Payment flow state
-  const [paymentModalOpen, setPaymentModalOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [paymentOpen, setPaymentOpen] = useState(false);
   const [paymentSuccessOpen, setPaymentSuccessOpen] = useState(false);
-  const [cartTotal, setCartTotal] = useState(0);
+  const [grandTotal, setGrandTotal] = useState(0);
+  const { clearCart, closeCart, totalPrice } = useCart();
 
-  // Product detail state
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const PLATFORM_FEE = 5;
+  const DELIVERY_FEE = 30;
+  const FREE_DELIVERY_THRESHOLD = 199;
+  const isFreeDelivery = totalPrice >= FREE_DELIVERY_THRESHOLD;
+  const deliveryFee = isFreeDelivery ? 0 : DELIVERY_FEE;
+  const computedGrandTotal = totalPrice + deliveryFee + PLATFORM_FEE;
 
-  // Filtered products based on search or active category
-  const filteredProducts = useMemo(() => {
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
-      return products.filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.brand?.toLowerCase().includes(q) ||
-          p.category?.toLowerCase().includes(q),
-      );
-    }
-    return productsByCategory(activeCategory);
-  }, [activeCategory, searchQuery]);
+  const currentProducts = searchQuery.trim()
+    ? productsByCategory("all").filter(
+        (p: Product) =>
+          p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.category.toLowerCase().includes(searchQuery.toLowerCase()),
+      )
+    : productsByCategory(activeCategory);
 
-  const handleCategoryChange = (cat) => {
+  const featured = featuredProducts();
+  const topSellers = bestsellers();
+
+  const handleCategoryChange = (cat: Category) => {
     setActiveCategory(cat.id);
     setSearchQuery("");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleCategorySelect = (id) => {
+  const handleCategorySelect = (id: string) => {
     setActiveCategory(id);
     setSearchQuery("");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleProceedToPayment = (total) => {
-    setCartTotal(total);
-    setPaymentModalOpen(true);
+  const handleProceedToPayment = (total: number) => {
+    setGrandTotal(total);
+    closeCart();
+    setPaymentOpen(true);
   };
 
   const handlePaymentSuccess = () => {
-    setPaymentModalOpen(false);
+    setPaymentOpen(false);
     setPaymentSuccessOpen(true);
+    clearCart();
   };
 
   const handlePaymentSuccessClose = () => {
     setPaymentSuccessOpen(false);
-    clearCart();
   };
 
   const isHome = !searchQuery && activeCategory === "all";
@@ -186,17 +214,17 @@ function AppContent() {
         {searchQuery ? (
           <ProductSection
             title={`Results for "${searchQuery}"`}
-            products={filteredProducts}
+            products={currentProducts}
             layout="grid"
             onProductClick={setSelectedProduct}
           />
         ) : activeCategory !== "all" ? (
           <ProductSection
             title={
-              categories.find((c) => c.id === activeCategory)?.name ??
-              "Products"
+              categories.find((c: { id: string }) => c.id === activeCategory)
+                ?.label ?? "Products"
             }
-            products={filteredProducts}
+            products={currentProducts}
             layout="grid"
             onProductClick={setSelectedProduct}
           />
@@ -207,20 +235,20 @@ function AppContent() {
 
             <ProductSection
               title="⚡ Top Picks For You"
-              products={products.filter((p) => p.rating >= 4.5).slice(0, 12)}
+              products={featured}
               layout="scroll"
               onViewAll={() => handleCategorySelect("all")}
               onProductClick={setSelectedProduct}
             />
+
             <ProductSection
               title="🔥 Bestsellers"
-              products={[...products]
-                .sort((a, b) => (b.reviewCount ?? 0) - (a.reviewCount ?? 0))
-                .slice(0, 12)}
+              products={topSellers}
               layout="scroll"
               onViewAll={() => handleCategorySelect("all")}
               onProductClick={setSelectedProduct}
             />
+
             <ProductSection
               title="👕 Laundry Care"
               products={productsByCategory("laundry").slice(0, 12)}
@@ -229,6 +257,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("laundry")}
               onProductClick={setSelectedProduct}
             />
+
             <ProductSection
               title="🧹 Household Cleaning"
               products={productsByCategory("cleaning").slice(0, 12)}
@@ -237,6 +266,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("cleaning")}
               onProductClick={setSelectedProduct}
             />
+
             <ProductSection
               title="🌾 Rice, Dal & Pulses"
               products={productsByCategory("rice-dal").slice(0, 12)}
@@ -245,6 +275,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("rice-dal")}
               onProductClick={setSelectedProduct}
             />
+
             {isHome && (
               <ProductSection
                 title="🍿 Snacks & Munchies"
@@ -255,6 +286,7 @@ function AppContent() {
                 onProductClick={setSelectedProduct}
               />
             )}
+
             <ProductSection
               title="🥛 Dairy & Eggs"
               products={productsByCategory("dairy").slice(0, 12)}
@@ -263,6 +295,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("dairy")}
               onProductClick={setSelectedProduct}
             />
+
             <ProductSection
               title="🧴 Personal Hygiene"
               products={productsByCategory("personal-hygiene").slice(0, 12)}
@@ -271,6 +304,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("personal-hygiene")}
               onProductClick={setSelectedProduct}
             />
+
             <ProductSection
               title="💆 Hair Care"
               products={productsByCategory("hair-care").slice(0, 12)}
@@ -279,6 +313,7 @@ function AppContent() {
               onViewAll={() => handleCategorySelect("hair-care")}
               onProductClick={setSelectedProduct}
             />
+
             <ProductSection
               title="🥤 Beverages"
               products={productsByCategory("beverages").slice(0, 12)}
@@ -294,26 +329,28 @@ function AppContent() {
       <CartSidebar onProceedToPayment={handleProceedToPayment} />
       <Footer />
 
-      {/* Payment flow modals */}
-      <PaymentModal
-        isOpen={paymentModalOpen}
-        onClose={() => setPaymentModalOpen(false)}
-        onPaymentSuccess={handlePaymentSuccess}
-        grandTotal={cartTotal}
-      />
-      <PaymentSuccessModal
-        isOpen={paymentSuccessOpen}
-        onClose={handlePaymentSuccessClose}
-        grandTotal={cartTotal}
-      />
-
-      {/* Product detail modal */}
+      {/* Product Detail Modal */}
       {selectedProduct && (
         <ProductDetailModal
           product={selectedProduct}
           onClose={() => setSelectedProduct(null)}
         />
       )}
+
+      {/* Payment Modal */}
+      <PaymentModal
+        isOpen={paymentOpen}
+        onClose={() => setPaymentOpen(false)}
+        onPaymentSuccess={handlePaymentSuccess}
+        grandTotal={grandTotal || computedGrandTotal}
+      />
+
+      {/* Payment Success Modal */}
+      <PaymentSuccessModal
+        isOpen={paymentSuccessOpen}
+        onClose={handlePaymentSuccessClose}
+        grandTotal={grandTotal}
+      />
     </div>
   );
 }

@@ -11,10 +11,14 @@ const SLIDES = [
     badge: "🌱 FRESHNESS GUARANTEE",
     highlight: "Free delivery on first order!",
     discount: null,
-    gradient: "linear-gradient(135deg, #1a7c3e 0%, #0f5a2b 60%, #0d4a24 100%)",
-    accentColor: "#FFD600",
-    emoji: "🥦",
-    emojiRight: "🍎",
+    theme: {
+      from: "#1a7c3e",
+      to: "#0f5a2b",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1542838132-2d5c6e7f8f9a?w=1200&q=80",
   },
   {
     id: "slide-beverages",
@@ -24,11 +28,15 @@ const SLIDES = [
     cta: "Explore Drinks",
     badge: "🧊 CHILLED & READY",
     highlight: "New arrivals every day",
-    discount: "20% OFF",
-    gradient: "linear-gradient(135deg, #0a4c8c 0%, #062f5e 60%, #041f3d 100%)",
-    accentColor: "#FFD600",
-    emoji: "🥤",
-    emojiRight: "🧃",
+    discount: "20%",
+    theme: {
+      from: "#0a4c8c",
+      to: "#062f5e",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1509042239860-f55ce641ab05?w=1200&q=80",
   },
   {
     id: "slide-snacks",
@@ -38,11 +46,15 @@ const SLIDES = [
     cta: "Browse Snacks",
     badge: "🔥 BESTSELLERS",
     highlight: "Trusted by 1Cr+ customers",
-    discount: "25% OFF",
-    gradient: "linear-gradient(135deg, #c44b00 0%, #8c3300 60%, #6b2500 100%)",
-    accentColor: "#FFD600",
-    emoji: "🍕",
-    emojiRight: "🍿",
+    discount: "25%",
+    theme: {
+      from: "#c44b00",
+      to: "#8c3300",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=1200&q=80",
   },
   {
     id: "slide-household",
@@ -51,11 +63,15 @@ const SLIDES = [
     cta: "Shop Essentials",
     badge: "⚡ 10 MIN DELIVERY",
     highlight: "Best prices guaranteed",
-    discount: "30% OFF",
-    gradient: "linear-gradient(135deg, #5a1cbf 0%, #3d0e8c 60%, #2d0a6b 100%)",
-    accentColor: "#FFD600",
-    emoji: "🧹",
-    emojiRight: "🧴",
+    discount: "30%",
+    theme: {
+      from: "#5a1cbf",
+      to: "#3d0e8c",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1583242702831-b3562c8ef9f5?w=1200&q=80",
   },
   {
     id: "slide-dairy",
@@ -65,18 +81,22 @@ const SLIDES = [
     cta: "Order Dairy",
     badge: "🥛 UP TO 40% OFF",
     highlight: "Same-day delivery available",
-    discount: "40% OFF",
-    gradient: "linear-gradient(135deg, #b07800 0%, #7a5200 60%, #5c3d00 100%)",
-    accentColor: "#FFD600",
-    emoji: "🥛",
-    emojiRight: "🧀",
+    discount: "40%",
+    theme: {
+      from: "#b07800",
+      to: "#7a5200",
+      accent: "#FFD600",
+      text: "#ffffff",
+    },
+    image:
+      "https://images.unsplash.com/photo-1550583724-aa285b6f3a31?w=1200&q=80",
   },
 ];
 
 export default function HeroCarousel() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const timerRef = useRef(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -92,7 +112,7 @@ export default function HeroCarousel() {
     };
   }, [paused, startTimer]);
 
-  const goTo = (idx) => {
+  const goTo = (idx: number) => {
     setCurrent(idx);
     startTimer();
   };
@@ -108,83 +128,56 @@ export default function HeroCarousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+      {/* Sliding track — translateX moves by multiples of 100% */}
       <div
         className="flex transition-carousel"
         style={{ transform: `translateX(-${current * 100}%)` }}
         aria-live="polite"
       >
-        {SLIDES.map((slide, idx) => (
+        {SLIDES.map((slide) => (
           <div
             key={slide.id}
             className="carousel-slide relative h-44 md:h-64 flex-shrink-0 w-full"
-            aria-hidden={idx !== current}
-            style={{ background: slide.gradient }}
+            aria-hidden={SLIDES.indexOf(slide) !== current}
           >
-            {/* Decorative circles */}
-            <div
-              style={{
-                position: "absolute",
-                top: "-40px",
-                right: "-40px",
-                width: "200px",
-                height: "200px",
-                borderRadius: "50%",
-                background: "rgba(255,255,255,0.06)",
-                pointerEvents: "none",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                bottom: "-60px",
-                right: "80px",
-                width: "280px",
-                height: "280px",
-                borderRadius: "50%",
-                background: "rgba(255,255,255,0.04)",
-                pointerEvents: "none",
-              }}
+            {/* Background image */}
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
             />
 
-            {/* Big emoji decoration right side */}
+            {/* Color overlay matching theme */}
             <div
+              className="absolute inset-0"
               style={{
-                position: "absolute",
-                right: "8%",
-                top: "50%",
-                transform: "translateY(-50%)",
-                fontSize: "clamp(60px, 10vw, 120px)",
-                opacity: 0.35,
-                userSelect: "none",
-                lineHeight: 1,
+                background: `linear-gradient(110deg, ${slide.theme.from}ee 0%, ${slide.theme.to}bb 50%, transparent 100%)`,
               }}
               aria-hidden="true"
-            >
-              {slide.emojiRight}
-            </div>
+            />
 
+            {/* Text content */}
             <div className="relative z-10 flex items-center h-full px-8 md:px-14">
               <div className="max-w-lg">
                 {/* Badge */}
-                <span className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white text-[10px] font-extrabold px-3 py-1 rounded-full mb-2 tracking-widest uppercase">
+                <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-[10px] font-extrabold px-3 py-1 rounded-full mb-2 tracking-widest uppercase">
                   {slide.badge}
                 </span>
 
-                {/* Title row */}
+                {/* Title + discount bubble */}
                 <div className="flex items-center gap-3 mb-1">
                   <h1 className="text-xl md:text-4xl font-extrabold leading-tight text-white drop-shadow-sm">
                     {slide.title}
                   </h1>
                   {slide.discount && (
                     <span
-                      className="hidden md:flex items-center justify-center min-w-[68px] min-h-[68px] rounded-full text-xs font-black text-center leading-tight flex-shrink-0 shadow-lg px-2"
-                      style={{
-                        background: slide.accentColor,
-                        color: "#111",
-                        whiteSpace: "pre-line",
-                      }}
+                      className="hidden md:flex items-center justify-center w-16 h-16 rounded-full text-sm font-black text-center leading-tight flex-shrink-0 shadow-lg"
+                      style={{ background: slide.theme.accent, color: "#111" }}
                     >
                       {slide.discount}
+                      <br />
+                      OFF
                     </span>
                   )}
                 </div>
@@ -197,7 +190,7 @@ export default function HeroCarousel() {
                   <button
                     type="button"
                     className="bg-white font-bold text-xs md:text-sm px-5 py-2 rounded-full hover:opacity-90 active:scale-95 transition-smooth shadow-md"
-                    style={{ color: "#5a1cbf" }}
+                    style={{ color: slide.theme.from }}
                     data-ocid={`carousel-cta-${slide.id}`}
                   >
                     {slide.cta} →
@@ -212,7 +205,7 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Prev button */}
+      {/* Left Arrow */}
       <button
         type="button"
         onClick={prev}
@@ -223,7 +216,7 @@ export default function HeroCarousel() {
         <ChevronLeft className="w-5 h-5" />
       </button>
 
-      {/* Next button */}
+      {/* Right Arrow */}
       <button
         type="button"
         onClick={next}
@@ -234,7 +227,7 @@ export default function HeroCarousel() {
         <ChevronRight className="w-5 h-5" />
       </button>
 
-      {/* Dot navigation */}
+      {/* Dot indicators */}
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-20">
         {SLIDES.map((s, i) => (
           <button

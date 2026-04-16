@@ -88,12 +88,12 @@ export default function ProductDetailModal({ product, onClose }) {
         {/* Product image — full width, top half */}
         <div className="relative w-full h-56 sm:h-64 overflow-hidden bg-gray-50">
           <img
-            src={product.imageUrl}
+            src={product.image}
             alt={product.name}
             className="w-full h-full object-cover"
             onError={(e) => {
-              e.currentTarget.src =
-                "https://placehold.co/400x400/f3f4f6/94a3b8?text=Product";
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' fill='%236b7280' text-anchor='middle' dy='.3em'%3EProduct%3C/text%3E%3C/svg%3E`;
             }}
           />
           {/* Gradient overlay for readability */}
@@ -105,13 +105,13 @@ export default function ProductDetailModal({ product, onClose }) {
             }}
           />
 
-          {product.discount > 0 && (
+          {!!product.discount && (
             <span
               className="absolute top-3 left-3 text-white text-xs font-extrabold px-2.5 py-1 rounded-full shadow"
               style={{ backgroundColor: "#FF6B35" }}
               data-ocid="product-detail-discount-badge"
             >
-              {product.discount}% OFF
+              {product.discount}
             </span>
           )}
 

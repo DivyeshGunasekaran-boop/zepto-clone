@@ -1,27 +1,28 @@
 {
-  "overview": "A full-featured grocery delivery web app inspired by Zepto — India's fastest grocery delivery platform. Includes product browsing, category navigation, shopping cart, animated search, and a complete purple-branded design system.",
+  "overview": "QuickCart is a pixel-perfect React clone of the Zepto grocery delivery website, rebranded with a modern purple design. It features a hero carousel, category tabs with full-bleed images, 120+ product cards, cart management, and a complete payment flow with UPI/Card/NetBanking/COD options.",
   "features": [
-    "Animated search bar cycling through product suggestions",
-    "Category tabs navigation (All, Cafe, Fresh, Electronics, Beauty, Fashion)",
-    "Hero banner carousel with promotions",
-    "Product cards with ADD/quantity controls and discount badges",
-    "Sliding cart sidebar with item management",
-    "Location selector dropdown",
-    "Login modal UI",
-    "Multiple product sections (Laundry, Cleaning, Rice, Dal, Personal Hygiene, Hair Care)",
-    "Responsive mobile and desktop layouts",
-    "Zepto-inspired purple brand design system",
-    "Footer with app download links and policy links"
+    "Hero carousel with auto-sliding banners and dot indicators",
+    "Category tabs with full-bleed product images",
+    "120+ products across 9 categories with add-to-cart",
+    "Product detail modal with large image and full info",
+    "Cart sidebar with quantity steppers and total summary",
+    "Complete payment flow: UPI (Google Pay, PhonePe, Paytm, BHIM), Card, Net Banking, COD",
+    "Order success confirmation with order ID and delivery time",
+    "Location map popup modal",
+    "Login/profile toggle with OTP flow",
+    "Zepto-style footer with 7 category columns",
+    "Plain JSX only — no TypeScript, minimal file count"
   ],
   "category": "e-commerce",
   "tags": [
     "grocery",
-    "delivery",
-    "e-commerce",
-    "zepto",
-    "shopping",
+    "zepto-clone",
+    "quickcart",
     "react",
-    "cart"
+    "jsx",
+    "e-commerce",
+    "cart",
+    "payment"
   ],
-  "last_updated": "2026-04-12T04:34:20.516Z"
+  "last_updated": "2026-04-16T05:40:11.250Z"
 }
