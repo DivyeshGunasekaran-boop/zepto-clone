@@ -11,57 +11,57 @@ import ProductSection from "./components/ProductSection";
 import { CartProvider, useCart } from "./context/CartContext";
 import { categories, products, productsByCategory } from "./data/products";
 
-// Shop By Category quick links — Pexels CDN, permanent stable URLs
+// Shop By Category quick links — verified Unsplash photo IDs, stable permanent URLs
 const SHOP_BY_CATEGORY = [
   {
     id: "rice-dal",
     label: "Dal & Pulses",
-    img: "https://images.pexels.com/photos/6260921/pexels-photo-6260921.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "snacks",
     label: "Snacks",
-    img: "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "dairy",
     label: "Dairy",
-    img: "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "rice-dal",
     label: "Rice & Atta",
-    img: "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "cleaning",
     label: "Household",
-    img: "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "beverages",
     label: "Beverages",
-    img: "https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1595981234058-a9302fb97229?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "personal-hygiene",
     label: "Personal Care",
-    img: "https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "hair-care",
     label: "Hair Care",
-    img: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "fruits",
     label: "Fresh Fruits",
-    img: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=200&h=200&fit=crop&auto=format",
   },
   {
     id: "laundry",
     label: "Laundry",
-    img: "https://images.pexels.com/photos/5217939/pexels-photo-5217939.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    img: "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=200&h=200&fit=crop&auto=format",
   },
 ];
 

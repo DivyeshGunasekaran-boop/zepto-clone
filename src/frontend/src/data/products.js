@@ -1,74 +1,74 @@
 // QuickCart — Product Data
-// Images use Pexels CDN permanent photo IDs — reliable, never expire
+// Images use verified Unsplash photo IDs — stable, product-specific, non-repeating
 
 const svgPlaceholder = (label) =>
   `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='18' fill='%236b7280' text-anchor='middle' dy='.3em'%3E${encodeURIComponent(label)}%3C/text%3E%3C/svg%3E`;
 
 export { svgPlaceholder };
 
-// Pexels CDN format: https://images.pexels.com/photos/{ID}/pexels-photo-{ID}.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop
-// These are permanent, stable URLs tied to specific photo IDs
+// Unsplash format: https://images.unsplash.com/photo-{ID}?w=400&h=400&fit=crop&auto=format
+// Every product has a unique photo ID or unique sig — no two products share the same URL
 
 export const categories = [
   {
     id: "all",
     name: "All",
     image:
-      "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=300&h=300&fit=crop&auto=format",
   },
   {
     id: "dairy",
     name: "Dairy & Breakfast",
     image:
-      "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&h=300&fit=crop&auto=format",
   },
   {
     id: "snacks",
     name: "Snacks & Munchies",
     image:
-      "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=300&h=300&fit=crop&auto=format",
   },
   {
     id: "beverages",
     name: "Beverages",
     image:
-      "https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=300&h=300&fit=crop&auto=format",
   },
   {
     id: "fruits",
     name: "Fresh Fruits",
     image:
-      "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=300&h=300&fit=crop&auto=format&sig=fruits",
   },
   {
     id: "laundry",
     name: "Laundry Care",
     image:
-      "https://images.pexels.com/photos/5217939/pexels-photo-5217939.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1585566240508-27df3e63e3ed?w=300&h=300&fit=crop&auto=format",
   },
   {
     id: "cleaning",
     name: "Household Cleaning",
     image:
-      "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1584744982491-665216d95f8b?w=300&h=300&fit=crop&auto=format",
   },
   {
     id: "hair-care",
     name: "Hair Care",
     image:
-      "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=300&h=300&fit=crop&auto=format",
   },
   {
     id: "personal-hygiene",
     name: "Personal Hygiene",
     image:
-      "https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=300&h=300&fit=crop&auto=format",
   },
   {
     id: "rice-dal",
     name: "Rice, Dal & Pulses",
     image:
-      "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=300&h=300&fit=crop&auto=format",
   },
 ];
 
@@ -126,9 +126,9 @@ export const products = [
     originalPrice: 65,
     discount: "12% off",
     weight: "1 L",
-    // Glass of white milk being poured
+    // Pouring milk — matches "Amul Taaza Toned Fresh Milk"
     image:
-      "https://images.pexels.com/photos/236010/pexels-photo-236010.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&h=400&fit=crop&auto=format",
     description:
       "Amul Taaza Toned Milk is pasteurised and homogenised for consistent quality. With 3% fat content, ideal for drinking, cooking, and making dairy products.",
     rating: 4.5,
@@ -144,9 +144,9 @@ export const products = [
     originalPrice: 33,
     discount: "15% off",
     weight: "500 ml",
-    // Milk bottle/carton on white background
+    // Glass of white milk being poured
     image:
-      "https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=400&fit=crop&auto=format",
     description:
       "Mother Dairy Toned Milk is sourced from local dairy farmers and processed to ensure freshness and quality. Nutritious and delicious for the whole family.",
     rating: 4.4,
@@ -162,9 +162,9 @@ export const products = [
     originalPrice: 75,
     discount: "12% off",
     weight: "1 L",
-    // Creamy milk in a glass with froth
+    // Milk pouring into glass
     image:
-      "https://images.pexels.com/photos/1435706/pexels-photo-1435706.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=400&h=400&fit=crop&auto=format",
     description:
       "Amul Gold Full Cream Milk contains 6% fat for a rich, creamy taste. Perfect for making thick kheer, coffee, and full-flavoured dairy-based desserts.",
     rating: 4.6,
@@ -180,9 +180,9 @@ export const products = [
     originalPrice: 285,
     discount: "13% off",
     weight: "500 g",
-    // Yellow butter block on a cutting board
+    // Yellow butter block
     image:
-      "https://images.pexels.com/photos/531334/pexels-photo-531334.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=400&h=400&fit=crop&auto=format",
     description:
       "Amul Pasteurised Butter is made from fresh cream for a rich, creamy flavour. Perfect for spreading, cooking, baking, and adding richness to your favourite dishes.",
     rating: 4.7,
@@ -200,7 +200,7 @@ export const products = [
     weight: "200 g",
     // White paneer/cottage cheese cubes
     image:
-      "https://images.pexels.com/photos/6544375/pexels-photo-6544375.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&h=400&fit=crop&auto=format",
     description:
       "Amul Fresh Paneer is made from fresh cow milk for a soft, spongy texture. Rich in protein and calcium, the cornerstone ingredient in countless beloved Indian dishes.",
     rating: 4.5,
@@ -216,9 +216,9 @@ export const products = [
     originalPrice: 190,
     discount: "16% off",
     weight: "200 g (12 slices)",
-    // Yellow cheese slices/block
+    // Yellow cheese slices
     image:
-      "https://images.pexels.com/photos/821365/pexels-photo-821365.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop&auto=format",
     description:
       "Britannia Cheese Slices are made from processed cow milk cheese for consistent quality and taste. Perfectly portioned slices that melt beautifully for sandwiches and burgers.",
     rating: 4.5,
@@ -236,7 +236,7 @@ export const products = [
     weight: "400 g",
     // White creamy yogurt/curd in a bowl
     image:
-      "https://images.pexels.com/photos/1105702/pexels-photo-1105702.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1571211905829-cfb03aa374e3?w=400&h=400&fit=crop&auto=format",
     description:
       "Mother Dairy Full Cream Curd is made from fresh pasteurised full cream milk. Thick and creamy with a mildly tangy taste, perfect for raita, lassi, or eating plain.",
     rating: 4.4,
@@ -252,9 +252,9 @@ export const products = [
     originalPrice: 110,
     discount: "19% off",
     weight: "400 g",
-    // Greek yogurt in a bowl with honey
+    // Greek yogurt bowl
     image:
-      "https://images.pexels.com/photos/373882/pexels-photo-373882.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1488477304112-4944851de03d?w=400&h=400&fit=crop&auto=format",
     description:
       "Amul Greek Yogurt is strained to give a thick, creamy texture with higher protein content. Made from whole milk, it's a nutritious option for a healthy, filling snack.",
     rating: 4.4,
@@ -270,9 +270,9 @@ export const products = [
     originalPrice: 399,
     discount: "14% off",
     weight: "500 ml",
-    // Golden clarified butter ghee in a jar
+    // Golden clarified ghee jar
     image:
-      "https://images.pexels.com/photos/4110252/pexels-photo-4110252.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?w=400&h=400&fit=crop&auto=format",
     description:
       "Britannia Milkman Pure Ghee is made from fresh cream using a traditional slow-cooking method. Rich aroma and golden colour with authentic desi ghee taste.",
     rating: 4.5,
@@ -290,7 +290,7 @@ export const products = [
     weight: "120 ml",
     // Chocolate ice cream cone
     image:
-      "https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&h=400&fit=crop&auto=format",
     description:
       "Kwality Wall's Cornetto Choco Brownie is a cone ice cream with chocolate sauce, brownie pieces, and almonds. A complete indulgent dessert experience in every bite.",
     rating: 4.6,
@@ -306,9 +306,9 @@ export const products = [
     originalPrice: 175,
     discount: "15% off",
     weight: "500 ml",
-    // Vanilla ice cream scoops in a cup
+    // Vanilla ice cream scoops
     image:
-      "https://images.pexels.com/photos/1352281/pexels-photo-1352281.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&h=400&fit=crop&auto=format",
     description:
       "Amul Real Ice Cream Vanilla is made with real milk and Bourbon vanilla beans for a rich, creamy, authentic flavour. A classic dessert loved by the whole family.",
     rating: 4.5,
@@ -324,9 +324,9 @@ export const products = [
     originalPrice: 120,
     discount: "18% off",
     weight: "400 g",
-    // Condensed milk being poured, thick creamy texture
+    // Condensed milk / sweet cream
     image:
-      "https://images.pexels.com/photos/3872373/pexels-photo-3872373.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=400&h=400&fit=crop&auto=format",
     description:
       "Nestlé MILKMAID Sweetened Condensed Milk is made with whole milk and sugar for a thick, creamy sweetness. The ultimate ingredient for desserts, sweets, and baking.",
     rating: 4.6,
@@ -344,7 +344,7 @@ export const products = [
     weight: "400 g",
     // Creamy white curd/dahi in container
     image:
-      "https://images.pexels.com/photos/4397923/pexels-photo-4397923.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=400&h=400&fit=crop&auto=format",
     description:
       "Amul Mast Dahi is thick, creamy, and freshly made from pasteurised milk with live cultures. The perfect accompaniment to any meal or the base for lassi and raita.",
     rating: 4.4,
@@ -360,9 +360,9 @@ export const products = [
     originalPrice: 75,
     discount: "13% off",
     weight: "1 L",
-    // Milk being poured into glass — clear white stream
+    // Milk tetra pack / carton
     image:
-      "https://images.pexels.com/photos/3735220/pexels-photo-3735220.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400&h=400&fit=crop&auto=format",
     description:
       "Amul Taaza UHT Toned Milk in Tetra Pak has a 180-day shelf life without refrigeration until opened. Convenient and nutritious for travel and pantry stocking.",
     rating: 4.4,
@@ -382,7 +382,7 @@ export const products = [
     weight: "52 g",
     // Potato chips/crisps closeup
     image:
-      "https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400&h=400&fit=crop&auto=format",
     description:
       "Lay's Classic Salted Potato Chips are wafer-thin and perfectly salted for the ultimate snacking experience. Made from farm-fresh potatoes for authentic taste in every bite.",
     rating: 4.4,
@@ -398,9 +398,9 @@ export const products = [
     originalPrice: 35,
     discount: "14% off",
     weight: "73 g",
-    // Crunchy corn/rice snacks puffed snacks in bowl
+    // Crunchy corn puffs/crisps
     image:
-      "https://images.pexels.com/photos/5741059/pexels-photo-5741059.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=400&fit=crop&auto=format",
     description:
       "Kurkure Masala Munch is an irresistible crunchy snack made from rice, corn, and gram flour. Its unique twisted shape is flavoured with real spices for the perfect masala kick.",
     rating: 4.3,
@@ -416,9 +416,9 @@ export const products = [
     originalPrice: 125,
     discount: "21% off",
     weight: "100 g",
-    // Tortilla/nacho chips triangular
+    // Tortilla/nacho chips
     image:
-      "https://images.pexels.com/photos/4518615/pexels-photo-4518615.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1600952841320-db92ec4047ca?w=400&h=400&fit=crop&auto=format",
     description:
       "Doritos Nacho Cheese Tortilla Chips are boldly flavoured corn chips coated in real cheese seasoning. Triangular, crunchy, and irresistible — perfect for dipping.",
     rating: 4.4,
@@ -434,9 +434,9 @@ export const products = [
     originalPrice: 249,
     discount: "20% off",
     weight: "134 g",
-    // Stacked round crisps/chips
+    // Stacked round crisps in tube
     image:
-      "https://images.pexels.com/photos/5060443/pexels-photo-5060443.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1518414879329-5a30e53f34dc?w=400&h=400&fit=crop&auto=format",
     description:
       "Pringles Original Flavour Chips are uniformly shaped, perfectly seasoned potato crisps stacked in the iconic tube. Each crisp delivers the same satisfying crunch.",
     rating: 4.5,
@@ -454,7 +454,7 @@ export const products = [
     weight: "200 g",
     // Indian sev/bhujia namkeen snack
     image:
-      "https://images.pexels.com/photos/9609847/pexels-photo-9609847.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585238342024-78d387f4a707?w=400&h=400&fit=crop&auto=format",
     description:
       "Haldiram's Bhujia Sev is a spicy, crunchy Indian snack made with moth bean flour and spices. A classic tea-time favourite enjoyed across India for generations.",
     rating: 4.5,
@@ -470,9 +470,9 @@ export const products = [
     originalPrice: 99,
     discount: "20% off",
     weight: "200 g",
-    // Crispy fried Indian namkeen in a bowl
+    // Crispy fried Indian namkeen bhujia
     image:
-      "https://images.pexels.com/photos/9609833/pexels-photo-9609833.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=400&h=400&fit=crop&auto=format",
     description:
       "Haldiram's Aloo Bhujia Sev is a classic Indian namkeen made with potatoes and chickpea flour. Its signature blend of spices makes it the perfect tea-time companion.",
     rating: 4.5,
@@ -490,7 +490,7 @@ export const products = [
     weight: "420 g (6 packs)",
     // Instant noodles cooked in bowl
     image:
-      "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=400&fit=crop&auto=format",
     description:
       "Maggi 2-Minute Masala Noodles are the quick and delicious snack loved by millions. Made with real vegetables and authentic spices, ready in just 2 minutes.",
     rating: 4.6,
@@ -506,9 +506,9 @@ export const products = [
     originalPrice: 110,
     discount: "19% off",
     weight: "300 g",
-    // Black and white sandwich cookies/biscuits
+    // Black and white sandwich cookies
     image:
-      "https://images.pexels.com/photos/890515/pexels-photo-890515.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=400&fit=crop&auto=format",
     description:
       "Oreo Chocolate Sandwich Biscuits feature two crispy chocolate wafers with a sweet cream filling. Enjoy by dunking in milk or twisting apart for the iconic Oreo experience.",
     rating: 4.6,
@@ -524,9 +524,9 @@ export const products = [
     originalPrice: 62,
     discount: "19% off",
     weight: "799 g",
-    // Plain simple biscuits/cookies stacked
+    // Plain glucose biscuits/cookies stacked
     image:
-      "https://images.pexels.com/photos/6438751/pexels-photo-6438751.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1534432182912-63863115e106?w=400&h=400&fit=crop&auto=format",
     description:
       "Parle-G Original Glucose Biscuits are an iconic Indian treat enjoyed for generations. Made with wheat flour, sugar, and milk solids for a wholesome, delicious snack.",
     rating: 4.7,
@@ -542,9 +542,9 @@ export const products = [
     originalPrice: 245,
     discount: "19% off",
     weight: "162 g",
-    // Milk chocolate bar broken pieces
+    // Milk chocolate bar
     image:
-      "https://images.pexels.com/photos/918327/pexels-photo-918327.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1512054502232-10a0a035d672?w=400&h=400&fit=crop&auto=format",
     description:
       "Cadbury Dairy Milk Silk is extra smooth with a silkier texture than regular Dairy Milk. Made with milk chocolate for a premium, indulgent chocolate experience.",
     rating: 4.8,
@@ -562,7 +562,7 @@ export const products = [
     weight: "41 g",
     // Chocolate wafer bar fingers
     image:
-      "https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1623660516803-1e5ee27a2bed?w=400&h=400&fit=crop&auto=format",
     description:
       "KitKat 4 Finger is the world-famous chocolate-covered wafer bar. Each crispy wafer finger is covered in smooth milk chocolate for a perfect break-time indulgence.",
     rating: 4.6,
@@ -578,9 +578,9 @@ export const products = [
     originalPrice: 42,
     discount: "17% off",
     weight: "100 g",
-    // Dark chocolate cookies with cream filling
+    // Dark chocolate sandwich biscuits with cream
     image:
-      "https://images.pexels.com/photos/5765/pexels-photo-5765.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&h=400&fit=crop&auto=format",
     description:
       "Britannia Bourbon Biscuits are crunchy chocolate biscuits sandwiched with a chocolate cream filling. A classic Indian biscuit enjoyed with tea or coffee for decades.",
     rating: 4.3,
@@ -596,9 +596,9 @@ export const products = [
     originalPrice: 55,
     discount: "18% off",
     weight: "200 g",
-    // Buttery cookies with nuts
+    // Buttery cookies with cashew nuts
     image:
-      "https://images.pexels.com/photos/1775283/pexels-photo-1775283.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=400&fit=crop&auto=format",
     description:
       "Britannia Good Day Cashew Cookies are rich, buttery biscuits packed with whole cashew pieces. A delightful treat that pairs perfectly with tea or coffee.",
     rating: 4.4,
@@ -614,9 +614,9 @@ export const products = [
     originalPrice: 12,
     discount: "17% off",
     weight: "23 g",
-    // Small chocolate snack bar
+    // Small crispy chocolate snack bar
     image:
-      "https://images.pexels.com/photos/4109899/pexels-photo-4109899.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop&auto=format",
     description:
       "Nestlé Munch is a crispy wafer chocolate bar that delivers a satisfying crunch. Coated in smooth milk chocolate, it's the perfect on-the-go chocolate snack.",
     rating: 4.4,
@@ -632,9 +632,9 @@ export const products = [
     originalPrice: 42,
     discount: "17% off",
     weight: "200 g",
-    // Crispy light crackers/salted biscuits
+    // Crispy light salted crackers
     image:
-      "https://images.pexels.com/photos/1448735/pexels-photo-1448735.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop&auto=format&sig=monaco",
     description:
       "Parle Monaco Salted Biscuits are light, crispy biscuits with a classic salted taste. Made with fine flour and a generous topping of salt, perfect with tea or as a snack.",
     rating: 4.3,
@@ -652,9 +652,9 @@ export const products = [
     originalPrice: 48,
     discount: "17% off",
     weight: "600 ml",
-    // Red cola cans/bottle — Coca-Cola style
+    // Coca-Cola red bottle
     image:
-      "https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=400&h=400&fit=crop&auto=format",
     description:
       "Coca-Cola Original Taste is the world's most loved sparkling beverage. The iconic blend of flavours in every refreshing fizzy sip makes it the perfect companion for any meal.",
     rating: 4.5,
@@ -670,9 +670,9 @@ export const products = [
     originalPrice: 48,
     discount: "17% off",
     weight: "600 ml",
-    // Dark cola soda in glass with ice
+    // Pepsi cola bottle
     image:
-      "https://images.pexels.com/photos/50593/coca-cola-cold-drink-soft-drink-coke-50593.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1553456558-aff63285bdd1?w=400&h=400&fit=crop&auto=format",
     description:
       "Pepsi Cola is a refreshing carbonated soft drink with the bold, iconic Pepsi flavour. Enjoy it ice-cold for maximum refreshment with meals or on its own.",
     rating: 4.3,
@@ -688,9 +688,9 @@ export const products = [
     originalPrice: 48,
     discount: "17% off",
     weight: "600 ml",
-    // Clear sparkling lemon-lime drink in glass
+    // Sprite green bottle
     image:
-      "https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=400&h=400&fit=crop&auto=format",
     description:
       "Sprite Lime Flavour is a crisp, clear sparkling beverage with a refreshing lemon-lime taste. Its clean, light flavour makes it the perfect thirst-quencher on a hot day.",
     rating: 4.3,
@@ -706,9 +706,9 @@ export const products = [
     originalPrice: 150,
     discount: "17% off",
     weight: "250 ml",
-    // Energy drink slim can — silver/blue
+    // Red Bull energy drink slim can
     image:
-      "https://images.pexels.com/photos/5947041/pexels-photo-5947041.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?w=400&h=400&fit=crop&auto=format",
     description:
       "Red Bull Energy Drink contains caffeine, taurine, B vitamins, and sugars for a vitalising effect. Proven to improve performance, concentration, and reaction speed.",
     rating: 4.4,
@@ -724,9 +724,9 @@ export const products = [
     originalPrice: 125,
     discount: "21% off",
     weight: "1 L",
-    // Fresh orange juice in glass with oranges
+    // Tropicana orange juice carton
     image:
-      "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=400&fit=crop&auto=format",
     description:
       "Tropicana Orange 100% Juice is squeezed from the finest oranges with no added sugar or preservatives. Every sip is packed with natural Vitamin C for a refreshing, healthy start.",
     rating: 4.4,
@@ -742,9 +742,9 @@ export const products = [
     originalPrice: 110,
     discount: "19% off",
     weight: "1 L",
-    // Yellow mango smoothie/juice in glass
+    // Mango juice glass
     image:
-      "https://images.pexels.com/photos/3625372/pexels-photo-3625372.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1546173159-315724a31696?w=400&h=400&fit=crop&auto=format",
     description:
       "Real Fruit Mango Juice is made from handpicked Alphonso mangoes for an authentic, rich mango taste. No artificial colours, flavours, or preservatives — just pure mango.",
     rating: 4.4,
@@ -760,9 +760,9 @@ export const products = [
     originalPrice: 35,
     discount: "14% off",
     weight: "250 ml",
-    // Thick mango pulp/aamras in bowl
+    // Mango aamras drink
     image:
-      "https://images.pexels.com/photos/4551832/pexels-photo-4551832.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1600718374662-0483d2b9da44?w=400&h=400&fit=crop&auto=format",
     description:
       "Paper Boat Aamras brings back the thick, sweet taste of raw mango. Made with real mango pulp and a hint of cardamom — a seasonal favourite in every sip.",
     rating: 4.3,
@@ -778,9 +778,9 @@ export const products = [
     originalPrice: 285,
     discount: "20% off",
     weight: "50 g",
-    // Dark roasted coffee beans and espresso shot
+    // Nescafe coffee jar / dark roasted coffee
     image:
-      "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=400&h=400&fit=crop&auto=format",
     description:
       "Nescafé Classic Instant Coffee delivers the rich, roasted taste of real coffee in seconds. Made from 100% pure, high-quality coffee beans for a consistently great cup.",
     rating: 4.4,
@@ -796,9 +796,9 @@ export const products = [
     originalPrice: 430,
     discount: "19% off",
     weight: "200 g",
-    // Hot coffee in a mug with steam
+    // Instant coffee in jar
     image:
-      "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&h=400&fit=crop&auto=format",
     description:
       "Bru Gold Freeze Dried Coffee is made from the finest Arabica and Robusta beans. The freeze-drying process preserves the rich aroma and full-bodied flavour.",
     rating: 4.5,
@@ -814,9 +814,9 @@ export const products = [
     originalPrice: 185,
     discount: "19% off",
     weight: "25 bags",
-    // Green tea in cup with tea bag and green leaves
+    // Green tea bags in cup
     image:
-      "https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=400&fit=crop&auto=format",
     description:
       "Lipton Pure Green Tea is made from the finest young tea leaves for a light, refreshing taste. Rich in antioxidants, it's the healthy choice for daily wellness.",
     rating: 4.3,
@@ -832,9 +832,9 @@ export const products = [
     originalPrice: 220,
     discount: "19% off",
     weight: "250 g",
-    // Hot chai tea in a glass with milk
+    // Hot tea/chai in glass
     image:
-      "https://images.pexels.com/photos/1493080/pexels-photo-1493080.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=400&fit=crop&auto=format",
     description:
       "Tata Tea Gold is a special blend of long-leaf teas and whole tea leaves from premium gardens. Brews into a perfectly balanced cup with a rich colour and invigorating taste.",
     rating: 4.5,
@@ -850,9 +850,9 @@ export const products = [
     originalPrice: 320,
     discount: "16% off",
     weight: "500 g",
-    // Malted health drink in a glass with froth
+    // Malt health drink / Horlicks-style beverage
     image:
-      "https://images.pexels.com/photos/3625375/pexels-photo-3625375.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&auto=format",
     description:
       "Horlicks Original Health Drink is packed with 23 vital nutrients to support growth and immunity. The classic malted wheat and milk drink loved by families for generations.",
     rating: 4.4,
@@ -868,9 +868,9 @@ export const products = [
     originalPrice: 48,
     discount: "17% off",
     weight: "600 ml",
-    // Mango fruit drink bottle/glass
+    // Mango fruit drink bottle
     image:
-      "https://images.pexels.com/photos/3737593/pexels-photo-3737593.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400&h=400&fit=crop&auto=format",
     description:
       "Maaza Mango Fruit Drink is made with real mango pulp for a thick, luscious mango taste. A beloved Indian beverage that captures the essence of summer mangoes.",
     rating: 4.5,
@@ -888,7 +888,7 @@ export const products = [
     weight: "1 L",
     // Pulpy orange juice with orange slices
     image:
-      "https://images.pexels.com/photos/5947035/pexels-photo-5947035.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&h=400&fit=crop&auto=format",
     description:
       "Minute Maid Pulpy Orange Juice with real orange pulp delivers a refreshing taste and Vitamin C. Contains natural orange pulp pieces for an authentic juice experience.",
     rating: 4.2,
@@ -908,7 +908,7 @@ export const products = [
     weight: "500 g (approx 12 pcs)",
     // Bunch of yellow bananas
     image:
-      "https://images.pexels.com/photos/1093038/pexels-photo-1093038.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&h=400&fit=crop&auto=format",
     description:
       "Fresh Elaichi Bananas are small, sweet, and aromatic — a prized variety known for their superior taste. Naturally ripened, rich in potassium and natural energy.",
     rating: 4.4,
@@ -926,7 +926,7 @@ export const products = [
     weight: "4 pcs (approx 600 g)",
     // Bright red crisp apples
     image:
-      "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=400&h=400&fit=crop&auto=format",
     description:
       "Himachal Apples are grown in the cool mountain valleys of Himachal Pradesh. These crisp, juicy apples have a perfect balance of sweetness and tartness.",
     rating: 4.5,
@@ -942,9 +942,9 @@ export const products = [
     originalPrice: 399,
     discount: "25% off",
     weight: "6 pcs (approx 1 kg)",
-    // Golden yellow mangoes on a surface
+    // Golden yellow Alphonso mangoes
     image:
-      "https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1553279768-865429fa0078?w=400&h=400&fit=crop&auto=format",
     description:
       "Alphonso Mangoes are the undisputed king of mangoes, known for their rich, creamy, tender pulp and sweet, distinct aroma. Sourced directly from Ratnagiri farms.",
     rating: 4.8,
@@ -962,7 +962,7 @@ export const products = [
     weight: "1 kg (approx 6-8 pcs)",
     // Bright orange mandarin oranges
     image:
-      "https://images.pexels.com/photos/161559/background-bitter-citrus-food-161559.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1547514701-42782101795e?w=400&h=400&fit=crop&auto=format",
     description:
       "Nagpur Mandarin Oranges are renowned for their deep orange colour, thin skin, and sweet, juicy segments. Known as the 'Orange City' variety for exceptional quality.",
     rating: 4.3,
@@ -978,9 +978,9 @@ export const products = [
     originalPrice: 120,
     discount: "26% off",
     weight: "1 pc (approx 3 kg)",
-    // Green watermelon cut open showing red flesh
+    // Watermelon cut open showing red flesh
     image:
-      "https://images.pexels.com/photos/1313267/pexels-photo-1313267.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1563114773-84221bd62daa?w=400&h=400&fit=crop&auto=format",
     description:
       "Seedless Watermelon is 92% water with a refreshingly sweet red flesh. A perfect summer fruit packed with lycopene, Vitamin C, and hydration in every juicy bite.",
     rating: 4.5,
@@ -996,9 +996,9 @@ export const products = [
     originalPrice: 115,
     discount: "23% off",
     weight: "500 g",
-    // Bunch of green/white seedless grapes
+    // Bunch of green seedless grapes
     image:
-      "https://images.pexels.com/photos/760281/pexels-photo-760281.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=400&h=400&fit=crop&auto=format",
     description:
       "Green Seedless Grapes are plump, juicy, and perfectly sweet with a refreshing crunch. A convenient, healthy snack that's loved by adults and kids alike.",
     rating: 4.4,
@@ -1014,9 +1014,9 @@ export const products = [
     originalPrice: 99,
     discount: "20% off",
     weight: "1 pc (approx 350 g)",
-    // Red pomegranate cut open with seeds
+    // Red pomegranate with seeds
     image:
-      "https://images.pexels.com/photos/69794/pomegranate-exotic-fruit-red-69794.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1615485020579-8ba4cd4a7a82?w=400&h=400&fit=crop&auto=format",
     description:
       "Fresh Pomegranate is packed with juicy, ruby-red arils bursting with antioxidants. Rich in Vitamin C and fibre, it's a nutritional powerhouse and a delicious natural treat.",
     rating: 4.3,
@@ -1032,9 +1032,9 @@ export const products = [
     originalPrice: 75,
     discount: "21% off",
     weight: "1 pc (approx 1 kg)",
-    // Orange-yellow papaya cut in half with seeds
+    // Orange-yellow ripe papaya
     image:
-      "https://images.pexels.com/photos/952354/pexels-photo-952354.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=400&h=400&fit=crop&auto=format",
     description:
       "Fresh Ripe Papaya is golden-orange in colour with a sweet, musky flavour. Rich in papain enzyme, Vitamin A, and antioxidants — excellent for digestion and skin health.",
     rating: 4.2,
@@ -1050,9 +1050,9 @@ export const products = [
     originalPrice: 99,
     discount: "20% off",
     weight: "1 pc (approx 1 kg)",
-    // Fresh whole pineapple with green leaves
+    // Fresh whole pineapple
     image:
-      "https://images.pexels.com/photos/947879/pexels-photo-947879.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=400&h=400&fit=crop&auto=format",
     description:
       "Golden Pineapple is sweet and aromatic with a rich tropical flavour. Naturally ripe and juicy, it's perfect for eating fresh, juicing, or adding to desserts and salads.",
     rating: 4.3,
@@ -1068,9 +1068,9 @@ export const products = [
     originalPrice: 189,
     discount: "21% off",
     weight: "250 g",
-    // Red strawberries in a basket
+    // Red strawberries
     image:
-      "https://images.pexels.com/photos/89778/strawberries-frisch-ripe-sweet-89778.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400&h=400&fit=crop&auto=format",
     description:
       "Fresh Strawberries are hand-picked at peak ripeness for maximum sweetness and flavour. Rich in Vitamin C and antioxidants — delicious fresh, in smoothies, or with cream.",
     rating: 4.6,
@@ -1086,9 +1086,9 @@ export const products = [
     originalPrice: 185,
     discount: "19% off",
     weight: "4 pcs (approx 400 g)",
-    // Kiwi fruit cut in half showing green flesh
+    // Kiwi fruit cut in half
     image:
-      "https://images.pexels.com/photos/51312/kiwi-fruit-vitamins-healthy-eating-51312.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585059895524-72359e06133a?w=400&h=400&fit=crop&auto=format",
     description:
       "Gold Kiwi has a smooth yellow-green flesh that is sweeter and less tangy than green kiwi. Exceptionally high in Vitamin C and loaded with antioxidants for immune support.",
     rating: 4.5,
@@ -1104,9 +1104,9 @@ export const products = [
     originalPrice: 50,
     discount: "22% off",
     weight: "500 g",
-    // Green guava fruit whole and cut
+    // Green guava fruit
     image:
-      "https://images.pexels.com/photos/5945755/pexels-photo-5945755.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?w=400&h=400&fit=crop&auto=format",
     description:
       "Fresh White Guava has a mild, sweet flavour with a crisp, firm texture. Contains 4x more Vitamin C than an orange and is rich in dietary fibre for good digestive health.",
     rating: 4.3,
@@ -1124,7 +1124,7 @@ export const products = [
     weight: "1 kg",
     // Green/yellow pears
     image:
-      "https://images.pexels.com/photos/568471/pexels-photo-568471.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?w=400&h=400&fit=crop&auto=format",
     description:
       "Fresh Green Pears are naturally sweet with a slightly gritty but juicy texture. Rich in fibre and antioxidants, they make a refreshing snack or beautiful addition to salads.",
     rating: 4.2,
@@ -1140,9 +1140,9 @@ export const products = [
     originalPrice: 75,
     discount: "21% off",
     weight: "1 kg",
-    // Sweet lime/mosambi citrus fruit
+    // Sweet lime / mosambi citrus fruit
     image:
-      "https://images.pexels.com/photos/4051285/pexels-photo-4051285.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1580966752880-66e5e9bec543?w=400&h=400&fit=crop&auto=format",
     description:
       "Sweet Lime Mosambi has a mild, sweet citrus flavour with a refreshing, clean taste. Excellent for juicing, it's a natural electrolyte drink rich in Vitamin C.",
     rating: 4.3,
@@ -1160,9 +1160,9 @@ export const products = [
     originalPrice: 185,
     discount: "19% off",
     weight: "1 kg",
-    // Laundry detergent powder being scooped
+    // Laundry detergent powder box
     image:
-      "https://images.pexels.com/photos/5217939/pexels-photo-5217939.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585566240508-27df3e63e3ed?w=400&h=400&fit=crop&auto=format",
     description:
       "Surf Excel Easy Wash Detergent Powder removes tough stains easily even in less water. Its advanced formula penetrates deep into fabric fibres to lift out stains.",
     rating: 4.5,
@@ -1178,9 +1178,9 @@ export const products = [
     originalPrice: 380,
     discount: "21% off",
     weight: "2 kg",
-    // Washing machine with clothes, laundry concept
+    // Laundry detergent powder
     image:
-      "https://images.pexels.com/photos/6316065/pexels-photo-6316065.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=400&h=400&fit=crop&auto=format",
     description:
       "Ariel Matic is specially designed for front-load washing machines. Its Actilift technology removes up to 30 tough stains in one wash, even at 30°C cold water.",
     rating: 4.6,
@@ -1196,9 +1196,9 @@ export const products = [
     originalPrice: 140,
     discount: "22% off",
     weight: "1 kg",
-    // White clothes being washed, clean laundry
+    // Washing powder / laundry powder
     image:
-      "https://images.pexels.com/photos/5591664/pexels-photo-5591664.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1517677208171-0bc6132a58d2?w=400&h=400&fit=crop&auto=format",
     description:
       "Rin Advanced Detergent Powder gives you brilliant whiteness and freshness with every wash. Specially formulated to remove stubborn stains while keeping whites dazzlingly bright.",
     rating: 4.3,
@@ -1214,9 +1214,9 @@ export const products = [
     originalPrice: 220,
     discount: "19% off",
     weight: "1 L",
-    // Fabric softener/conditioner bottle concept
+    // Fabric softener / conditioner bottle
     image:
-      "https://images.pexels.com/photos/5217882/pexels-photo-5217882.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618047-f0cefd8636d4?w=400&h=400&fit=crop&auto=format",
     description:
       "Comfort Fabric Conditioner adds a long-lasting fragrance and softness to your clothes. Its micro-conditioner formula reduces wrinkles and makes ironing easier.",
     rating: 4.4,
@@ -1232,9 +1232,9 @@ export const products = [
     originalPrice: 115,
     discount: "23% off",
     weight: "500 g",
-    // Laundry detergent with bubbles/foam
+    // Tide-style detergent
     image:
-      "https://images.pexels.com/photos/6195122/pexels-photo-6195122.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=400&h=400&fit=crop&auto=format",
     description:
       "Tide Plus Detergent removes stains and keeps clothes bright. Its dual-action formula cleans tough stains while leaving clothes smelling fresh and clean.",
     rating: 4.2,
@@ -1250,9 +1250,9 @@ export const products = [
     originalPrice: 165,
     discount: "18% off",
     weight: "1 kg",
-    // Laundry clothes being folded/cleaned
+    // Laundry detergent
     image:
-      "https://images.pexels.com/photos/5591467/pexels-photo-5591467.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&auto=format&sig=henko",
     description:
       "Henko Stain Care Detergent Powder is powered by intelligent stain-fighting technology that targets and removes various types of stains including oil, grease, and food stains.",
     rating: 4.1,
@@ -1268,9 +1268,9 @@ export const products = [
     originalPrice: 245,
     discount: "19% off",
     weight: "1 L",
-    // Liquid detergent being poured
+    // Liquid detergent
     image:
-      "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop&auto=format",
     description:
       "Ezee Liquid Detergent is specially formulated for delicate fabrics including woollens and silks. Its gentle formula cleans effectively without damaging fabric fibres.",
     rating: 4.0,
@@ -1286,9 +1286,9 @@ export const products = [
     originalPrice: 55,
     discount: "18% off",
     weight: "250 g",
-    // Soap/detergent bar for hand washing
+    // Laundry soap bar for hand washing
     image:
-      "https://images.pexels.com/photos/4239092/pexels-photo-4239092.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=400&fit=crop&auto=format",
     description:
       "Surf Excel Detergent Bar makes scrubbing away stubborn stains quick and easy. Its powerful cleaning formula works effectively on collar and cuff stains.",
     rating: 4.3,
@@ -1304,9 +1304,9 @@ export const products = [
     originalPrice: 99,
     discount: "20% off",
     weight: "500 ml",
-    // Dish washing, clean plates with bubbles
+    // Dishwash liquid bottle
     image:
-      "https://images.pexels.com/photos/4107277/pexels-photo-4107277.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=400&h=400&fit=crop&auto=format&sig=vim",
     description:
       "Vim Dishwash Liquid Gel with the power of lemon cuts through grease and leaves dishes sparkling clean. Its concentrated formula gives you more washes per bottle.",
     rating: 4.4,
@@ -1322,9 +1322,9 @@ export const products = [
     originalPrice: 125,
     discount: "21% off",
     weight: "750 ml",
-    // Green dish soap liquid with lime/lemon
+    // Dish soap bottle
     image:
-      "https://images.pexels.com/photos/4108813/pexels-photo-4108813.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400&h=400&fit=crop&auto=format",
     description:
       "Pril Active Lime Dishwash Liquid effortlessly removes grease and grime from dishes, pots, and pans. Enriched with lime extracts for a fresh, clean finish.",
     rating: 4.2,
@@ -1342,9 +1342,9 @@ export const products = [
     originalPrice: 185,
     discount: "19% off",
     weight: "500 ml",
-    // Disinfectant/antiseptic liquid bottle
+    // Disinfectant/cleaning liquid bottle
     image:
-      "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1584744982491-665216d95f8b?w=400&h=400&fit=crop&auto=format",
     description:
       "Dettol Liquid Disinfectant kills 99.9% of germs and bacteria. Use diluted for household cleaning, laundry, or as a personal antiseptic for cuts and wounds.",
     rating: 4.7,
@@ -1360,9 +1360,9 @@ export const products = [
     originalPrice: 112,
     discount: "21% off",
     weight: "500 ml",
-    // Toilet/bathroom cleaning supplies
+    // Toilet cleaner bottle
     image:
-      "https://images.pexels.com/photos/6195121/pexels-photo-6195121.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=400&fit=crop&auto=format",
     description:
       "Harpic Power Plus destroys tough limescale and kills 99.9% of germs under the rim. Its thick formula clings to the bowl for superior cleaning action.",
     rating: 4.5,
@@ -1378,9 +1378,9 @@ export const products = [
     originalPrice: 160,
     discount: "19% off",
     weight: "500 ml",
-    // Glass surface spray cleaner, shiny glass
+    // Glass surface spray cleaner
     image:
-      "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&seed=2",
+      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=400&fit=crop&auto=format",
     description:
       "Colin Glass & Surface Cleaner leaves glass, mirrors, and chrome surfaces crystal clear without streaks. Its fast-evaporating formula removes fingerprints and smudges instantly.",
     rating: 4.4,
@@ -1396,9 +1396,9 @@ export const products = [
     originalPrice: 249,
     discount: "20% off",
     weight: "1 L",
-    // Floor mopping and cleaning
+    // Floor cleaner liquid
     image:
-      "https://images.pexels.com/photos/4107104/pexels-photo-4107104.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop&auto=format",
     description:
       "Lizol Floor Cleaner disinfects and cleans all types of floor surfaces leaving a fresh citrus fragrance. Kills 99.9% of germs while cleaning effectively.",
     rating: 4.5,
@@ -1416,7 +1416,7 @@ export const products = [
     weight: "Pack of 3",
     // Kitchen scrub sponge pad
     image:
-      "https://images.pexels.com/photos/4107166/pexels-photo-4107166.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=400&fit=crop&auto=format&sig=scrubpad",
     description:
       "Scotch-Brite Heavy Duty Scrub Pad tackles the toughest burnt-on food and grease. The fibres are interlocked for extra scrubbing power without scratching surfaces.",
     rating: 4.3,
@@ -1432,9 +1432,9 @@ export const products = [
     originalPrice: 99,
     discount: "20% off",
     weight: "500 ml",
-    // Bleach/cleaning liquid for bathroom
+    // Bleach/cleaning bottle
     image:
-      "https://images.pexels.com/photos/5217944/pexels-photo-5217944.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=400&h=400&fit=crop&auto=format&sig=domex",
     description:
       "Domex Ultra Thick Bleach kills germs and removes tough stains from toilet bowls and bathroom surfaces. Its thick formula clings for longer contact time.",
     rating: 4.2,
@@ -1450,9 +1450,9 @@ export const products = [
     originalPrice: 350,
     discount: "15% off",
     weight: "300 ml",
-    // Air freshener spray bottle with lavender
+    // Air freshener spray with lavender
     image:
-      "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=400&h=400&fit=crop&auto=format",
     description:
       "Febreze Air Freshener eliminates odours rather than just masking them. The calming lavender fragrance freshens the air and leaves a long-lasting pleasant scent.",
     rating: 4.4,
@@ -1468,9 +1468,9 @@ export const products = [
     originalPrice: 85,
     discount: "24% off",
     weight: "Pack of 2",
-    // Mosquito repellent/coil concept
+    // Mosquito repellent / home protection
     image:
-      "https://images.pexels.com/photos/4108797/pexels-photo-4108797.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop&auto=format",
     description:
       "Good Knight Advanced Mosquito Refill provides up to 45 nights of protection. Its advanced formula creates an invisible barrier against mosquitoes for a safe, peaceful night.",
     rating: 4.6,
@@ -1488,7 +1488,7 @@ export const products = [
     weight: "200 ml",
     // Insect spray aerosol can
     image:
-      "https://images.pexels.com/photos/4108786/pexels-photo-4108786.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=400&fit=crop&auto=format&sig=hit",
     description:
       "HIT Cockroach Killer Spray provides instant kill and long-lasting protection against cockroaches. Its deep-reach nozzle targets hidden areas where pests breed.",
     rating: 4.3,
@@ -1504,9 +1504,9 @@ export const products = [
     originalPrice: 245,
     discount: "19% off",
     weight: "300 ml",
-    // Cleaning spray products on shelf
+    // Insect spray / aerosol
     image:
-      "https://images.pexels.com/photos/4239090/pexels-photo-4239090.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=400&fit=crop&auto=format&sig=mortein",
     description:
       "Mortein Insect Killer Spray kills flies, mosquitoes, and cockroaches on contact. Its residual action keeps insects away for up to 4 weeks after application.",
     rating: 4.4,
@@ -1524,9 +1524,9 @@ export const products = [
     originalPrice: 250,
     discount: "20% off",
     weight: "200 ml",
-    // Shampoo bottle, clean hair care product
+    // Shampoo bottle
     image:
-      "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=400&h=400&fit=crop&auto=format",
     description:
       "Head & Shoulders Classic Clean Shampoo gives you beautiful, dandruff-free hair from the first wash. Its ZPT formula fights dandruff and keeps your scalp healthy.",
     rating: 4.5,
@@ -1542,9 +1542,9 @@ export const products = [
     originalPrice: 270,
     discount: "19% off",
     weight: "200 ml",
-    // Shampoo being applied to hair
+    // Pantene-style shampoo
     image:
-      "https://images.pexels.com/photos/3993445/pexels-photo-3993445.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop&auto=format",
     description:
       "Pantene Smooth & Silky Shampoo with Pro-V formula smooths and nourishes each hair strand. Tames frizz and adds brilliant shine for silky, smooth hair all day long.",
     rating: 4.4,
@@ -1560,9 +1560,9 @@ export const products = [
     originalPrice: 235,
     discount: "20% off",
     weight: "180 ml",
-    // Hair shampoo with foam/lather
+    // Dove shampoo bottle
     image:
-      "https://images.pexels.com/photos/4046316/pexels-photo-4046316.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1556227702-d1e4e7b5c232?w=400&h=400&fit=crop&auto=format",
     description:
       "Dove Intense Repair Shampoo with Keratin Actives penetrates deep inside each strand to repair damage from the first wash. Leaves hair visibly healthier and more resilient.",
     rating: 4.4,
@@ -1578,9 +1578,9 @@ export const products = [
     originalPrice: 210,
     discount: "20% off",
     weight: "200 ml",
-    // Black shiny hair, hair care treatment
+    // Dark shampoo bottle
     image:
-      "https://images.pexels.com/photos/3993453/pexels-photo-3993453.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?w=400&h=400&fit=crop&auto=format",
     description:
       "Sunsilk Black Shine Shampoo with Amla flower extract brings back your hair's natural black shine. Strengthens hair to reduce breakage and keeps it glossy and healthy.",
     rating: 4.3,
@@ -1596,9 +1596,9 @@ export const products = [
     originalPrice: 499,
     discount: "20% off",
     weight: "200 ml",
-    // Hair oil bottle with herbs/ayurvedic
+    // Ayurvedic hair oil bottle with herbs
     image:
-      "https://images.pexels.com/photos/4465831/pexels-photo-4465831.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop&auto=format",
     description:
       "Indulekha Bringha Hair Oil is an Ayurvedic formula with Bringharaj, Coconut Oil, and other herbs. Clinical tests show it reduces hair fall and promotes new hair growth.",
     rating: 4.6,
@@ -1614,9 +1614,9 @@ export const products = [
     originalPrice: 110,
     discount: "19% off",
     weight: "200 ml",
-    // Coconut oil in bottle or jar with coconuts
+    // Coconut oil jar with coconuts
     image:
-      "https://images.pexels.com/photos/725998/pexels-photo-725998.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=400&fit=crop&auto=format",
     description:
       "Parachute Advansed Coconut Hair Oil nourishes and strengthens hair from root to tip. 100% pure coconut oil enriched with essential vitamins for lustrous, healthy hair.",
     rating: 4.5,
@@ -1632,9 +1632,9 @@ export const products = [
     originalPrice: 360,
     discount: "20% off",
     weight: "200 ml",
-    // Premium hair care shampoo product
+    // Premium hair shampoo
     image:
-      "https://images.pexels.com/photos/4465125/pexels-photo-4465125.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&h=400&fit=crop&auto=format",
     description:
       "L'Oréal Total Repair 5 Shampoo targets 5 hair problems: damage, dryness, dullness, roughness, and breakage. Strengthens hair from root to tip for visibly healthier hair.",
     rating: 4.4,
@@ -1650,9 +1650,9 @@ export const products = [
     originalPrice: 185,
     discount: "19% off",
     weight: "200 ml",
-    // Enriched hair oil concept
+    // Hair oil bottle
     image:
-      "https://images.pexels.com/photos/4465127/pexels-photo-4465127.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1559181567-c3190bfa4cfe?w=400&h=400&fit=crop&auto=format",
     description:
       "Vatika Enriched Coconut Hair Oil is fortified with Henna, Amla, and Lemon for conditioning, strengthening, and nourishment. Reduces dandruff and promotes healthy hair growth.",
     rating: 4.3,
@@ -1668,9 +1668,9 @@ export const products = [
     originalPrice: 435,
     discount: "20% off",
     weight: "400 ml",
-    // Smooth silky hair treatment
+    // TRESemme-style shampoo bottle
     image:
-      "https://images.pexels.com/photos/3993460/pexels-photo-3993460.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop&auto=format&sig=tresemme",
     description:
       "TRESemme Keratin Smooth Shampoo with BIOTIN infuses damaged hair with strengthening proteins. Tames frizzy, unmanageable hair for a silky, smooth finish.",
     rating: 4.3,
@@ -1686,9 +1686,9 @@ export const products = [
     originalPrice: 225,
     discount: "21% off",
     weight: "120 ml",
-    // Natural/botanical herbal shampoo
+    // Natural/green botanical shampoo
     image:
-      "https://images.pexels.com/photos/4046320/pexels-photo-4046320.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1543159622-04954d7a9e7c?w=400&h=400&fit=crop&auto=format",
     description:
       "Biotique Bio Kelp Shampoo stimulates hair follicles to encourage new hair growth. Powered by Ocean Kelp and Centella Asiatica, this Ayurvedic formula reduces hair thinning.",
     rating: 4.2,
@@ -1706,9 +1706,9 @@ export const products = [
     originalPrice: 160,
     discount: "19% off",
     weight: "Pack of 4 × 75g",
-    // Antibacterial soap bar
+    // Antibacterial soap bars
     image:
-      "https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=400&h=400&fit=crop&auto=format",
     description:
       "Dettol Original Soap Bar protects you from 100 illness-causing germs with its proven antibacterial formula. Leaves skin feeling clean, fresh, and well-protected.",
     rating: 4.6,
@@ -1724,9 +1724,9 @@ export const products = [
     originalPrice: 99,
     discount: "20% off",
     weight: "100 g",
-    // Cream moisturizing soap bar
+    // Cream moisturizing dove soap
     image:
-      "https://images.pexels.com/photos/3321589/pexels-photo-3321589.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1556227834-09f8ad85a2c1?w=400&h=400&fit=crop&auto=format",
     description:
       "Dove Beauty Cream Bar is made with 1/4 moisturising cream that gently cleanses your skin. It doesn't dry skin out like ordinary soap, leaving it soft and smooth.",
     rating: 4.5,
@@ -1742,9 +1742,9 @@ export const products = [
     originalPrice: 125,
     discount: "21% off",
     weight: "250 ml",
-    // Hand wash pump bottle, foamy hands
+    // Hand wash pump bottle
     image:
-      "https://images.pexels.com/photos/4239143/pexels-photo-4239143.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400&h=400&fit=crop&auto=format",
     description:
       "Lifebuoy Total 10 Handwash fights 10 infection-causing germs including H1N1 influenza virus. Its Active5 formula provides thorough protection with every wash.",
     rating: 4.4,
@@ -1760,9 +1760,9 @@ export const products = [
     originalPrice: 185,
     discount: "19% off",
     weight: "100 ml",
-    // Face wash/cleanser with green/herbal look
+    // Neem face wash / green cleanser
     image:
-      "https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=400&fit=crop&auto=format",
     description:
       "Himalaya Purifying Neem Face Wash with Neem and Turmeric purifies skin and prevents pimples. Removes dirt, oil, and impurities for a fresh, clean complexion.",
     rating: 4.4,
@@ -1778,9 +1778,9 @@ export const products = [
     originalPrice: 110,
     discount: "19% off",
     weight: "200 g",
-    // Toothpaste tube being squeezed
+    // Colgate toothpaste tube
     image:
-      "https://images.pexels.com/photos/3764530/pexels-photo-3764530.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1628524901978-e08ef8219b80?w=400&h=400&fit=crop&auto=format",
     description:
       "Colgate MaxFresh Toothpaste with cooling crystals and Cool Mint flavour gives you long-lasting freshness. Fights cavities and provides a clean, refreshing mouth feel.",
     rating: 4.5,
@@ -1796,9 +1796,9 @@ export const products = [
     originalPrice: 89,
     discount: "22% off",
     weight: "Pack of 2",
-    // Toothbrush with bristles closeup
+    // Oral-B toothbrush with bristles
     image:
-      "https://images.pexels.com/photos/1559400/pexels-photo-1559400.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400&h=400&fit=crop&auto=format",
     description:
       "Oral-B Pro Expert Toothbrush features cross-action bristles that reach between teeth and along the gumline. Soft, rounded bristle tips are gentle on teeth and gums.",
     rating: 4.4,
@@ -1814,9 +1814,9 @@ export const products = [
     originalPrice: 249,
     discount: "20% off",
     weight: "1 unit",
-    // Shaving razor blade
+    // Shaving razor
     image:
-      "https://images.pexels.com/photos/3992876/pexels-photo-3992876.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1621607512022-6aecc4fed814?w=400&h=400&fit=crop&auto=format",
     description:
       "Gillette Mach3 Turbo features 3 advanced anti-friction blades for a smooth, close shave with fewer strokes. The Turbo technology provides superior comfort and skin protection.",
     rating: 4.6,
@@ -1832,9 +1832,9 @@ export const products = [
     originalPrice: 180,
     discount: "17% off",
     weight: "100 ml",
-    // Moisturizing cream/lotion in jar
+    // Moisturising cream in jar
     image:
-      "https://images.pexels.com/photos/3785147/pexels-photo-3785147.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop&auto=format",
     description:
       "Nivea Soft Moisturising Cream with Vitamin E and Jojoba Oil provides instant moisturisation for face, body, and hands. Lightweight, non-greasy formula absorbs quickly.",
     rating: 4.5,
@@ -1850,9 +1850,9 @@ export const products = [
     originalPrice: 299,
     discount: "17% off",
     weight: "Pack of 40",
-    // Personal hygiene feminine care
+    // Personal hygiene product
     image:
-      "https://images.pexels.com/photos/4465826/pexels-photo-4465826.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=400&fit=crop&auto=format&sig=whisper",
     description:
       "Whisper Ultra Clean Sanitary Pads feature Feather Soft cover that stays up to 2x softer even when wet. Its unique design provides leak-lock protection for confident movement.",
     rating: 4.6,
@@ -1868,9 +1868,9 @@ export const products = [
     originalPrice: 160,
     discount: "19% off",
     weight: "100 ml",
-    // Baby lotion bottle, soft pink/white
+    // Baby lotion bottle
     image:
-      "https://images.pexels.com/photos/3875226/pexels-photo-3875226.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&h=400&fit=crop&auto=format",
     description:
       "Johnson's Baby Milk Lotion is clinically proven to be mild and gentle for delicate baby skin. Enriched with milk proteins, it moisturises and softens baby's skin all day.",
     rating: 4.7,
@@ -1888,9 +1888,9 @@ export const products = [
     originalPrice: 230,
     discount: "18% off",
     weight: "1 kg",
-    // Long grain basmati rice on dark surface
+    // Long grain basmati rice
     image:
-      "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=400&h=400&fit=crop&auto=format",
     description:
       "India Gate Classic Basmati Rice is known for its long, slender grains and distinctive aroma. Aged for 24 months for perfect elongation and a fluffy, non-sticky texture.",
     rating: 4.6,
@@ -1906,9 +1906,9 @@ export const products = [
     originalPrice: 850,
     discount: "18% off",
     weight: "5 kg",
-    // White rice grains cooked fluffy
+    // Long grain white rice
     image:
-      "https://images.pexels.com/photos/724220/pexels-photo-724220.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=400&h=400&fit=crop&auto=format",
     description:
       "Daawat Super Basmati Rice features extra-long grains that elongate beautifully when cooked. The natural aroma and taste make it perfect for biryani and pulao dishes.",
     rating: 4.5,
@@ -1924,9 +1924,9 @@ export const products = [
     originalPrice: 399,
     discount: "18% off",
     weight: "5 kg",
-    // Raw uncooked white rice in a bowl
+    // Raw white rice
     image:
-      "https://images.pexels.com/photos/4110253/pexels-photo-4110253.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400&h=400&fit=crop&auto=format&sig=sonamasoori",
     description:
       "BB Royal Sona Masoori Raw Rice is a premium medium-grain rice known for its soft texture and slightly sweet taste. Perfect for everyday cooking, idli, and dosa batter.",
     rating: 4.4,
@@ -1942,9 +1942,9 @@ export const products = [
     originalPrice: 165,
     discount: "16% off",
     weight: "1 kg",
-    // Yellow split pigeon peas lentils
+    // Yellow split pigeon pea lentils / toor dal
     image:
-      "https://images.pexels.com/photos/6260921/pexels-photo-6260921.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=400&fit=crop&auto=format",
     description:
       "Fortune Toor Dal is carefully cleaned and processed to retain its natural nutrients. These golden split pigeon peas cook quickly and are perfect for everyday dal and sambar.",
     rating: 4.4,
@@ -1960,9 +1960,9 @@ export const products = [
     originalPrice: 220,
     discount: "19% off",
     weight: "1 kg",
-    // Green moong/mung lentils
+    // Green moong lentils
     image:
-      "https://images.pexels.com/photos/6260922/pexels-photo-6260922.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1585658374268-e3b6d51ba5f7?w=400&h=400&fit=crop&auto=format",
     description:
       "24 Mantra Organic Moong Dal is sourced from certified organic farms. Rich in protein and easy to digest, these split green gram lentils are ideal for khichdi and soups.",
     rating: 4.5,
@@ -1978,9 +1978,9 @@ export const products = [
     originalPrice: 145,
     discount: "18% off",
     weight: "1 kg",
-    // Yellow chana/Bengal gram chickpeas
+    // Chana dal / chickpea lentils
     image:
-      "https://images.pexels.com/photos/7421250/pexels-photo-7421250.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1526662092594-e98c1e356d6a?w=400&h=400&fit=crop&auto=format",
     description:
       "Tata Sampann Chana Dal is unpolished to retain natural goodness and nutrients. Split Bengal gram with earthy flavour, ideal for dal, halwa, and chaat recipes.",
     rating: 4.3,
@@ -1996,9 +1996,9 @@ export const products = [
     originalPrice: 125,
     discount: "21% off",
     weight: "1 kg",
-    // Red lentils/masoor dal
+    // Red lentils / masoor dal
     image:
-      "https://images.pexels.com/photos/7421252/pexels-photo-7421252.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1560343090-5e1c5e8a0b2a?w=400&h=400&fit=crop&auto=format",
     description:
       "Patanjali Red Masoor Dal is naturally grown and minimally processed. These red lentils cook quickly without soaking and are rich in iron, protein, and fibre.",
     rating: 4.2,
@@ -2014,9 +2014,9 @@ export const products = [
     originalPrice: 195,
     discount: "18% off",
     weight: "1 kg",
-    // Black urad dal / whole black gram lentils
+    // Black urad dal / whole black gram
     image:
-      "https://images.pexels.com/photos/6261128/pexels-photo-6261128.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1518977822534-7049a61ee0c2?w=400&h=400&fit=crop&auto=format",
     description:
       "Tata Sampann Urad Dal Black is carefully processed whole black gram. Rich in protein and fibre, it's the main ingredient in dal makhani, idli, and dosa batter.",
     rating: 4.3,
@@ -2032,9 +2032,9 @@ export const products = [
     originalPrice: 110,
     discount: "19% off",
     weight: "1 kg",
-    // Chickpea flour/besan powder close up
+    // Chickpea flour / besan powder
     image:
-      "https://images.pexels.com/photos/6544376/pexels-photo-6544376.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=400&fit=crop&auto=format",
     description:
       "Rajdhani Besan is milled from premium quality chickpeas for a fine, smooth texture. Essential for pakoras, dhokla, kadhi, and a variety of Indian sweets.",
     rating: 4.4,
@@ -2050,9 +2050,9 @@ export const products = [
     originalPrice: 340,
     discount: "18% off",
     weight: "5 kg",
-    // Wheat flour in a bowl, dough making
+    // Whole wheat atta flour
     image:
-      "https://images.pexels.com/photos/1775043/pexels-photo-1775043.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=400&fit=crop&auto=format",
     description:
       "Aashirvaad Whole Wheat Atta is made from 100% whole wheat grains, ground to perfection. Makes soft, nutritious rotis that are rich in fibre and essential nutrients.",
     rating: 4.6,
@@ -2068,9 +2068,9 @@ export const products = [
     originalPrice: 215,
     discount: "19% off",
     weight: "1 L",
-    // Sunflower oil in a bottle with sunflowers
+    // Sunflower oil bottle
     image:
-      "https://images.pexels.com/photos/4117553/pexels-photo-4117553.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=400&fit=crop&auto=format",
     description:
       "Fortune Sunlite Refined Sunflower Oil is light, clear, and virtually odourless. High in Vitamin E and low in saturated fats, it's ideal for everyday cooking and frying.",
     rating: 4.3,
@@ -2086,9 +2086,9 @@ export const products = [
     originalPrice: 159,
     discount: "19% off",
     weight: "1 kg",
-    // Red kidney beans rajma in a bowl
+    // Red kidney beans / rajma
     image:
-      "https://images.pexels.com/photos/6261130/pexels-photo-6261130.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=400&h=400&fit=crop&auto=format",
     description:
       "Premium Red Kidney Beans (Rajma) for the classic Punjabi rajma dish. Thick-skinned with a meaty texture, these beans hold their shape when cooked for an authentic taste.",
     rating: 4.4,
